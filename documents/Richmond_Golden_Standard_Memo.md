@@ -1,7 +1,5 @@
 # Richmond Golden Standard Memo
 
-Draft version: 2026-06-15
-
 ## 1. Purpose
 
 This memo defines what can legitimately be used as the Richmond "golden standard" for our project. The immediate goal is to answer the professor's core concerns:

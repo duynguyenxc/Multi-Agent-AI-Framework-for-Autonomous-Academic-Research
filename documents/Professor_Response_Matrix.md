@@ -1,7 +1,5 @@
 # Project Direction and Verification Matrix
 
-Draft version: 2026-06-15
-
 ## 1. Executive Summary
 
 This matrix consolidates the project's current research direction, benchmark position, verification status, and immediate work plan. It is intended to provide a concise entry point before the supporting documents are reviewed.

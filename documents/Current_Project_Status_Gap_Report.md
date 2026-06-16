@@ -1,7 +1,5 @@
 # Current Project Status and Gap Report
 
-Draft version: 2026-06-15
-
 ## 1. Purpose
 
 This report states where the project currently stands, what can already be claimed, what cannot yet be claimed, and which gaps must be closed before the results can be presented to the professor as a defensible research package.

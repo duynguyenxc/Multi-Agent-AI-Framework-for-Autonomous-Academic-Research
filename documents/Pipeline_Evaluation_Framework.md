@@ -1,7 +1,5 @@
 # Pipeline Evaluation Framework
 
-Draft version: 2026-06-15
-
 ## 1. Purpose
 
 This framework defines how to evaluate the project pipeline from input papers to knowledge graph, CMOCs, cross-study synthesis, and final programme theory.

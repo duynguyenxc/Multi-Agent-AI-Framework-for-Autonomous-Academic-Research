@@ -1,7 +1,5 @@
 # Project Briefing Report
 
-Draft version: 2026-06-15
-
 ## 1. Executive Summary
 
 This project develops and evaluates an AI-assisted, knowledge-graph-supported pipeline for realist evidence synthesis. Richmond et al. (2020) is used as the benchmark case because it provides a completed human realist review of 28 studies, a final programme theory, and a clear conclusion about educational interventions for clinical reasoning.

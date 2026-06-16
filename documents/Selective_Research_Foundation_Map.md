@@ -1,7 +1,5 @@
 # Selective Research Foundation Map
 
-Draft version: 2026-06-15
-
 ## 1. Purpose
 
 This document defines the selection policy for external papers, algorithms, tools, and concepts used in the project.

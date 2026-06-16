@@ -1,7 +1,5 @@
 # Entity/Relationship Verification Protocol
 
-Draft version: 2026-06-15
-
 ## 1. Purpose
 
 This protocol defines how we will verify entities and relationships produced by the knowledge graph and the downstream realist synthesis pipeline.

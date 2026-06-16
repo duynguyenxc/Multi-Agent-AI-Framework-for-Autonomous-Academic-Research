@@ -1,7 +1,5 @@
 # Immediate Verification Work Plan
 
-Draft version: 2026-06-15
-
 ## 1. Strategic Direction
 
 The project is moving from a working prototype to a verified research pipeline. The immediate objective is to establish a defensible evidence package showing how the AI pipeline will be compared with Richmond et al.'s human realist review.

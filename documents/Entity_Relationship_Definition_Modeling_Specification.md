@@ -1,7 +1,5 @@
 # Entity/Relationship Definition and Modeling Specification
 
-Draft version: 2026-06-15
-
 ## 1. Purpose
 
 This specification defines what the project means by entity, relationship, knowledge graph, and CMOC subgraph. It also defines the architecture, tools, algorithms, output schema, and code changes needed to make entity/relationship modeling scientifically defensible.
