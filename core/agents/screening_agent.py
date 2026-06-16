@@ -83,13 +83,35 @@ def screen_title_abstract_node(state: RealistReviewState) -> dict:
     Agent 4: Title/Abstract Screener
     INPUT:  study_registry with metadata
     OUTPUT: title_abstract_decisions with include/exclude/uncertain per study
+
+    Supports benchmark_mode: when True, auto-includes all studies (Richmond's
+    final set is already human-screened — re-screening distorts the benchmark).
     """
     studies = state.get("study_registry", [])
     inclusion_criteria = state.get("inclusion_criteria", "Standard RAMESES criteria for medical education")
+    is_benchmark = state.get("benchmark_mode", False)
 
     if not studies:
         return {"errors": ["No studies in registry to screen."]}
 
+    # ── Benchmark Mode: auto-include all (Richmond's final included set) ──
+    if is_benchmark:
+        print(f"\n[AGENT 4] Title/Abstract Screener — BENCHMARK MODE")
+        print(f"  All {len(studies)} studies auto-included (Richmond's final included set)")
+        decisions = [
+            {"study_id": s["study_id"], "decision": "include",
+             "rationale": "Benchmark mode — study is part of Richmond et al. (2020) final included set",
+             "confidence": 1.0}
+            for s in studies
+        ]
+        log = f"[Screening Agent] BENCHMARK MODE: All {len(studies)} studies auto-included"
+        return {
+            "title_abstract_decisions": decisions,
+            "prisma_counts": {"records_screened": len(studies), "title_abstract_excluded": 0},
+            "audit_log": [log]
+        }
+
+    # ── Production Mode: LLM-based screening ──────────────────────────────
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
     structured_llm = llm.with_structured_output(ScreeningDecision)
     chain = SCREENING_PROMPT | structured_llm
@@ -142,10 +164,13 @@ def full_text_eligibility_node(state: RealistReviewState) -> dict:
     Agent 6: Full-Text Eligibility Agent
     INPUT:  Studies that passed title/abstract screen + their full text
     OUTPUT: Final included_studies list
+
+    Supports benchmark_mode: auto-includes all candidates when True.
     """
     registry = {s["study_id"]: s for s in state.get("study_registry", [])}
     ta_decisions = state.get("title_abstract_decisions", [])
     inclusion_criteria = state.get("inclusion_criteria", "")
+    is_benchmark = state.get("benchmark_mode", False)
 
     candidates = [d for d in ta_decisions if d["decision"] in ("include", "uncertain")]
     print(f"\n[AGENT 6] Full-Text Eligibility — Reviewing {len(candidates)} candidates...")
@@ -155,6 +180,26 @@ def full_text_eligibility_node(state: RealistReviewState) -> dict:
         return {"included_studies": [], "full_text_decisions": [],
                 "audit_log": ["[FullText Agent] No candidates passed title/abstract screen."]}
 
+    # ── Benchmark Mode: auto-include all ──────────────────────────────────
+    if is_benchmark:
+        print(f"  BENCHMARK MODE: All {len(candidates)} candidates auto-included")
+        final_included = [registry.get(d["study_id"], {}) for d in candidates]
+        final_included = [s for s in final_included if s]  # filter empty
+        full_text_decisions = [
+            {"study_id": d["study_id"], "decision": "include",
+             "rationale": "Benchmark mode — Richmond's final included set"}
+            for d in candidates
+        ]
+        log = f"[FullText Agent] BENCHMARK MODE: {len(final_included)} studies auto-included"
+        return {
+            "included_studies": final_included,
+            "full_text_decisions": full_text_decisions,
+            "prisma_counts": {"full_texts_assessed": len(candidates), "full_text_excluded": 0,
+                              "studies_included": len(final_included)},
+            "audit_log": [log]
+        }
+
+    # ── Production Mode: LLM-based eligibility ────────────────────────────
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
     structured_llm = llm.with_structured_output(ScreeningDecision)
     chain = FULLTEXT_PROMPT | structured_llm

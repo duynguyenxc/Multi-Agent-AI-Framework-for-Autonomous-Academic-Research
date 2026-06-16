@@ -1,0 +1,29 @@
+idx	access_level	source_id	year	title	doi	abstract_available	confidence
+1	full_text_pdf	201201linn.pdf		18  Reprinted from Australian Family Physician Vol. 41, No. 1/2 january/february 2012		False	0.4
+2	abstract_only	https://pubmed.ncbi.nlm.nih.gov/11302031/	2001	Coordination of Analytic and Similarity-Based Processing Strategies and Expertise in Dermatological Diagnosis	10.1207/S15328015TLM1302_6	True	0.9999999999999999
+3	abstract_only	https://pubmed.ncbi.nlm.nih.gov/12634216/	2003	“Clinical Reasoning Theater”	10.1097/00001888-200303000-00017	True	0.9999999999999999
+4	abstract_only	https://pubmed.ncbi.nlm.nih.gov/16565197/	2006	Giving Learners the Best of Both Worlds: Do Clinical Teachers Need to Guard Against Teaching Pattern Recognition to Novices?	10.1097/00001888-200604000-00017	True	0.9999999999999999
+5	full_text_pdf	EBSCO-FullText-01_02_2026 (1).pdf	2007	Teaching from the clinical reasoning literature: combined reasoning strategies help novice diagnosticians overcome misleading information	10.1111/j.1365-2923.2007.02923.x	True	0.9999999999999999
+6	full_text_pdf	EBSCO-FullText-01_02_2026 (2).pdf	2007	The benefits of flexibility: the pedagogical value of instructions to adopt multifaceted diagnostic reasoning strategies	10.1111/j.1365-2929.2007.02688.x	True	0.9999999999999999
+7	full_text_pdf	EBSCO-FullText-01_02_2026 (10).pdf	2008	Fostering diagnostic knowledge through computer‐supported, case‐based worked examples: effects of erroneous examples and feedback	10.1111/j.1365-2923.2008.03122.x	True	0.9999999999999999
+8	abstract_only	https://pubmed.ncbi.nlm.nih.gov/20936581/	2010	Integrated Cases Section: A Course Designed to Promote Clinical Reasoning in Year 2 Medical Students	10.1080/10401334.2010.512835	True	0.9999999999999999
+9	abstract_only	https://pubmed.ncbi.nlm.nih.gov/20592507/	2010	To Think Is Good: Querying an Initial Hypothesis Reduces Diagnostic Error in Medical Students	10.1097/ACM.0b013e3181e1b229	True	0.9999999999999999
+10	full_text_pdf	first-page-pdf.pdf	2011	A Novel Educational Tool for Teaching Diagnostic Reasoning and Laboratory Data Interpretation to Veterinary (and Medical) Students	10.1016/j.cll.2010.10.007	False	0.9999999999999999
+11	abstract_only	https://pubmed.ncbi.nlm.nih.gov/21710417/	2011	Bringing Explicit Insight into Cognitive Psychology Features during Clinical Reasoning Seminars: A Prospective, Controlled Study	10.4103/1357-6283.101459	True	0.9999999999999999
+12	full_text_pdf	EBSCO-FullText-01_02_2026 (7).pdf	2011	How we created virtual patient cases for primary care-based learning	10.3109/0142159x.2011.544796	False	0.9999999999999999
+13	abstract_only	https://pubmed.ncbi.nlm.nih.gov/21240775/	2011	The Efficacy of a Targeted Remediation Process for Students Who Fail Standardized Patient Examinations	10.1080/10401334.2010.536749	True	0.9999999999999999
+14	full_text_pdf	EBSCO-FullText-01_02_2026 (6).pdf	2011	The influence of medical students selfexplanations on diagnostic performance	10.1111/j.1365-2923.2011.03933.x	True	0.9999999999999999
+15	full_text_pdf	EBSCO-FullText-01_02_2026 (9).pdf	2012	Preparing medical students for clinical decision making: A pilot study exploring how students make decisions and the perceived impact of a clinical decision making teaching intervention	10.3109/0142159x.2012.670323	False	0.9999999999999999
+16	full_text_pdf	EBSCO-FullText-01_02_2026 (4).pdf	2012	Reflection as a strategy to foster medical students acquisition of diagnostic competence	10.1111/j.1365-2923.2012.04217.x	True	0.9999999999999999
+17	full_text_pdf	EBSCO-FullText-01_02_2026 (5).pdf	2012	Should we teach using schemas? Evidence from a randomised trial	10.1111/j.1365-2923.2012.04311.x	True	0.9999999999999999
+18	full_text_pdf	s11251-012-9211-z.pdf	2012	What and how advanced medical students learn	10.1007/s11251-012-9211-z	False	0.9999999999999999
+19	abstract_only	https://pubmed.ncbi.nlm.nih.gov/22587313/	2012	evPaeds: undergraduate clinical reasoning	10.1111/j.1743-498X.2011.00523.x	True	0.9999999999999999
+20	full_text_pdf	EBSCO-FullText-01_02_2026 (3).pdf	2013	Effect of enhanced analytic reasoning on diagnostic accuracy: A randomized controlled study	10.3109/0142159x.2013.759643	False	0.9999999999999999
+21	full_text_pdf	EBSCO-FullText-01_02_2026.pdf	2013	Students selfexplanations while solving unfamiliar cases: the role of biomedical knowledge	10.1111/medu.12253	True	0.9999999999999999
+22	full_text_pdf	Cancer Cytopathology - 2013 - Evered - To what extent does nonanalytic reasoning contribute to visu.pdf	2013	To what extent does nonanalytic reasoning contribute to visual learning in cytopathology?	10.1002/cncy.21263	True	0.9999999999999999
+23	full_text_pdf	s00268-014-2743-4.pdf	2014	A Serious Game Can Be a Valid Method to Train Clinical	10.1007/s00268-014-2743-4	True	0.9999999999999999
+24	full_text_pdf	1472-6947-14-66.pdf	2014	Casebook: a virtual patient iPad application for teaching decision-making through the use of electronic health records	10.1186/1472-6947-14-66	False	0.9999999999999999
+25	full_text_pdf	div-class-title-ineffectiveness-of-cognitive-forcing-strategies-to-reduce-biases-in-diagnostic-reasoning-.pdf	2014	Ineffectiveness of cognitive forcing strategies	10.2310/8000.2013.130860	True	0.9999999999999999
+26	full_text_pdf	s10459-014-9576-7.pdf	2015	Does medical students’ diagnostic performance improve by observing examples of self-explanation provided by peers or experts?	10.1007/s10459-014-9576-7	False	0.9999999999999999
+27	full_text_pdf	EBSCO-FullText-01_02_2026 (8).pdf	2015	Self&#x2010;explanation in learning clinical reasoning: the added value of examples and prompts	10.1111/medu.12623	True	0.9999999999999999
+28	full_text_pdf	EBSCO-FullText-01_02_2026 (11).pdf	2016	Test&#x2010;enhanced learning of clinical reasoning: a crossover randomised trial	10.1111/medu.13069	True	0.9999999999999999

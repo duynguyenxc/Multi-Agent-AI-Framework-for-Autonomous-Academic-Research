@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM-Knowledge-Graph — Realist Synthesis Visualization</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0f0f23;
+    color: #e0e0e0;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 24px 32px;
+    border-bottom: 2px solid #533483;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #e94560, #533483, #0f3460);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .header .subtitle {
+    font-size: 0.85rem;
+    color: #8899aa;
+    font-weight: 300;
+  }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 24px 32px;
+  }
+
+  .stat-card {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+    border-color: #533483;
+  }
+
+  .stat-card .number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e94560;
+  }
+
+  .stat-card .label {
+    font-size: 0.8rem;
+    color: #8899aa;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .section {
+    padding: 24px 32px;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #e94560;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section h2::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(180deg, #e94560, #533483);
+    border-radius: 2px;
+  }
+
+  /* Graph container */
+  #graph-container {
+    width: 100%;
+    height: 600px;
+    background: #0a0a1a;
+    border: 1px solid #2a2a4a;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #graph-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a2e;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  th {
+    background: #16213e;
+    color: #e94560;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #533483;
+  }
+
+  td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #2a2a4a;
+    font-size: 0.85rem;
+  }
+
+  tr:hover td {
+    background: #16213e;
+  }
+
+  .match-good { color: #2ecc71; }
+  .match-partial { color: #f39c12; }
+  .match-poor { color: #e74c3c; }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 12px 0;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  /* Relationship type badges */
+  .rel-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .rel-PROVIDES { background: #2ecc71; color: #000; }
+  .rel-ENABLES { background: #3498db; color: #fff; }
+  .rel-LEADS_TO { background: #9b59b6; color: #fff; }
+  .rel-TRIGGERS { background: #f39c12; color: #000; }
+  .rel-INHIBITS { background: #e74c3c; color: #fff; }
+  .rel-MODERATES { background: #1abc9c; color: #000; }
+
+  /* Bar chart */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 0;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .bar-label {
+    width: 80px;
+    font-size: 0.8rem;
+    text-align: right;
+    color: #8899aa;
+  }
+  .bar-track {
+    flex: 1;
+    height: 24px;
+    background: #0a0a1a;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    transition: width 0.5s ease;
+  }
+  .bar-richmond {
+    position: absolute;
+    top: 0; bottom: 0;
+    border-right: 2px dashed #e94560;
+    opacity: 0.7;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    position: fixed;
+    background: #1a1a2e;
+    border: 1px solid #533483;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.8rem;
+    max-width: 300px;
+    pointer-events: none;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  .tooltip strong { color: #e94560; }
+
+  /* Node info panel */
+  .node-info {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: rgba(26, 26, 46, 0.95);
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 280px;
+    font-size: 0.8rem;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>LLM-Knowledge-Graph — Realist Synthesis Dashboard</h1>
+    <div class="subtitle">Richmond et al. (2020) Benchmark Comparison | Generated: 2026-06-02 13:51</div>
+  </div>
+</div>
+
+<!-- Stats Dashboard -->
+<div class="dashboard">
+  <div class="stat-card">
+    <div class="number">57</div>
+    <div class="label">Total CMOCs</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">28</div>
+    <div class="label">Studies</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">31</div>
+    <div class="label">Unique Nodes</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">34</div>
+    <div class="label">Relationships</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">21</div>
+    <div class="label">Negative CMOCs</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">5</div>
+    <div class="label">PTS Coverage</div>
+  </div>
+</div>
+
+<!-- Richmond Comparison -->
+<div class="section">
+  <h2>Richmond Benchmark Comparison</h2>
+  <table>
+    <tr>
+      <th>PTS</th>
+      <th>Context</th>
+      <th>Description</th>
+      <th>Richmond (expected)</th>
+      <th>Our System</th>
+      <th>Match %</th>
+    </tr>
+    <tr>
+      <td><strong>PTS1</strong></td>
+      <td>E02</td>
+      <td>Low knowledge students</td>
+      <td>20</td>
+      <td>20</td>
+      <td class="match-good">100%</td>
+    </tr><tr>
+      <td><strong>PTS2</strong></td>
+      <td>E03</td>
+      <td>High knowledge students</td>
+      <td>6</td>
+      <td>2</td>
+      <td class="match-partial">33%</td>
+    </tr><tr>
+      <td><strong>PTS3</strong></td>
+      <td>E04</td>
+      <td>Positive coping/self-efficacy</td>
+      <td>5</td>
+      <td>12</td>
+      <td class="match-good">240%</td>
+    </tr><tr>
+      <td><strong>PTS4</strong></td>
+      <td>E05</td>
+      <td>Negative coping/lacking self-efficacy</td>
+      <td>4</td>
+      <td>20</td>
+      <td class="match-good">500%</td>
+    </tr><tr>
+      <td><strong>PTS5</strong></td>
+      <td>E06</td>
+      <td>Mixed-level groups</td>
+      <td>4</td>
+      <td>3</td>
+      <td class="match-good">75%</td>
+    </tr>
+  </table>
+</div>
+
+<!-- PTS Distribution Bar Chart -->
+<div class="section">
+  <h2>PTS Distribution (Our System vs Richmond)</h2>
+  <div class="bar-chart">
+    <div class="bar-row">
+      <div class="bar-label">PTS1</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width: 100.0%; background: linear-gradient(90deg, #533483, #e94560);">
+          20
+        </div>
+        <div class="bar-richmond" style="left: 100.0%;" title="Richmond expected: 20"></div>
+      </div>
+    </div><div class="bar-row">
+      <div class="bar-label">PTS2</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width: 10.0%; background: linear-gradient(90deg, #533483, #e94560);">
+          2
+        </div>
+        <div class="bar-richmond" style="left: 30.0%;" title="Richmond expected: 6"></div>
+      </div>
+    </div><div class="bar-row">
+      <div class="bar-label">PTS3</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width: 60.0%; background: linear-gradient(90deg, #533483, #e94560);">
+          12
+        </div>
+        <div class="bar-richmond" style="left: 25.0%;" title="Richmond expected: 5"></div>
+      </div>
+    </div><div class="bar-row">
+      <div class="bar-label">PTS4</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width: 100.0%; background: linear-gradient(90deg, #533483, #e94560);">
+          20
+        </div>
+        <div class="bar-richmond" style="left: 20.0%;" title="Richmond expected: 4"></div>
+      </div>
+    </div><div class="bar-row">
+      <div class="bar-label">PTS5</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width: 15.0%; background: linear-gradient(90deg, #533483, #e94560);">
+          3
+        </div>
+        <div class="bar-richmond" style="left: 20.0%;" title="Richmond expected: 4"></div>
+      </div>
+    </div>
+    <div style="font-size: 0.75rem; color: #8899aa; margin-top: 4px;">
+      <span style="border-right: 2px dashed #e94560; padding-right: 4px;">▎</span> Dashed line = Richmond expected count
+    </div>
+  </div>
+</div>
+
+<!-- Entity Nodes Table -->
+<div class="section">
+  <h2>Entity Nodes (31 unique codes)</h2>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background: #FF6B6B"></div> Context</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #4ECDC4"></div> Intervention</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #FFA07A"></div> Mechanism Response</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #98D8C8"></div> Outcome (positive)</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #E74C3C"></div> Outcome (negative)</div>
+  </div>
+  <table>
+    <tr>
+      <th>Code</th>
+      <th>Category</th>
+      <th>Label</th>
+      <th>Frequency</th>
+      <th>Studies</th>
+    </tr>
+    <tr>
+      <td><strong style="color: #FFA07A">E27</strong></td>
+      <td>Mechanism_Response</td>
+      <td>?</td>
+      <td>24</td>
+      <td style="font-size: 0.75rem;">S001, S004, S005, S006, S007, S008, S009, S010...</td>
+    </tr><tr>
+      <td><strong style="color: #FF6B6B">E02</strong></td>
+      <td>Context</td>
+      <td>?</td>
+      <td>23</td>
+      <td style="font-size: 0.75rem;">S001, S002, S004, S005, S006, S007, S008, S009...</td>
+    </tr><tr>
+      <td><strong style="color: #FFA07A">E45</strong></td>
+      <td>Mechanism_Response</td>
+      <td>?</td>
+      <td>19</td>
+      <td style="font-size: 0.75rem;">S001, S004, S005, S007, S009, S010, S011, S012...</td>
+    </tr><tr>
+      <td><strong style="color: #FF6B6B">E05</strong></td>
+      <td>Context</td>
+      <td>?</td>
+      <td>18</td>
+      <td style="font-size: 0.75rem;">S001, S005, S007, S009, S010, S011, S012, S014...</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E14</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>16</td>
+      <td style="font-size: 0.75rem;">S001, S005, S007, S009, S010, S011, S012, S014...</td>
+    </tr><tr>
+      <td><strong style="color: #E74C3C">E36</strong></td>
+      <td>Outcome</td>
+      <td>?</td>
+      <td>16</td>
+      <td style="font-size: 0.75rem;">S004, S005, S007, S009, S010, S011, S013, S014...</td>
+    </tr><tr>
+      <td><strong style="color: #98D8C8">E46</strong></td>
+      <td>Outcome</td>
+      <td>?</td>
+      <td>15</td>
+      <td style="font-size: 0.75rem;">S002, S004, S007, S008, S009, S010, S014, S016...</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E18</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>11</td>
+      <td style="font-size: 0.75rem;">S002, S004, S005, S006, S008, S009, S014, S016...</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E10</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>10</td>
+      <td style="font-size: 0.75rem;">S001, S003, S008, S012, S013, S015, S018, S019...</td>
+    </tr><tr>
+      <td><strong style="color: #98D8C8">E25</strong></td>
+      <td>Outcome</td>
+      <td>?</td>
+      <td>8</td>
+      <td style="font-size: 0.75rem;">S001, S002, S005, S006, S013, S021, S022, S026</td>
+    </tr><tr>
+      <td><strong style="color: #98D8C8">E22</strong></td>
+      <td>Outcome</td>
+      <td>?</td>
+      <td>7</td>
+      <td style="font-size: 0.75rem;">S001, S003, S006, S008, S012, S019, S028</td>
+    </tr><tr>
+      <td><strong style="color: #FF6B6B">E04</strong></td>
+      <td>Context</td>
+      <td>?</td>
+      <td>6</td>
+      <td style="font-size: 0.75rem;">S001, S003, S006, S008, S027, S028</td>
+    </tr><tr>
+      <td><strong style="color: #FF6B6B">E03</strong></td>
+      <td>Context</td>
+      <td>?</td>
+      <td>5</td>
+      <td style="font-size: 0.75rem;">S002, S011, S013, S016, S023</td>
+    </tr><tr>
+      <td><strong style="color: #FF6B6B">E06</strong></td>
+      <td>Context</td>
+      <td>?</td>
+      <td>5</td>
+      <td style="font-size: 0.75rem;">S003, S012, S015, S021, S024</td>
+    </tr><tr>
+      <td><strong style="color: #FFA07A">E26</strong></td>
+      <td>Mechanism_Response</td>
+      <td>?</td>
+      <td>5</td>
+      <td style="font-size: 0.75rem;">S001, S003, S006, S008, S028</td>
+    </tr><tr>
+      <td><strong style="color: #E74C3C">E38</strong></td>
+      <td>Outcome</td>
+      <td>?</td>
+      <td>5</td>
+      <td style="font-size: 0.75rem;">S001, S012, S022, S025, S026</td>
+    </tr><tr>
+      <td><strong style="color: #FFA07A">E39</strong></td>
+      <td>Mechanism_Response</td>
+      <td>?</td>
+      <td>5</td>
+      <td style="font-size: 0.75rem;">S002, S003, S021, S023, S024</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E08</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>4</td>
+      <td style="font-size: 0.75rem;">S004, S017, S022, S025</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E15</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>4</td>
+      <td style="font-size: 0.75rem;">S001, S010, S017, S021</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E07</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>3</td>
+      <td style="font-size: 0.75rem;">S003, S011, S024</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E09</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>3</td>
+      <td style="font-size: 0.75rem;">S006, S007, S022</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E17</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>3</td>
+      <td style="font-size: 0.75rem;">S021, S026, S027</td>
+    </tr><tr>
+      <td><strong style="color: #98D8C8">E44</strong></td>
+      <td>Outcome</td>
+      <td>?</td>
+      <td>3</td>
+      <td style="font-size: 0.75rem;">S011, S015, S027</td>
+    </tr><tr>
+      <td><strong style="color: #FFA07A">E24</strong></td>
+      <td>Mechanism_Response</td>
+      <td>?</td>
+      <td>2</td>
+      <td style="font-size: 0.75rem;">S002, S028</td>
+    </tr><tr>
+      <td><strong style="color: #98D8C8">E43</strong></td>
+      <td>Outcome</td>
+      <td>?</td>
+      <td>2</td>
+      <td style="font-size: 0.75rem;">S021, S024</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E12</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>1</td>
+      <td style="font-size: 0.75rem;">S028</td>
+    </tr><tr>
+      <td><strong style="color: #4ECDC4">E13</strong></td>
+      <td>Intervention</td>
+      <td>?</td>
+      <td>1</td>
+      <td style="font-size: 0.75rem;">S013</td>
+    </tr><tr>
+      <td><strong style="color: #FFA07A">E23</strong></td>
+      <td>Mechanism_Response</td>
+      <td>?</td>
+      <td>1</td>
+      <td style="font-size: 0.75rem;">S025</td>
+    </tr><tr>
+      <td><strong style="color: #98D8C8">E28</strong></td>
+      <td>Outcome</td>
+      <td>?</td>
+      <td>1</td>
+      <td style="font-size: 0.75rem;">S003</td>
+    </tr><tr>
+      <td><strong style="color: #FFA07A">E32</strong></td>
+      <td>Mechanism_Response</td>
+      <td>?</td>
+      <td>1</td>
+      <td style="font-size: 0.75rem;">S013</td>
+    </tr><tr>
+      <td><strong style="color: #FFA07A">E42</strong></td>
+      <td>Mechanism_Response</td>
+      <td>?</td>
+      <td>1</td>
+      <td style="font-size: 0.75rem;">S027</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Relationship Edges Table -->
+<div class="section">
+  <h2>Relationship Edges (34 unique)</h2>
+  <table>
+    <tr>
+      <th>Source</th>
+      <th>Relationship</th>
+      <th>Target</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+      <td>E15</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E19</td>
+      <td><span class="rel-badge rel-TRIGGERS">TRIGGERS</span></td>
+      <td>E27</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E27</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E25</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E10</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E19</td>
+      <td><span class="rel-badge rel-TRIGGERS">TRIGGERS</span></td>
+      <td>E26</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E26</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E22</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E14</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E19</td>
+      <td><span class="rel-badge rel-TRIGGERS">TRIGGERS</span></td>
+      <td>E45</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E45</td>
+      <td><span class="rel-badge rel-INHIBITS">INHIBITS</span></td>
+      <td>E38</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E18</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E19</td>
+      <td><span class="rel-badge rel-TRIGGERS">TRIGGERS</span></td>
+      <td>E39</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E39</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E46</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E19</td>
+      <td><span class="rel-badge rel-TRIGGERS">TRIGGERS</span></td>
+      <td>E24</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E24</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E25</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E07</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E39</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E22</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E26</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E28</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E27</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E46</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E08</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E45</td>
+      <td><span class="rel-badge rel-INHIBITS">INHIBITS</span></td>
+      <td>E36</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E09</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E27</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E44</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E27</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E22</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E19</td>
+      <td><span class="rel-badge rel-TRIGGERS">TRIGGERS</span></td>
+      <td>E32</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E32</td>
+      <td><span class="rel-badge rel-INHIBITS">INHIBITS</span></td>
+      <td>E36</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E13</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E17</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E39</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E43</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E19</td>
+      <td><span class="rel-badge rel-TRIGGERS">TRIGGERS</span></td>
+      <td>E23</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E23</td>
+      <td><span class="rel-badge rel-INHIBITS">INHIBITS</span></td>
+      <td>E38</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E19</td>
+      <td><span class="rel-badge rel-TRIGGERS">TRIGGERS</span></td>
+      <td>E42</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E42</td>
+      <td><span class="rel-badge rel-LEADS_TO">LEADS_TO</span></td>
+      <td>E44</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E24</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr><tr>
+      <td>E12</td>
+      <td><span class="rel-badge rel-PROVIDES">PROVIDES</span></td>
+      <td>E19</td>
+      <td>1</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Full CMOC Table -->
+<div class="section">
+  <h2>Full CMOC Evidence Table (57 entries)</h2>
+  <table>
+    <tr>
+      <th>Study</th>
+      <th>CMOC</th>
+      <th>PTS</th>
+      <th>C → I → M_Resp → O</th>
+      <th>Neg?</th>
+      <th>Conf</th>
+    </tr>
+    <tr>
+      <td>S001</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E15</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E25</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S001</td>
+      <td>CMOC2</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E04</strong> →
+        <strong>E10</strong> →
+        <strong>E26</strong> →
+        <strong style="color: #2ecc71">E22</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S001</td>
+      <td>CMOC3</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E38</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S002</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E39</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S002</td>
+      <td>CMOC2</td>
+      <td>PTS2</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E03</strong> →
+        <strong>E18</strong> →
+        <strong>E24</strong> →
+        <strong style="color: #2ecc71">E25</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S003</td>
+      <td>CMOC1</td>
+      <td>PTS5</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E06</strong> →
+        <strong>E07</strong> →
+        <strong>E39</strong> →
+        <strong style="color: #2ecc71">E22</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S003</td>
+      <td>CMOC2</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E04</strong> →
+        <strong>E10</strong> →
+        <strong>E26</strong> →
+        <strong style="color: #2ecc71">E28</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S004</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S004</td>
+      <td>CMOC2</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E08</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S005</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E25</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S005</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S006</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E25</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S006</td>
+      <td>CMOC2</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E04</strong> →
+        <strong>E09</strong> →
+        <strong>E26</strong> →
+        <strong style="color: #2ecc71">E22</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S007</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E09</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S007</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S008</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S008</td>
+      <td>CMOC2</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E04</strong> →
+        <strong>E10</strong> →
+        <strong>E26</strong> →
+        <strong style="color: #2ecc71">E22</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S009</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S009</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S010</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E15</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S010</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S011</td>
+      <td>CMOC1</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E03</strong> →
+        <strong>E07</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E44</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S011</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S012</td>
+      <td>CMOC1</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E06</strong> →
+        <strong>E10</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E22</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S012</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E38</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S013</td>
+      <td>CMOC1</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E10</strong> →
+        <strong>E32</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S013</td>
+      <td>CMOC2</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E03</strong> →
+        <strong>E13</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E25</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S014</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S014</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S015</td>
+      <td>CMOC1</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E06</strong> →
+        <strong>E10</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E44</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S015</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S016</td>
+      <td>CMOC1</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E03</strong> →
+        <strong>E18</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S016</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S017</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E15</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S017</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E08</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S018</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E10</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S018</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S019</td>
+      <td>CMOC1</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E10</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E22</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S019</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S020</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S020</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S021</td>
+      <td>CMOC1</td>
+      <td>PTS5</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E06</strong> →
+        <strong>E17</strong> →
+        <strong>E39</strong> →
+        <strong style="color: #2ecc71">E43</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S021</td>
+      <td>CMOC2</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E15</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E25</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S022</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E09</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E25</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S022</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E08</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E38</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S023</td>
+      <td>CMOC1</td>
+      <td>PTS2</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E03</strong> →
+        <strong>E10</strong> →
+        <strong>E39</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S023</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S024</td>
+      <td>CMOC1</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E10</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S024</td>
+      <td>CMOC2</td>
+      <td>PTS5</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E06</strong> →
+        <strong>E07</strong> →
+        <strong>E39</strong> →
+        <strong style="color: #2ecc71">E43</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S025</td>
+      <td>CMOC1</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E08</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E36</strong>
+      </td>
+      <td>❌</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S025</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E14</strong> →
+        <strong>E23</strong> →
+        <strong style="color: #e74c3c">E38</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S026</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E17</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E25</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S026</td>
+      <td>CMOC2</td>
+      <td>PTS4</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E05</strong> →
+        <strong>E14</strong> →
+        <strong>E45</strong> →
+        <strong style="color: #e74c3c">E38</strong>
+      </td>
+      <td>❌</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S027</td>
+      <td>CMOC1</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E04</strong> →
+        <strong>E17</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S027</td>
+      <td>CMOC2</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E18</strong> →
+        <strong>E42</strong> →
+        <strong style="color: #2ecc71">E44</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr><tr>
+      <td>S028</td>
+      <td>CMOC1</td>
+      <td>PTS1</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E02</strong> →
+        <strong>E24</strong> →
+        <strong>E27</strong> →
+        <strong style="color: #2ecc71">E46</strong>
+      </td>
+      <td>✓</td>
+      <td>0.9</td>
+    </tr><tr>
+      <td>S028</td>
+      <td>CMOC2</td>
+      <td>PTS3</td>
+      <td style="font-size: 0.75rem;">
+        <strong>E04</strong> →
+        <strong>E12</strong> →
+        <strong>E26</strong> →
+        <strong style="color: #2ecc71">E22</strong>
+      </td>
+      <td>✓</td>
+      <td>0.8</td>
+    </tr>
+  </table>
+</div>
+
+<div style="padding: 24px 32px; text-align: center; color: #555; font-size: 0.75rem;">
+  LLM-Knowledge-Graph | Realist Synthesis Pipeline | Richmond et al. (2020) Benchmark
+</div>
+
+</body>
+</html>

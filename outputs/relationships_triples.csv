@@ -1,0 +1,172 @@
+study_id,cmoc_id,source_e_code,predicate,target_e_code,evidence_quote
+S001,S001_CMOC1,E15,PROVIDES,E19,"the teacher explaining the reasoning processes used including hypothesising, hypothesis testing, re-analysis and differential diagnosis."
+S001,S001_CMOC1,E19,TRIGGERS,E27,this is to assist the student to understand what the clinician was thinking and how they were reasoning.
+S001,S001_CMOC1,E27,LEADS_TO,E25,improving time to diagnosis.
+S001,S001_CMOC2,E10,PROVIDES,E19,"this approach used with a single student would remain beneficial, even potentially enhanced."
+S001,S001_CMOC2,E19,TRIGGERS,E26,students having a basic understanding of the theoretical concepts behind clinical reasoning to improve understanding.
+S001,S001_CMOC2,E26,LEADS_TO,E22,improving patient satisfaction and being branded with the ‘good doctor’ label.
+S001,S001_CMOC3,E14,CONSTRAINS,E19,"if the student’s reasoning is unclear, the clinical teacher can interject with questions."
+S001,S001_CMOC3,E19,TRIGGERS,E45,students can find it challenging to know how to navigate the information during a patient interaction.
+S001,S001_CMOC3,E45,LEADS_TO,E38,a diagnosis that could have been made with a careful history and physical examination may end up taking two or three consultations.
+S002,S002_CMOC1,E18,PROVIDES,E19,the relative reliance on analytic and similarity-based processes is amenable to instruction.
+S002,S002_CMOC1,E19,TRIGGERS,E39,the reliance of these 2 processes was indexed by the performance of 12 preclinical medical students.
+S002,S002_CMOC1,E39,LEADS_TO,E46,students enhanced their performance by adopting a similarity-based strategy.
+S002,S002_CMOC2,E18,PROVIDES,E19,the relative reliance on analytic and similarity-based processes is amenable to instruction.
+S002,S002_CMOC2,E19,TRIGGERS,E24,the reliance of these 2 processes was indexed by the performance of residents.
+S002,S002_CMOC2,E24,LEADS_TO,E25,residents enhanced their performance by adopting an analytic strategy.
+S003,S003_CMOC1,E07,PROVIDES,E19,the doctor explains his or her reflections and discusses suggestions from the audience for additional questions
+S003,S003_CMOC1,E19,TRIGGERS,E39,the interaction between doctor and patient is analyzed in such a way that the repeated cycles of questions and answers are revealed to the students
+S003,S003_CMOC1,E39,LEADS_TO,E22,students' evaluations of the relevance of CRT reveal that they appreciate CRT
+S003,S003_CMOC2,E10,PROVIDES,E19,demonstrate the process of clinical reasoning to students through the conversation of a doctor with his or her patient
+S003,S003_CMOC2,E19,TRIGGERS,E26,the doctor's clinical reasoning skills are modeled in CRT
+S003,S003_CMOC2,E26,LEADS_TO,E28,students appreciate CRT
+S004,S004_CMOC1,E18,PROVIDES,E19,the groups instructed to use both strategies (explicitly or implicitly) performed significantly better.
+S004,S004_CMOC1,E19,TRIGGERS,E27,instructions to be feature oriented and to trust similarity improve performance.
+S004,S004_CMOC1,E27,LEADS_TO,E46,"performed significantly better (56% and 53%, respectively; p < .01)."
+S004,S004_CMOC2,E08,PROVIDES,E19,No difference in diagnostic accuracy was observed between the groups given the feature first (42%) and first impression (41%) instructions.
+S004,S004_CMOC2,E19,TRIGGERS,E45,the groups instructed to use both strategies (explicitly or implicitly) performed significantly better.
+S004,S004_CMOC2,E45,LEADS_TO,E36,No difference in diagnostic accuracy was observed between the groups.
+S005,S005_CMOC1,E18,PROVIDES,E19,the instruction to utilise a combined reasoning approach resulted in greater diagnostic accuracy.
+S005,S005_CMOC1,E19,TRIGGERS,E27,explicit guidance regarding the value of both analytic and non-analytic reasoning tendencies.
+S005,S005_CMOC1,E27,LEADS_TO,E25,explicitly telling novice diagnosticians to utilise multiple forms of reasoning can result in improved diagnostic accuracy.
+S005,S005_CMOC2,E14,CONSTRAINS,E19,participants in the no-instruction condition would have been influenced by similarity when making their diagnostic decisions.
+S005,S005_CMOC2,E19,TRIGGERS,E45,the instruction to utilise a combined reasoning approach resulted in greater diagnostic accuracy.
+S005,S005_CMOC2,E45,LEADS_TO,E36,participants in the no-instruction condition did not perform as successfully.
+S006,S006_CMOC1,E18,PROVIDES,E19,participants were instructed to carefully identify all features while trusting guidance provided by feelings of familiarity.
+S006,S006_CMOC1,E19,TRIGGERS,E27,the combined reasoning strategy was operationalised.
+S006,S006_CMOC1,E27,LEADS_TO,E25,Greater diagnostic accuracy was achieved following both contrastive learning and instructions to use a combined reasoning strategy.
+S006,S006_CMOC2,E09,PROVIDES,E19,the need to assess such a comparison provided the first objective of this study.
+S006,S006_CMOC2,E19,TRIGGERS,E26,the provision of explicit and concrete instructions regarding how to do so appears to be beneficial.
+S006,S006_CMOC2,E26,LEADS_TO,E22,the conclusion that contrastive learning and combined reasoning instructions hold pedagogical value.
+S007,S007_CMOC1,E09,PROVIDES,E19,the acquisition of diagnostic knowledge is mainly supported by providing erroneous examples in combination with elaborated feedback.
+S007,S007_CMOC1,E19,TRIGGERS,E27,learners must identify the error and understand the correct solution by systematically comparing the incorrect solution with the correct one.
+S007,S007_CMOC1,E27,LEADS_TO,E46,the effects of the learning environment proved sustainable.
+S007,S007_CMOC2,E14,CONSTRAINS,E19,"When only KCR feedback is given, erroneous examples are detrimental."
+S007,S007_CMOC2,E19,TRIGGERS,E45,the information deﬁcit in the conditions with KCR feedback... must be compensated for by effective self-explanation.
+S007,S007_CMOC2,E45,LEADS_TO,E36,the unfavourable effect of erroneous examples in combination with KCR feedback on knowledge acquisition replicates findings.
+S008,S008_CMOC1,E18,PROVIDES,E19,Curricular instruction incorporated analytic and nonanalytic clinical reasoning models.
+S008,S008_CMOC1,E19,TRIGGERS,E27,Practice with variable case scenarios enhanced students application of basic science knowledge to clinical problem solving.
+S008,S008_CMOC1,E27,LEADS_TO,E46,Students clinical reasoning showed a significant gain after the Integrated Cases Section on a script concordance test.
+S008,S008_CMOC2,E10,PROVIDES,E19,Practice with variable case scenarios enhanced students application of basic science knowledge to clinical problem solving.
+S008,S008_CMOC2,E19,TRIGGERS,E26,Curricular instruction incorporated analytic and nonanalytic clinical reasoning models.
+S008,S008_CMOC2,E26,LEADS_TO,E22,Students clinical reasoning showed a significant gain after the Integrated Cases Section on a script concordance test.
+S009,S009_CMOC1,E18,PROVIDES,E19,querying an initial diagnostic hypothesis
+S009,S009_CMOC1,E19,TRIGGERS,E27,the same primary data presented to both groups
+S009,S009_CMOC1,E27,LEADS_TO,E46,allows students to rectify an incorrect diagnosis
+S009,S009_CMOC2,E14,CONSTRAINS,E19,no difference existed in the accuracy of initial and final diagnoses
+S009,S009_CMOC2,E19,TRIGGERS,E45,the same primary data presented to both groups
+S009,S009_CMOC2,E45,LEADS_TO,E36,initial diagnoses were retained only 23.3% of the time
+S010,S010_CMOC1,E15,PROVIDES,E19,the educational tool provides explicit explanations of diagnostic reasoning.
+S010,S010_CMOC1,E19,TRIGGERS,E27,the tool includes multiple resources for understanding laboratory data.
+S010,S010_CMOC1,E27,LEADS_TO,E46,students demonstrated improved diagnostic accuracy after using the tool.
+S010,S010_CMOC2,E14,CONSTRAINS,E19,students received minimal feedback during the learning process.
+S010,S010_CMOC2,E19,TRIGGERS,E45,the tool provided various resources but lacked effective feedback.
+S010,S010_CMOC2,E45,LEADS_TO,E36,students struggled to develop coherent illness scripts.
+S011,S011_CMOC1,E07,PROVIDES,E19,the tutors made each step explicit to students and encouraged self-reflection on their reasoning processes
+S011,S011_CMOC1,E19,TRIGGERS,E27,bringing them explicit insight into cognitive aspects of their reasoning
+S011,S011_CMOC1,E27,LEADS_TO,E44,improved aspects of diagnostic competence
+S011,S011_CMOC2,E14,CONSTRAINS,E19,the overall differences in accuracy of the final diagnosis given to the patient at the end of the encounter were not statistically significant
+S011,S011_CMOC2,E19,CONSTRAINS,E45,students in the control group had lower accuracy in diagnosis
+S011,S011_CMOC2,E45,LEADS_TO,E36,the overall differences in accuracy of the final diagnosis given to the patient at the end of the encounter were not statistically significant
+S012,S012_CMOC1,E10,PROVIDES,E19,VP cases can be tailored using decision-making software to give students experience of primary care specific clinical reasoning skills.
+S012,S012_CMOC1,E19,TRIGGERS,E27,genuine patient video clips can be collected and integrated into decision-making software.
+S012,S012_CMOC1,E27,LEADS_TO,E22,students found the scenarios useful for developing consulting skills.
+S012,S012_CMOC2,E14,CONSTRAINS,E19,"Feedback was collected on the accessibility, popularity and any perceived disadvantages of each VP case."
+S012,S012_CMOC2,E19,TRIGGERS,E45,VP cases can be tailored using decision-making software to give students experience of primary care specific clinical reasoning skills.
+S012,S012_CMOC2,E45,LEADS_TO,E38,students expressed confusion about the scenarios.
+S013,S013_CMOC1,E10,PROVIDES,E19,"a month-long clinical performance course, targeted to treat specific types of clinical performance deficiencies"
+S013,S013_CMOC1,E19,TRIGGERS,E32,"assessed on pre- and postperformance measures, including multiple-choice tests"
+S013,S013_CMOC1,E32,LEADS_TO,E36,the mean postintervention scores for the participants were above the passing standard for these two examinations
+S013,S013_CMOC2,E13,PROVIDES,E19,the purpose is to determine the impact of a specifically targeted clinical performance course
+S013,S013_CMOC2,E19,TRIGGERS,E27,students were assessed on pre- and postperformance measures
+S013,S013_CMOC2,E27,LEADS_TO,E25,the mean postintervention scores for the participants were above the passing standard
+S014,S014_CMOC1,E18,PROVIDES,E19,generating self-explanations while solving a clinical case
+S014,S014_CMOC1,E19,TRIGGERS,E27,self-explanations were generated after minimal instructions and no feedback was provided to students
+S014,S014_CMOC1,E27,LEADS_TO,E46,students in the self-explanation condition... demonstrated better diagnostic performance on subsequent clinical cases
+S014,S014_CMOC2,E14,CONSTRAINS,E19,no feedback was provided to students
+S014,S014_CMOC2,E19,TRIGGERS,E45,self-explanations were generated after minimal instructions and no feedback was provided to students
+S014,S014_CMOC2,E45,LEADS_TO,E36,the performance of the two groups did not differ in the training phase
+S015,S015_CMOC1,E10,PROVIDES,E19,"A tripartite teaching intervention was developed, consisting of a clinical decision making tool, a tutorial and scenarios within a simulated ward environment."
+S015,S015_CMOC1,E19,TRIGGERS,E27,Experiencing complex decision making scenarios through individually orientated simulation results in students being subjectively more prepared for work as FY1s.
+S015,S015_CMOC1,E27,LEADS_TO,E44,A teaching intervention... appeared to be useful in improving medical students’ decision making.
+S015,S015_CMOC2,E14,PROVIDES,E19,"A tripartite teaching intervention was developed, consisting of a clinical decision making tool, a tutorial and scenarios within a simulated ward environment."
+S015,S015_CMOC2,E19,TRIGGERS,E45,students continue to feel unprepared for the responsibility of clinical decision making.
+S015,S015_CMOC2,E45,LEADS_TO,E36,"students feel unprepared for clinical decision making as FY1s, and lack effective decision making strategies."
+S016,S016_CMOC1,E18,PROVIDES,E19,structured reflection while practising with cases appears to foster the learning of clinical knowledge.
+S016,S016_CMOC1,E19,TRIGGERS,E27,elaboration on the case information and search for meaning helps to activate additional relevant knowledge.
+S016,S016_CMOC1,E27,LEADS_TO,E46,scores in the reﬂection condition...significantly outperformed those in the other conditions.
+S016,S016_CMOC2,E14,PROVIDES,E19,structured reflection seems to lead to poorer performance than the other conditions.
+S016,S016_CMOC2,E19,TRIGGERS,E45,reﬂection imposes a high cognitive load during the learning phase.
+S016,S016_CMOC2,E45,LEADS_TO,E36,students in the reﬂection condition performed worse than those in the other conditions.
+S017,S017_CMOC1,E15,PROVIDES,E19,Students receiving schema-based instruction performed better on structured knowledge questions.
+S017,S017_CMOC1,E19,TRIGGERS,E27,The provision of schemas is hypothesised to aid in the development of compiled knowledge.
+S017,S017_CMOC1,E27,LEADS_TO,E46,Schema-based instruction was associated with improved retention of structured knowledge and diagnostic performance among novices.
+S017,S017_CMOC2,E08,PROVIDES,E19,The traditional instruction group did generate a greater number of correct features for untaught lesions.
+S017,S017_CMOC2,E19,TRIGGERS,E45,Incorrect features may have a derailing effect on diagnostic reasoning.
+S017,S017_CMOC2,E45,LEADS_TO,E36,We anticipated lower diagnostic accuracy on untaught lesions among students instructed with schemas.
+S018,S018_CMOC1,E10,PROVIDES,E19,the study reported in this article concerns the questions what and how fourth-year medical students can learn from a series of cases that have a similar underlying problem.
+S018,S018_CMOC1,E19,TRIGGERS,E27,"integration of biomedical knowledge into the fault component was, however, hampered by lack of knowledge and by misconceptions that students were unable to debug."
+S018,S018_CMOC1,E27,LEADS_TO,E46,continued and repeated experience with classes of similar cases may result in the integration of biomedical knowledge in clinical knowledge.
+S018,S018_CMOC2,E14,CONSTRAINS,E19,the present results do not tell whether students will use resource information to debug a misconception in biomedical knowledge.
+S018,S018_CMOC2,E19,TRIGGERS,E45,students are well able to learn the patterns and variations of enabling conditions and consequences independently.
+S018,S018_CMOC2,E45,LEADS_TO,E36,the role of the coach is that all participants are active and to prevent cognitive errors from being made.
+S019,S019_CMOC1,E10,PROVIDES,E19,"evPaeds incorporates the Paediatric Decision Tree, which encourages students to make decisions on investigations and management."
+S019,S019_CMOC1,E19,TRIGGERS,E27,Close collaboration with students and teachers ensured that evPaeds met the unique learning needs of undergraduate students.
+S019,S019_CMOC1,E27,LEADS_TO,E22,evPaeds has proven popular with students to practise and develop clinical reasoning.
+S019,S019_CMOC2,E14,CONSTRAINS,E19,Close collaboration with students and teachers ensured that evPaeds met the unique learning needs of undergraduate students.
+S019,S019_CMOC2,E19,CONSTRAINS,E45,These are popular with students but provide little opportunity for interaction.
+S019,S019_CMOC2,E45,LEADS_TO,E36,These are popular with students but provide little opportunity for interaction.
+S020,S020_CMOC1,E18,PROVIDES,E19,the analytic reasoning group was requested to list differential diagnoses and findings compatible or not compatible with each diagnosis
+S020,S020_CMOC1,E19,TRIGGERS,E27,an answer sheet containing a table designed to enhance analytic reasoning
+S020,S020_CMOC1,E27,LEADS_TO,E46,Mean diagnostic accuracy scores were significantly higher in the analytic reasoning group than in the control group
+S020,S020_CMOC2,E14,CONSTRAINS,E19,the control group provided a diagnosis without these processes
+S020,S020_CMOC2,E19,CONSTRAINS,E45,students in the control group provided a diagnosis without these processes
+S020,S020_CMOC2,E45,LEADS_TO,E36,diagnostic accuracy was significantly lower in the control group than in the analytic reasoning group
+S021,S021_CMOC1,E17,PROVIDES,E19,Self-explanation while solving clinical cases may be an effective strategy to foster reasoning.
+S021,S021_CMOC1,E19,TRIGGERS,E39,Self-explanation triggers monitoring processes.
+S021,S021_CMOC1,E39,LEADS_TO,E43,Self-explanation fosters learning and helps students to create a coherent representation of a case.
+S021,S021_CMOC2,E15,PROVIDES,E19,Self-explanation while diagnosing cases improved diagnostic performance.
+S021,S021_CMOC2,E19,TRIGGERS,E27,Self-explanation provides opportunities to link biomedical to clinical knowledge.
+S021,S021_CMOC2,E27,LEADS_TO,E25,Self-explanation improved diagnostic performance on new cases.
+S022,S022_CMOC1,E09,PROVIDES,E19,the remaining 25 participants were simply shown 20 nonannotated paired images of normal and abnormal cervical cells.
+S022,S022_CMOC1,E19,TRIGGERS,E27,Encouraging trainees to adopt pattern recognition strategies may help to expedite the acquisition of visual interpretation skills.
+S022,S022_CMOC1,E27,LEADS_TO,E25,Diagnostic accuracy in both groups improved significantly between tests 1 and 2.
+S022,S022_CMOC2,E08,PROVIDES,E19,both groups were instructed to adopt a combined analytic/nonanalytic diagnostic strategy.
+S022,S022_CMOC2,E19,TRIGGERS,E45,the remaining 25 participants were simply shown 20 nonannotated paired images of normal and abnormal cervical cells.
+S022,S022_CMOC2,E45,LEADS_TO,E38,combining analytic and non-analytic reasoning do not appear to be effective.
+S023,S023_CMOC1,E10,PROVIDES,E19,A serious game was developed to train surgical residents in clinical decision-making regarding biliary tract disease.
+S023,S023_CMOC1,E19,TRIGGERS,E39,Players are required to develop and test hypotheses to overcome a given challenge relating to experiential learning.
+S023,S023_CMOC1,E39,LEADS_TO,E46,"Trainees performed significantly better in their second play session than in the first (median 72 vs. 48 %, p = 0.00)."
+S023,S023_CMOC2,E14,CONSTRAINS,E19,"The performance of the participants was automatically measured through the following parameters: correct, incorrect, or neither correct/incorrect solution."
+S023,S023_CMOC2,E19,TRIGGERS,E45,"The serious game contained 97 cases: cholecystolithiasis (15), laparoscopic cholecystectomy (15), bile duct injuries (9), biliary pancreatitis (8), choledocholithiasis (5), cholecystitis (4), gallbladder carcinoma (5), adenomyomatosis (3), a variety of minor topics regarding biliary tract disease (33)."
+S023,S023_CMOC2,E45,LEADS_TO,E36,"Of the students, 8 of 17 found the game frustrating."
+S024,S024_CMOC1,E10,PROVIDES,E19,students learn decision-making skills by observing and interacting with real patient cases in this simulated environment.
+S024,S024_CMOC1,E19,TRIGGERS,E27,the application has been designed to read specially formatted patient cases that have been created using electronic health records.
+S024,S024_CMOC1,E27,LEADS_TO,E46,learning theory research has shown that students learn decision-making skills best when they have access to multitudes of patient cases.
+S024,S024_CMOC2,E07,PROVIDES,E19,annotations can be defined as physician notes that have been added to electronic health records for the purpose of providing some insight for the student into the physician’s decision-making rationale.
+S024,S024_CMOC2,E19,TRIGGERS,E39,the cases consist of data and patient records from real-life medical situations that genuinely occurred.
+S024,S024_CMOC2,E39,LEADS_TO,E43,"the more experience a student has, the more likely they will make a correct diagnosis from the data available to them."
+S025,S025_CMOC1,E08,PROVIDES,E19,CFS training provided multiple relevant resources for students.
+S025,S025_CMOC1,E19,TRIGGERS,E45,These resources triggered confusion among students.
+S025,S025_CMOC1,E45,LEADS_TO,E36,the interventions... failed to show any reduction in diagnostic error by novices.
+S025,S025_CMOC2,E14,PROVIDES,E19,CFS training provided multiple relevant resources.
+S025,S025_CMOC2,E19,TRIGGERS,E23,students expressed frustration with the lack of effective feedback.
+S025,S025_CMOC2,E23,LEADS_TO,E38,the interventions... did not improve diagnostic accuracy.
+S026,S026_CMOC1,E17,PROVIDES,E19,Combining SE and examples or models of clinical reasoning may provide such a condition.
+S026,S026_CMOC1,E19,TRIGGERS,E27,"Through SE, students engage in knowledge elaboration, generation of inferences, integration of new information with prior knowledge."
+S026,S026_CMOC1,E27,LEADS_TO,E25,students who generated SE while solving clinical cases demonstrated better diagnostic performance 1 week later.
+S026,S026_CMOC2,E14,CONSTRAINS,E19,students were not given prompts or other specific tasks to ensure that they listened actively to the examples.
+S026,S026_CMOC2,E19,CONSTRAINS,E45,"students may have been passive, even though their prior SE on the same case was expected to act as a preparatory task."
+S026,S026_CMOC2,E45,LEADS_TO,E38,"there seems to be limited value of adding SE examples, at least examples from peers or experts."
+S027,S027_CMOC1,E17,PROVIDES,E19,Group 1 listened to examples of residents’ SEs with prompts.
+S027,S027_CMOC1,E19,TRIGGERS,E27,listening to residents’ examples helped them to elaborate further on their own ideas.
+S027,S027_CMOC1,E27,LEADS_TO,E46,Group 1 showed a signiﬁcantly higher diagnostic performance score after 1 week than the control group.
+S027,S027_CMOC2,E18,PROVIDES,E19,the addition of prompts (specific questions) while working with examples.
+S027,S027_CMOC2,E19,TRIGGERS,E42,the incorporation of only three general prompts to each of the four examples of resident SE.
+S027,S027_CMOC2,E42,LEADS_TO,E44,Group 1 obtained signiﬁcantly higher diagnostic accuracy and diagnostic performance scores than the control group.
+S028,S028_CMOC1,E24,PROVIDES,E19,the intervention condition used the same content but augmented case presentation with a sequence of key feature questions.
+S028,S028_CMOC1,E19,TRIGGERS,E27,the observed score difference can be attributed to an effect of repeated testing on the storage and retrieval of knowledge.
+S028,S028_CMOC1,E27,LEADS_TO,E46,mean student scores on intervention items were significantly higher than those on control items.
+S028,S028_CMOC2,E12,PROVIDES,E19,repeated testing with key feature questions is more effective than repeated case-based learning.
+S028,S028_CMOC2,E19,TRIGGERS,E26,students expressed appreciation for the structured approach to learning.
+S028,S028_CMOC2,E26,LEADS_TO,E22,students reported that the repeated testing improved their understanding.

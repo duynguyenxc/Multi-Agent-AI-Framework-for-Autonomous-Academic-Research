@@ -1,0 +1,291 @@
+
+
+===== PAGE 1 =====
+4. Methodology
+4.1 Overview of the Multi-Agent Framework
+Systematic reviews that synthesize evidence from diverse research approaches are essential for
+understanding how educational interventions and practices operate within complex systems
+(Moss & Gomez, 2025). Realist systematic review, in particular, seeks to answer not only “what
+works” but also “for whom, in what circumstances, how, and why” by identifying
+Context–Mechanism–Outcome Configurations (CMOCs) and refining programme theories
+(Pawson, 2006; Richmond et al., 2020; Wong et al., 2013). However, conducting high-quality
+realist reviews manually is resource-intensive, involving extensive literature searching, iterative
+coding of CMOCs, detection of demi-regularities, and resolution of contradictions across studies.
+To address these challenges while meeting the methodological innovation goals of the RRE 2026
+call, we developed a multi-agent framework that combines large language models (LLMs) with
+structured knowledge graph techniques. The framework automates repetitive tasks such as
+literature retrieval, screening, and initial data extraction, while preserving human researchers as
+the ultimate decision-makers through explicit human-in-the-loop checkpoints. This design
+ensures methodological transparency, auditability, and reproducibility—key requirements for
+systematic reviews intended to inform sustainable change in complex educational systems (Moss
+& Gomez, 2025).
+The framework is implemented as a stateful orchestration system using LangGraph, enabling
+agents to collaborate through a shared state (the “single source of truth”). It follows a core-and-
+plugin architecture:
+ The core infrastructure manages universal review tasks that are common across
+synthesis methods (e.g., search, deduplication, screening, and audit logging).
+ Method-specific plugins extend the core with the distinctive analytic logic of particular
+review traditions.
+For the present paper we focus on the Realist Synthesis Plugin , which operationalizes CMOC
+extraction, pattern identification, and programme theory refinement. However, the architecture is
+deliberately modular, allowing plug-ins for other approaches highlighted in the RRE call, such as
+framework synthesis, thematic synthesis, meta-ethnography, critical interpretive synthesis,
+qualitative comparative analysis (QCA), and mixed-method syntheses. This modularity supports
+the call’s emphasis on synthesizing evidence from diverse methodological traditions (Moss &
+Gomez, 2025).
+The central innovation of the framework is the Literature Knowledge Graph (LKG) , which
+transforms narrative findings from research articles into structured, queryable big concepts (high-
+level thematic entities) that can be directly assembled into CMOCs. The construction and use of
+the LKG are described in detail in subsequent subsections.
+This overview establishes the overall purpose and high-level design of the framework. The next
+subsection (4.2) explains the core-and-plugin architecture in greater depth, showing how the
+
+===== PAGE 2 =====
+separation of concerns enables both methodological stability and flexibility across different
+review traditions.
+This subsection is complete, self-contained, and ready for your draft. It:
+ Clearly states the problem and purpose (linking to the RRE call).
+ Introduces the multi-agent framework and core-and-plugin idea.
+ Positions realist synthesis as the primary focus while noting modularity for other
+methods.
+ Transitions smoothly to the next subsection (architecture).
+Next subsection will be 4.2 Architectural Principles: Core Review Infrastructure and
+Method-Specific Plugins. It will build directly on this overview by explaining the two layers in
+detail and listing the specific plug-in methods mentioned in the RRE call (framework synthesis,
+thematic synthesis, meta-ethnography, critical interpretive synthesis, QCA, mixed-method, etc.),
+while keeping realist as the worked example.
+Would you like me to deliver 4.2 now, or would you prefer any changes to 4.1 first?
+4. Methodology
+4.1 Overview of the Multi-Agent Framework
+Systematic reviews that synthesize evidence from diverse research approaches are essential for
+understanding how educational interventions and practices operate within complex systems
+(Moss & Gomez, 2025). Realist systematic review, in particular, seeks to answer not only “what
+works” but also “for whom, in what circumstances, how, and why” by identifying
+Context–Mechanism–Outcome Configurations (CMOCs) and refining programme theories
+(Pawson, 2006; Richmond et al., 2020; Wong et al., 2013). However, conducting high-quality
+realist reviews manually is resource-intensive, involving extensive literature searching, iterative
+coding of CMOCs, detection of demi-regularities, and resolution of contradictions across studies.
+To address these challenges while meeting the methodological innovation goals of the RRE 2026
+call, we developed a multi-agent framework that combines large language models (LLMs) with
+structured knowledge graph techniques. The framework automates repetitive tasks such as
+literature retrieval, screening, and initial data extraction, while preserving human researchers as
+the ultimate decision-makers through explicit human-in-the-loop checkpoints. This design
+ensures methodological transparency, auditability, and reproducibility—key requirements for
+systematic reviews intended to inform sustainable change in complex educational systems (Moss
+& Gomez, 2025).
+The framework is implemented as a stateful orchestration system using LangGraph, enabling
+agents to collaborate through a shared state (the “single source of truth”). It follows a core-and-
+plugin architecture:
+
+===== PAGE 3 =====
+ The core infrastructure manages universal review tasks that are common across
+synthesis methods (e.g., search, deduplication, screening, and audit logging).
+ Method-specific plugins extend the core with the distinctive analytic logic of particular
+review traditions.
+For the present paper we focus on the Realist Synthesis Plugin , which operationalizes CMOC
+extraction, pattern identification, and programme theory refinement. However, the architecture is
+deliberately modular, allowing plug-ins for other approaches highlighted in the RRE call, such as
+framework synthesis, thematic synthesis, meta-ethnography, critical interpretive synthesis,
+qualitative comparative analysis (QCA), and mixed-method syntheses. This modularity supports
+the call’s emphasis on synthesizing evidence from diverse methodological traditions (Moss &
+Gomez, 2025).
+The central innovation of the framework is the Literature Knowledge Graph (LKG) , which
+transforms narrative findings from research articles into structured, queryable big concepts (high-
+level thematic entities) that can be directly assembled into CMOCs. The construction and use of
+the LKG are described in detail in subsequent subsections.
+This overview establishes the overall purpose and high-level design of the framework. The next
+subsection (4.2) explains the core-and-plugin architecture in greater depth, showing how the
+separation of concerns enables both methodological stability and flexibility across different
+review traditions.
+This subsection is complete, self-contained, and ready for your draft. It:
+ Clearly states the problem and purpose (linking to the RRE call).
+ Introduces the multi-agent framework and core-and-plugin idea.
+ Positions realist synthesis as the primary focus while noting modularity for other
+methods.
+ Transitions smoothly to the next subsection (architecture).
+Next subsection will be 4.2 Architectural Principles: Core Review Infrastructure and
+Method-Specific Plugins. It will build directly on this overview by explaining the two layers in
+detail and listing the specific plug-in methods mentioned in the RRE call (framework synthesis,
+thematic synthesis, meta-ethnography, critical interpretive synthesis, QCA, mixed-method, etc.),
+while keeping realist as the worked example.
+Would you like me to deliver 4.2 now, or would you prefer any changes to 4.1 first?
+4.2 Architectural Principles: Core Review Infrastructure and Method-Specific Plugins
+
+===== PAGE 4 =====
+The multi-agent framework adopts a core-and-plugin architecture to balance methodological
+generality with the specific analytic requirements of different synthesis traditions. This design
+responds to the RRE 2026 call’s emphasis on advancing systematic review methods that can
+synthesize evidence from diverse research approaches, including qualitative, mixed, and
+comparative case-oriented studies (Moss & Gomez, 2025).
+The core review infrastructure is method-agnostic: it performs the foundational tasks shared
+across nearly all systematic reviews, ensuring consistency, provenance tracking, and auditability
+regardless of the synthesis approach. These tasks include protocol specification, literature
+retrieval, deduplication, two-stage screening, and generation of repository-ready artifacts. The
+core is implemented using LangGraph for stateful orchestration, with all agents communicating
+through a shared state (the “single source of truth”) that logs every action and decision.
+The method-specific plugins extend the core by injecting the distinctive intellectual logic of
+particular review traditions. Each plugin defines specialized agents, schemas, prompts, and
+reasoning rules tailored to the synthesis method’s purpose, theoretical assumptions, and analytic
+units. This modular structure allows the same infrastructure to support multiple approaches
+without losing methodological rigor.
+The RRE 2026 call highlights several well-developed synthesis methods that incorporate
+qualitative and mixed evidence (Moss & Gomez, 2025). The framework is designed to
+accommodate these through dedicated plug-ins. Examples include:
+ Framework synthesis and thematic synthesis — inductive or theory-informed methods
+that build descriptive or explanatory themes from qualitative and mixed studies (Brunton
+et al., 2020; Thomas & Harden, 2008). A Thematic/Inductive Plugin would use the LKG
+to cluster big concepts into themes or frameworks.
+ Meta-ethnography — interpretive synthesis that translates concepts across ethnographic
+studies (Noblit & Hare, 1988; France et al., 2019). A Meta-ethnographic Plugin would
+emphasize reciprocal and refutational translation within communities.
+ Critical interpretive synthesis and meta-narrative review — methods that trace the
+genealogy of ideas across disciplines and paradigms (Dixon-Woods et al., 2006;
+Greenhalgh et al., 2005). Corresponding plug-ins would use the LKG to map conceptual
+lineages and paradigm shifts.
+ Qualitative comparative analysis (QCA) — set-theoretic analysis of causal
+configurations in complex cases (Rihoux & Ragin, 2009; Mello, 2021). A QCA Plugin
+would extract crisp/fuzzy set conditions from the LKG and apply truth-table analysis.
+ Mixed-method synthesis — integration of quantitative meta-analysis with qualitative
+evidence (Booth et al., 2022; Gough et al., 2017). A Mixed-Method Plugin would link
+quantitative effect sizes to qualitative CMOCs or themes.
+In this paper we focus on the Realist Synthesis Plugin as a worked example. Realist review
+seeks to explain how, why, and for whom interventions work by identifying CMOCs and
+refining programme theories (Pawson, 2006; Wong et al., 2013). The plugin operationalizes this
+logic by using the LKG to extract and link big concepts into CMOCs, detect demi-regularities,
+and surface contextual contingencies.
+
+===== PAGE 5 =====
+The core-and-plugin separation ensures that the framework remains flexible for future extensions
+while maintaining strict methodological explicitness — a key requirement of the RRE call (Moss
+& Gomez, 2025). The next subsection (4.3) describes the core infrastructure in detail, showing
+how it provides a stable, auditable foundation for all plug-ins.
+This subsection is complete, self-contained, and flows logically:
+ Builds on 4.1’s overview by diving into architecture.
+ Clearly defines core vs. plug-in.
+ Lists and briefly describes the synthesis methods from the RRE call
+(framework/thematic, meta-ethnography, critical interpretive, meta-narrative, QCA,
+mixed-method).
+ Positions realist as the primary focus while showing modularity.
+ Transitions naturally to 4.3 (Core Infrastructure).
+Next subsection will be 4.3 Core Review Infrastructure — it will describe each core
+agent/task in detail, link back to the architecture, and transition to the Realist Plugin.
+Would you like me to proceed with 4.3 now? Or any adjustments to 4.1 or 4.2 first?
+Plugin Agents (Realist Synthesis Plugin – method-specific)
+ CMOC Extraction Agent Role: Extracts structured Context–Mechanism–Outcome
+configurations. Input: Full-text chunks + IPT schema. Output: JSON triples mapped to
+the LKG {“context”: “…”, “mechanism_resource”: “…”, “mechanism_response”: “…”,
+“outcome”: “…”, “source_span”: “…”}. Prompt strategy: Inference prompt “Identify the
+student-level Context (C), Mechanism Resource (M-res), student’s cognitive Response
+(M-resp), and Reasoning Outcome (O). Link each to a specific text span. Output only
+valid JSON.”
+ Theory Synthesis & Refinement Agent Role: Compares CMOCs across studies to
+identify patterns and update the programme theory. Input: Extracted CMOCs from the
+LKG. Output: Updated programme theory with identified demi-regularities. Prompt
+
+===== PAGE 6 =====
+strategy: Pattern recognition prompt “Compare CMOCs across studies. Propose an
+update to the IPT if context X consistently alters outcome Y. Output structured theory
+summary.”
+ Contradiction Agent Role: Detects conflicting evidence within the LKG. Input: LKG
+subgraphs. Output: Conflict register listing conflicting configurations. Prompt strategy:
+Conflict detection prompt “Flag instances where the same resource leads to different
+outcomes. Present as a structured register.”
+ Reporting Agent Role: Generates final auditable artifacts. Input: Shared state and LKG.
+Output: PRISMA flow, evidence tables, and theory diagrams. Prompt strategy:
+Formatting prompt “Generate RAMESES-compliant audit trail and evidence tables from
+the current state.”
+Here is the start of subsection 4.4 (the first plugin agent), written in the same detailed,
+publication-ready academic style as the previous subsections. This begins the transition from the
+core infrastructure (4.3) to the method-specific plugins, starting with the Realist Synthesis
+Plugin as the primary worked example (as per your focus and the NotebookLM file).
+This subsection is self-contained but links back to 4.3 (core foundation) and forward to the rest
+of 4.4 (other plug-ins) and 4.5 (LKG construction).
+4.4 Method-Specific Plugins: Realist Synthesis Plugin (Worked Example)
+The method-specific plugins extend the core infrastructure by injecting the distinctive
+intellectual logic of particular review traditions. Each plugin adds specialized agents, schemas,
+prompts, and reasoning rules tailored to the synthesis method’s purpose, theoretical assumptions,
+and analytic units. This modularity allows the framework to support the diverse systematic
+review approaches referenced in the RRE 2026 call (Moss & Gomez, 2025), including meta-
+analysis of quantitative studies (Cooper et al., 2019), intervention effectiveness reviews (Higgins
+et al., 2024; U.S. Institute of Education Sciences, 2022), qualitative evidence synthesis (Noyes &
+Hardin, in press), and realist synthesis (Wong et al., 2013).
+In this paper, we focus on the Realist Synthesis Plugin as a worked example. Realist review
+seeks to explain how, why, and for whom interventions work by identifying
+Context–Mechanism–Outcome Configurations (CMOCs) and refining programme theories
+(Pawson, 2006; Richmond et al., 2020). The plugin builds directly on the core infrastructure’s
+screened and retrieved records (from 4.3), using the Literature Knowledge Graph (LKG) to
+structure evidence into big concepts and CMOCs. Detailed LKG construction is described in 4.5.
+The plugin contains three specialized agents:
+CMOC Extraction Agent (first plugin agent)
+Role and alignment with human systematic review processes This agent corresponds to the
+subject matter expert or coder in a human realist review team (Richmond et al., 2020). In a
+traditional realist review, the researcher (often the lead author or a trained coder) reads full texts
+
+===== PAGE 7 =====
+of included studies and systematically extracts pieces of evidence that form
+Context–Mechanism–Outcome Configurations (CMOCs). This involves identifying:
+ Context (C): conditions or circumstances in which the intervention occurs (e.g., student
+knowledge level).
+ Mechanism resource (M-res): what the intervention provides (e.g., expert explanation).
+ Mechanism response (M-resp): how participants react (e.g., insight vs. panic).
+ Outcome (O): the resulting change (e.g., improved diagnostic accuracy). The coder
+iteratively refines extractions based on team discussion, emerging theory, and
+contradictions. The agent automates this extraction while allowing the same human
+validation and correction, ensuring CMOCs are explicit, evidence-based, and linked to
+source text.
+Input Full-text chunks and eligibility decisions from the Full-Text Acquisition & Eligibility
+Agents (from 4.3), plus the protocol schema and IPT hypotheses from the shared state.
+Output JSON triples for the LKG: { “study_id”: “STUDY-XXX”, “context”: “description of
+context big concept”, “mechanism_resource”: “description of mechanism resource”,
+“mechanism_response”: “description of mechanism response”, “outcome”: “description of
+outcome”, “source_span”: “exact text location/reference”, “confidence”: 0–1, “rationale”: “short
+justification (1–2 sentences)” }. These triples are written directly to the LKG as edges and
+properties, linking to the study node and text spans.
+How the agent interacts with the Knowledge Graph, Microsoft Graph, and GraphRAG The
+agent writes every extracted CMOC triple as a structured edge in the Literature Knowledge
+Graph (LKG) (e.g., study node → context node → mechanism node → outcome node), with
+provenance links to source text spans. Microsoft Graph is not directly used here (it was used
+earlier for retrieval). GraphRAG is called to provide context: before extraction, it queries the
+LKG for existing big concepts or CMOCs from related studies (e.g., if the text mentions “novice
+overload”, GraphRAG retrieves the “Low Knowledge Context” community for consistency and
+disambiguation, Edge et al., 2024).
+Initial Prompt Template “You are a subject matter expert in realist medical education
+synthesis. You are given the protocol schema [insert schema here], the IPT hypotheses, and a
+full-text chunk from StudyID XXX. Identify the Context (C), Mechanism Resource (M-res),
+Mechanism Response (M-resp), and Outcome (O) in the text. Link each to a specific text span.
+Output only valid JSON with fields: study_id, context, mechanism_resource,
+mechanism_response, outcome, source_span, confidence, rationale. Do not invent or interpret
+beyond the text.”
+Human Feedback and Revision Process After the agent produces its first batch of CMOC
+triples, the researcher reviews a sample (e.g., all triples from 10% of studies or any with low
+confidence) at the CMOC Validation checkpoint. The researcher can:
+ Approve the extractions as correct.
+
+===== PAGE 8 =====
+ Edit specific triples (e.g., “Change mechanism response from ‘insight’ to ‘panic and
+overload’”).
+ Provide textual comments (e.g., “Missing implicit panic — add it as mechanism response
+because the text implies emotional frustration”).
+The system automatically incorporates the feedback as follows:
+1. The human feedback is appended as a few-shot example to the agent’s prompt template.
+The new prompt becomes: “Previous extraction for StudyID 123: [old JSON triple].
+Human correction: change mechanism response from ‘insight’ to ‘panic and overload’
+because the text implies emotional frustration. Now re-extract from the same text chunk.
+Output updated JSON.”
+2. The agent is re-invoked with the same original input (full-text chunk + protocol schema)
+plus the updated prompt containing the accumulating few-shot examples.
+3. The new output (revised CMOC triples) replaces the old entries in the LKG and shared
+state.
+4. The cycle can repeat: the researcher reviews the revised triples again, provides further
+feedback if needed (e.g., “Add source span reference”), and the agent is re-run with the
+growing set of few-shot examples. This process continues until the researcher is satisfied
+with the extracted CMOCs.
+This human-driven revision ensures the CMOCs are accurate and theory-relevant. The agent’s
+output (structured CMOC triples in the LKG) is automatically passed as the primary input to the
+next agent in the plugin — the Theory Synthesis & Refinement Agent — which uses them to
+identify patterns and refine the programme theory.
+This is the complete, detailed description for only the first plugin agent (CMOC Extraction
+Agent), matching the depth and style of the core agents.
+When you say “next one” or “continue”, I will provide the next plugin agent (Theory Synthesis
+& Refinement Agent) in the same level of detail.
+Please say “next one” when you are ready for the second plugin agent.

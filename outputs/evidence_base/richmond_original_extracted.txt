@@ -1,0 +1,950 @@
+# Extracted text: paper-Richmond-original.pdf
+# Pages: 12
+
+
+
+===== PAGE 1 =====
+Medical Education. 2020;54:709–719.     |  709
+wileyonlinelibrary.com/journal/medu
+ 
+Received: 6 September 2019  |  Revised: 19 January 2020  |  Accepted: 6 February 2020
+DOI: 10.1111/medu.14137  
+MEDICAL EDUCATION IN REVIEW
+The student is key: A realist review of educational 
+interventions to develop analytical and non-analytical clinical 
+reasoning ability
+Anna Richmond1  |   Nicola Cooper2  |   Simon Gay3  |   William Atiomo1  |   
+Rakesh Patel1
+This is an open access article under the terms of the Creative Commons Attribution-NonCommercial-NoDerivs License, which permits use and distribution in 
+any medium, provided the original work is properly cited, the use is non-commercial and no modifications or adaptations are made.
+© 2020 The Authors. Medical Education  published by Association for the Study of Medical Education  and John Wiley & Sons Ltd
+1Education Centre, School of Medicine, 
+University of Nottingham, Nottingham, UK
+2Department of Acute Medicine, University 
+Hospitals of Derby and Burton NHS 
+Foundation Trust, Derby, UK
+3School of Medicine, University of Leicester, 
+Leicester, UK
+Correspondence
+Rakesh Patel, Education Centre, School 
+of Medicine, University of Nottingham, 
+Nottingham, UK.
+Email: Rakesh.Patel@nottingham.ac.uk
+Abstract
+Objectives: Clinical reasoning refers to the cognitive processes used by individuals as they 
+formulate a diagnosis or treatment plan. Clinical reasoning is dependent on formal and ex-
+periential knowledge. Developing the ability to acquire and recall knowledge effectively 
+for both analytical and non-analytical cognitive processing has patient safety implications. 
+This realist review examines the way educational inter ventions develop analytical and non-
+analytical reasoning ability in undergraduate education. A realist review is theory-driven, 
+seeking not only to identify if an intervention works, but also understand the reasons why, 
+for whom, and in what circumstances. The aim of this study is to develop understanding 
+about the way educational interventions develop effective analytical and non-analytical 
+clinical reasoning ability, when they do, for whom and in what circumstances.
+Methods: Literature from a scoping search, combined with expert opinion and re -
+searcher experience was synthesised to generate an initial programme theory (IPT). Four 
+databases were searched and articles relevant to the developing theory were selected as 
+appropriate. Factors affecting educational outcomes at the individual student, teacher 
+and wider organisational levels were investigated in order to further refine the IPT.
+Results: A total of 28 papers contributed to the overall programme theory. The re -
+view predominantly identified evidence of mechanisms for interventions at the 
+individual student level. Key student level factors influencing the effectiveness of 
+interventions included an individual's self-confidence, self-efficacy and pre-existing 
+level of knowledge. These contexts influenced a variety of educational interventions, 
+impacting both positively and negatively on educational outcomes.
+Conclusions: Development of analytical and non-analytical clinical reasoning ability re-
+quires activities that enhance knowledge acquisition and recall alongside the accumula-
+tion of clinical experience and opportunities to practise reasoning in real or simulated 
+clinical environments. However, factors such as pre-existing knowledge and self-con-
+fidence influence their effectiveness, especially amongst individuals with ‘low knowl -
+edge.’ Promoting non-analytical reasoning once novices acquire more clinical knowledge 
+is important for the development of clinical reasoning in undergraduate education.
+
+===== PAGE 2 =====
+710  |    
+RICHMOND et  al .
+1 |  INTRODUCTION
+Medical students need to develop safe and effective clinical rea -
+soning ability during their training prior to entering the workplace 
+as practising doctors. 1 Clinical reasoning can be defined as a skill, 
+process, or outcome  in which clinicians observe, collect and interpret 
+data to diagnose and treat patients. 2 There is a growing body of evi -
+dence in the literature confirming the importance of knowledge and 
+clinical experience for improving clinical reasoning ability.
+3 However, 
+merely acquiring factual knowledge and clinical experience is insuf -
+ficient for developing clinical reasoning expertise. The ways in which 
+one mobilises and applies that knowledge when faced with clinical 
+problems or presentations is also important.
+4
+Researchers describe two complementary approaches for pro -
+cessing information during clinical reasoning. Non-analytical reason -
+ing involves unconscious information processing without the effortful 
+use of working memory
+5 and is triggered when individuals recognise 
+or have a sense of familiarity with a clinical presentation. Analytical 
+reasoning is triggered when individuals have little or no sense of famil-
+iarity with a clinical presentation and involves effortful use of work -
+ing memory alongside a careful deliberation over various diagnostic 
+possibilities. Over time and particularly amongst experts, non-an -
+alytical approaches are typically used for the majority of everyday 
+problem-solving and decision making. Conversely, experts are also 
+effective at recognising when ‘things do not fit’ and capable of con -
+sciously switching to more analytical approaches when necessary.
+6
+A number of educational interventions are described for develop-
+ing non-analytical and analytical clinical reasoning skills. The majority 
+teach the analytical processes of reasoning and increasing awareness 
+about cognitive biases.
+7 These interventions assume by being more 
+‘mindful’ about thinking and ‘bringing reasoning’ into consciousness, 
+individuals may mitigate the impact of particular error-prone bi -
+ases. The evidence supporting these interventions is inconclusive.
+8 
+However, interventions that develop knowledge alongside promoting 
+analytical reasoning approaches have demonstrated benefit on diag -
+nostic performance.
+9,10 However, these interventions have not led to 
+benefit for all learners, or across different reasoning tasks.
+The observation that reasoning ability does not easily transfer 
+across different contexts is not new,11 nor is the observation that some 
+educational interventions are more effective in some settings than 
+others. This presents a significant challenge for medical educators. 
+Given the imperative for developing effective reasoning skills amongst 
+learners by the point of graduation, it is important to better under -
+stand the reasons why interventions work, for whom they work, and in 
+what circumstances. Health care professions education is context-spe-
+cific; therefore, factors such as the type of learner, the type of teach -
+ing and instructional design, as well as the organisational structure in 
+which the education is delivered are all relevant when making sense of 
+the effectiveness of interventions. Therefore, any search for effective 
+educational interventions requires scrutiny not only of their efficacy, 
+but also the contexts and circumstances in which they are effective.
+Realism is a philosophical perspective that places empha -
+sis on both context and causality. Realist research attempts to 
+illuminate why, how, for whom and in what circumstances inter -
+ventions work or not.
+12 A linear causal relationship between the 
+intervention and outcome is not assumed from this perspective, 
+but instead there is acknowledgement of complexity and gener -
+ative causation dependent on various contexts in which the in -
+tervention operates.
+13 This study aims to develop theory-driven 
+understanding about the way educational interventions develop 
+effective analytical and non-analytical clinical reasoning, when 
+they do, for whom and under what circumstances. The research 
+questions that emerged from this aim were: (i) What educational 
+interventions are effective for developing analytical and non-an -
+alytical clinical reasoning ability amongst medical students?, 
+and (ii) When and why are they effective, for whom and in what 
+circumstances?
+2 |  METHODS
+Realist research data are analysed and interpreted to form context, 
+mechanism, outcome configurations (CMOCs) and collectively form 
+a programme theory.
+12 I n  t h i s  a n a l yt i c a l  f r a m e w o r k ,  c o n t e xts  a r e  
+separate to the intervention being investigated but affect how the 
+intervention is received by participants. Context is assumed to be 
+neutral in systematic reviews, whereas context is viewed differently 
+from a realist perspective and is integral to understanding reasons 
+for success or failure of an intervention.
+13 Mechanisms are concep -
+tualised as resources and responses: interventions offer resources 
+into a context, effecting a change in participants’ responses, which 
+in turn leads to various outcomes.
+14 Mechanisms, particularly the 
+cognitive or emotional responses of the learners, are not always ex -
+plicit and may be difficult to ‘see.’ Therefore, mechanisms can be 
+theorised from existing theories of learning or inferred from data 
+in the review process.
+15 Outcomes are the measured effects of in -
+terventions. All possible outcomes may also not be explicit, there -
+fore, outcomes can be also theorised in the same way. In this review, 
+diagnostic accuracy or effective learning about clinical reasoning 
+as a process (eg, knowledge of case exemplars or illness script for -
+mation), were used as the outcome measures. Both the short-term 
+measures of ability (diagnostic accuracy or error) and longer term 
+measures of ability (development of process components over time) 
+were included.
+16
+The review was registered on PROSPERO: International 
+Prospective Register of Systematic Reviews (CRD42017072029). 
+The RAMESES ( Realist And Meta-narrative Evidence Syntheses: 
+Evolving Standards) publication standards for realist synthesis
+12 
+were referred to throughout the review. Initial background litera -
+ture searches relating to educational interventions around clinical 
+reasoning and dual-process theory was undertaken by the lead 
+author (AR). All members of the research team (AR, NC, SG, WA 
+and RP) were clinical teachers with expertise in the development 
+and education of clinical reasoning at undergraduate, postgrad -
+uate and Masters level.
+7,17,18 AR developed consensus amongst 
+the research team about educational interventions that promote 
+
+===== PAGE 3 =====
+     |  711
+RICHMOND et  al .
+non-analytical or analytical processes during clinical reasoning 
+tasks. The outputs from the background literature search and con -
+sensus building led to the development of initial drafts of CMOCs. 
+Following feedback from the research team, an initial programme 
+theory (IPT) was constructed from these drafts. The scope of re -
+view was restricted to undergraduate medical or health care pro -
+fessions education.
+Other relevant theories were also integrated into the IPT. 
+Cognitive flexibility theory (CFT)
+19 posits that all learning is context 
+dependent and for successful transfer of learning in future encoun -
+ters, learning should occur within multiple scenarios and contexts. 
+Situativity theory
+20 a l s o  a s s e r t s  t h e  i m p o r t a n c e  o f  c o n t e x t  w i t h i n  
+learning, specifically that learning is ‘situated in experience,’ 20 with 
+particular attention given to different contextual levels. These in -
+sights directed searching for contexts at the level of the student, 
+the teacher and learning encounter or activity. Such an approach to 
+theorising different contextual levels has been reported in a previous 
+realist review.
+21
+FIGURE 1 PRISMA ( preferred reporting i tems for systematic reviews and m eta-analyses) diagram. Abbreviations: CINAHL, Cumulative 
+Index to Nursing and Allied Health Literature; DIP, dual process theory; ERIC, (Education Resources Information Center. diagram
+MEDLINE
+ title and abstract
+
+===== PAGE 4 =====
+712  |    
+RICHMOND et  al .
+2.1 | Search strategy and appraisal
+Figure  1 shows the PRISMA ( preferred reporting items for system -
+atic reviews and meta- analyses) diagram for the review. Structured 
+searches of MEDLINE, PsycINFO, ERIC (Education Resources 
+Information Centre) and CINAHL (Cumulative Index to Nursing and 
+Allied Health Literature) were performed in May 2017, incorporat -
+ing key themes developed from the IPT (Appendix S1). Searching 
+began from the year 2000 following the publication in 1999 of the 
+seminal report ‘To err is human,’
+22 which brought diagnostic error 
+and clinical reasoning into the mainstream consciousness of the 
+health care community and global public. A supplementary search 
+to incorporate additional terms, such as pattern recognition, de -
+liberate practice,
+23 illness scripts 24 knowledge acquisition and 
+recall 25 was also performed as initial searching highlighted these 
+concepts as relevant to medical expertise development and non-
+analytical reasoning. The conceptualisation of the ‘knowledge’ rel -
+evant to this review was multidimensional as defined in Table 1.
+The title-abstract screen assessed for relevance (Appendix S1) 
+and studies retrieved if they were deemed to contribute to theory 
+building.
+12 Methodological rigour, were the methods credible and 
+trustworthy, 12 was  further  assessed  at  full  text  review .  An  educa-
+tional intervention was defined as ‘a teaching process or method for 
+developing knowledge and skills or delivering information to an in -
+dividual or group’ for the full text review. Some studies describing a 
+technique that could be integrated into an intervention (eg, exper -
+imental studies that promoted a specific reasoning style by giving 
+instructions at the time of the test)
+26-31 were included in the analysis. 
+Reference lists of included full texts were also searched for relevant 
+papers that could contribute to theory building (n = 2).
+32
+2.2 | Data extraction, analysis and synthesis
+The CMOCs were devised for all included full texts. Initial CMOC coding 
+was undertaken by AR and all 28 articles were checked for consistency 
+by another reviewer (RP, SG or NC). Data extraction forms were kept for 
+all reviewed full texts (Appendix S1). Comparisons were made between 
+studies and recurrent patterns of CMOCs were identified. Some stud-
+ies particularly highlighted contexts whereas others shed more light on 
+mechanisms. Studies identified earlier were re-analysed in light of theo-
+ries arising from papers included later in the review.
+12 The  aim  o f  this 
+review focuses on theory building rather than testing as often interven-
+tions or outcomes of interest were under-reported or too distant.21,33 
+NVivo Version 12.1.0 (NViVo, QSR International Pty Ltd, Doncaster, Vic, 
+Australia) used to store full texts and code contexts. Micorsoft® Excel 
+(Micorsoft Corp., Redmond, WA, USA) was used to further elaborate 
+which contexts affected the mechanisms and outcomes. Key contexts 
+and mechanisms for determining effectiveness were eventually pro -
+duced as outputs from the synthesis through this iterative process.
+3 |  RESULTS
+3.1 | Study characteristics
+In total, 149 full texts were retrieved. Of these, 25 articles met the in-
+clusion criteria, and two more were added from reference list search-
+ing.34 One was added from a subsequent search of learning strategies 
+to promote knowledge retention. Details of the included papers are 
+available in Appendix S2. Of the included papers, three were from the 
+United Kingdom, eleven from Canada, three from the United States of 
+America, two from Germany, three from the Netherlands and six from 
+other countries. A total of 23 studies were described in medical educa-
+tion, one was from veterinary education and four involved psychology 
+students. The total number of participants across the studies was 1495.
+Outcomes in the selected studies were heterogenous with 
+most defining diagnostic accuracy as the primary clinical reason -
+ing endpoint (n = 13). Some studies reported more than one mea -
+sured outcome.
+36,37,41,46,56,58  Seven studies reported student 
+satisfaction 36,37,39,41,46,47,50  and seven reported a change in knowl -
+edge.36,37,40,41,43,56,58  Five studies detailed interventions that were 
+theorised to promote illness script and non-analytical reasoning de -
+velopment.9,51,56,57,58 No outcomes were reported in one study but 
+the findings contributed to understanding about potential mecha -
+nisms for possible outcomes. 35
+3.2 | Theory development and refinement
+The selected studies identified key contexts for clinical reasoning 
+interventions at the individual level, with contexts at the teacher or 
+the wider organisation level rarely discussed. Therefore, the results 
+presented below predominantly focus on individual student level 
+contexts. Five key contexts were identified: (a) students with ‘low 
+TABLE 1 Definition of knowledge
+Knowledge term Definition
+Knowledge Encompasses factual, conceptual, 
+procedural and metacognitive 
+knowledge74
+Low knowledge Generic low knowledge across all 
+clinical domains
+Low clinical domain-
+specific knowledge
+Low knowledge within a clinical 
+domain, low problem-specific 
+knowledge
+75 or low knowledge-
+specific to the clinical case
+Inability to apply 
+knowledge in a reasoning 
+situation
+Has sufficient generic or clinical 
+domain-specific knowledge but 
+lacks ability to apply this to a 
+clinical reasoning case in a real or 
+simulated clinical situation
+High clinical domain-
+specific knowledge
+Sufficiently high knowledge with a 
+clinical domain or high problem or 
+clinical case-specific knowledge
+Different levels of 
+knowledge
+Differing generic levels of 
+knowledge or problem-specific 
+knowledge between students in the 
+same group
+
+===== PAGE 5 =====
+     |  713
+RICHMOND et  al .
+FIGURE 2 Individual student contexts important to the outcomes of teaching
+"knowledge,' "
+ s, or
+ s, or
+
+===== PAGE 6 =====
+714  |    
+RICHMOND et  al .
+knowledge,’ low clinical domain-specific knowledge, or an inability to 
+use knowledge in a reasoning situation; (b) students with high clini -
+cal domain-specific knowledge; (c) positive student coping strategies 
+or appropriate level of self-confidence or self-efficacy; (d) negative 
+student coping strategies or lacking self-confidence or self-efficacy, 
+and (e) students with different levels of knowledge within a group.
+The results are shown in Figure 2 and are presented for each of 
+these five contexts in turn with a CMOC statement (in italics) fol -
+lowed by an explanation of the supporting evidence for the CMOC.
+3.2.1 | Context 1: Students with ‘low knowledge,’ 
+low clinical domain-specific knowledge, or an inability 
+to use knowledge in a reasoning situation
+When students have low knowledge, low domain-specific 
+knowledge or an inability to apply their knowledge in a 
+reasoning situation (Context; C), there are multiple ways 
+(Mechanism - resource; Mresource) in which educational 
+interventions may develop their diagnostic accuracy or 
+reasoning ability (Outcome; O). The context of low knowl-
+edge (C) combines with different resources to produce 
+varying emotional and cognitive responses in the students 
+(Mechanisms - response; Mresponse), which promote either 
+positive or negative educational outcomes (O).
+A total of 22 studies contributed to developing this the -
+ory
+9,26–31,35–49 and this context exerted most influence on the in -
+terventions. The many ways this context affected mechanisms and 
+outcomes is shown in Figure 3. For example, when students with in -
+sufficient knowledge passively observe an expert without receiving 
+an explanation of the expert's reasoning, they may experience panic 
+or resentment at not immediately knowing how the expert has made 
+a decision and are not able to fully develop their own understand -
+ing about the clinical problem. Conversely, students who receive a 
+full and explicit explanation of an expert's reasoning tend to have 
+positive learning experiences as they have clear insight into, and can 
+make sense of, an expert's diagnostic decision-making pathway.
+This context is particularly relevant to much of undergraduate educa-
+tion as many students are novices in most clinical situations. Furthermore, 
+many students may have ‘low knowledge’ relative to the clinical reasoning 
+challenge even though they may have ‘adequate knowledge’ in general 
+for their stage of training. Likewise, students may be perceived as having 
+‘low knowledge’ when unable to apply their knowledge appropriately.
+3.2.2 | Context 2: High clinical domain-specific 
+knowledge student
+When an expert's reasoning processes or thoughts are ex-
+plicitly revealed and discussed (Mresource) with students 
+with sufficient domain-specific knowledge (C), this promotes 
+understanding (Mresponse) leading to insight (Mresponse) 
+into the reasoning process when diagnosing and managing 
+patients (O) and a positive learning experience (O).
+When students with high clinical domain-specific knowl -
+edge (C) are instructed to use analytical reasoning alone 
+or this is promoted by ensuring they think through all as -
+pects of the case (Mresource), they may feel frustrated 
+(Mresponse) as they can rely on non-analytical reasoning 
+(Mresponse) and still attain high diagnostic accuracy (O).
+Seven studies contributed to this theory
+8,9,30,38,44,50,51  as well 
+as insights from the expertise development literature. 23 Sufficient 
+knowledge and experience enable relatively accurate non-analytical 
+reasoning in this context, with students naturally developing more 
+rapid, intuitive reasoning as their knowledge and experience in -
+creases. Students with higher subject-specific knowledge may benefit 
+more from discussions with teachers and experts explaining their rea-
+soning as they develop a good understanding of the clinical domain. 
+Likewise, students with sufficient clinical domain-specific knowledge 
+derive little benefit from being stretched for explanations, or when di-
+rective teaching approaches, commonly reserved for ‘low knowledge’ 
+students, are used on them.
+3.2.3 | Context 3: Positive student coping 
+strategies or appropriate level of self-confidence or 
+self-efficacy
+When students with the ability to cope with the challenge 
+of performing clinical reasoning (C) or students with an 
+appropriate level of self-confidence or self-efficacy cali -
+brated to previous clinical reasoning performance (C) are 
+exposed to teaching resources that allow them to make 
+mistakes (Mresource) or those based in real-life scenarios 
+(Mresource), including simulation and simulated patients, 
+they feel grateful for the learning experience (Mresponse). 
+The experience enables them to build understanding 
+(Mresponse), which has a positive impact on learning (O) 
+and this is important to developing more complete illness 
+scripts and performing more accurate non-analytical rea -
+soning (O).
+When students with positive coping strategies (C) are 
+exposed to real cases (Mresource) they feel pressure 
+that their decision making could have a real impact 
+(Mresponse), which results in a positive learning experi -
+ence (O).
+Five studies contributed to this theory.
+36,37,46,50,51  Feelings of 
+stress in simulated or real environments can be intrinsic or ex -
+trinsic to the task. 52 When those emotions are perceived by the 
+individual as being necessary for performing the task, they may 
+enhance knowledge acquisition. Conversely, when emotions are 
+
+===== PAGE 7 =====
+     |  715
+RICHMOND et  al .
+perceived as peripheral to the task or distractors, performance 
+on task may be impaired. The ways individuals perceive emo -
+tional triggers as threats or opportunities vary according to the 
+extent those individuals have developed sufficient coping strat -
+egies when performing on task. Experience, practice and making 
+mistakes
+53 are vital to developing clinical reasoning ability and 
+FIGURE 3 Context, mechanism, outcome configurations related to the context of low knowledge, or low case-specific knowledge, or 
+inability to apply knowledge in a reasoning situation
+
+===== PAGE 8 =====
+716  |    
+RICHMOND et  al .
+students with positive coping strategies or appropriately high 
+levels of self-confidence will gain most from educational inter -
+ventions that provide this resource.
+3.2.4 | Context 4: Negative student coping 
+strategies or lacking self-confidence or self-efficacy
+Students with poor coping strategies or low self-confi -
+dence or self-efficacy beliefs calibrated to previous clin -
+ical reasoning performance (C), exposed to simulated or 
+real patient encounters (Mresources), may experience 
+fear (Mresponse), stress (Mresponse) or pressure to per -
+form (Mresponse). As a consequence, cognitive load is 
+increased (Mresponse) resulting in poor illness script de -
+velopment, faulty future non-analytical reasoning and 
+negative learning outcomes (O).
+Four studies contributed to this theory
+36,46,50,51 a s  w e l l  a s  i n-
+sights from cognitive load theory 54 and human stress responses. 52,55 
+Negative outcomes result from students’ inability to cope with the 
+stress of simulated or real environments and from making mistakes. 
+Although simulation allows students to learn from cases they might 
+otherwise not encounter in the workplace or make mistakes without 
+the fear of punishment,
+53 not all students will make learning gains in 
+these situations.
+3.2.5 | Context 5: Students with different levels of 
+knowledge within a group
+When teaching students with different levels of pre-ex -
+isting knowledge in a group (C), using strategies that 
+promote knowledge retention (Mresource) will build 
+upon what they already know (Mresponse) and develop 
+understanding (Mresponse) regardless of their pre-exist -
+ing knowledge level, which leads to increased learning (O) 
+and further engagement (O).
+Providing accurate and timely feedback (Mresource) is 
+an important component of developing reasoning skills 
+in students with all levels of knowledge (C), to develop 
+understanding (Mresponse) of their successes and fail -
+ures and generate plans for improvement. This is more 
+likely to promote development of complete illness scripts 
+(Mresponse) and successful non-analytical reasoning in 
+the future (O). When feedback is absent, incomplete or 
+contains errors (Mresource) this can lead to confusion 
+(Mresponse) and have a negative impact on learning (O).
+Nine studies contributed to this theory.
+29,40,43,46,47,51,56–58 The 
+educational challenge for teachers is to deliver teaching experiences 
+to students with varying levels of pre-existing knowledge. The most 
+effective way is to provide timely and accurate feedback on perfor -
+mance as well as use strategies that promote long-term retention of 
+knowledge. One effective strategy was to integrate test-enhanced 
+learning into the teaching of clinical reasoning.
+59 Conversely, leaving 
+students without feedback on their reasoning ability or providing erro-
+neous feedback led to confusion, reduced understanding and impaired 
+clinical reasoning development.
+4 |  DISCUSSION
+This research demonstrates that educational interventions seeking 
+to develop effective analytical and non-analytical clinical reasoning 
+ability amongst undergraduate students do not work independently, 
+but work inter-dependently with the individual, their pre-existing 
+clinical domain-specific knowledge and their ability to cope with the 
+clinical reasoning task. The research identified five contexts, and is 
+the first study to report that the same educational intervention may 
+‘work’ across many contexts, but the effect is not the same across 
+them all, especially amongst students with low knowledge states. 
+Furthermore, this research provides more evidence to the growing 
+consensus that a ‘one-size fits all’ approach to delivering education 
+is less effective, especially for clinical reasoning teaching, given the 
+negative outcomes identified when students are given tasks beyond 
+their competence or reach, even with a teacher present with them as 
+they perform.
+The ‘Matthew effect’ is well-described in the educational lit -
+erature and suggests that better pre-existing knowledge of an 
+individual correlates with higher educational achievement.
+60 This 
+research provides further evidence for this observation and sug -
+gests identifying the level of knowledge a student possesses for a 
+given task or across a particular knowledge domain is necessary 
+for predicting which educational interventions will be effective. 
+Our findings are also corroborated by the expertise reversal ef -
+fect,
+61 where more experienced learners may not benefit, or in -
+deed reverse learning gains, from those instructional techniques 
+used for novices.
+Often knowledge levels are assumed amongst students based on 
+their year of study, having progressed through high-stakes assess -
+ments, or their accumulated total experience over a programme. Time 
+spent on a course is a poor marker of competence
+62 and this realist 
+review suggests a given intervention may not have the same impact 
+on all students, especially those with low knowledge states who need 
+support the most. Furthermore, improving knowledge for clinical rea-
+soning has been highlighted as the most promising area to improve 
+diagnostic accuracy and reduce error.
+4,63,64  This review supports that 
+call and the findings suggest improving knowledge structures and 
+long-term knowledge retention for later recall is essential for the de -
+velopment of both confidence and competence in clinical reasoning.
+Although not the main focus of the review, students with low 
+knowledge states featured heavily as targets for educational inter -
+ventions to develop analytical and non-analytical clinical reasoning 
+ability. Effective teaching and learning strategies are particularly 
+
+===== PAGE 9 =====
+     |  717
+RICHMOND et  al .
+important amongst this group of learners as they provide the great -
+est challenge for clinical teachers. Retrieval practice, interleaving 
+and spaced practice are examples of learning strategies, which in -
+duce ‘desirable difficulties’ amongst learners and demonstrate the 
+promising outcomes for constructing knowledge and effective trans -
+fer into memory.
+65 These strategies promote long-term retention 
+of knowledge by encouraging learners to revisit material over time, 
+practise retrieving stored information in a variety of ways (such as 
+quizzes or questioning) and mix different subjects together when 
+studying rather than learning topics in silos.
+66,67 Educators could use 
+these strategies to increase knowledge retention prior to, or along -
+side experiences in simulated or real environments, so learners have 
+sufficient knowledge not just for illness script formation and devel -
+opment, but also refinement after receiving feedback from teachers 
+following performance on tasks.
+Although the assertion that increasing knowledge alone is neces -
+sary for improving clinical reasoning is still being debated,
+68 the rec-
+ommendation for more exposure to real patients in any environment 
+for improving performance causes few objections. This research 
+identified that exposure to real patients in practice or simulated en -
+vironments was necessary for making ‘safe mistakes’
+53 and providing 
+a ‘safe place’ for students to also develop coping strategies prior to 
+becoming doctors. Furthermore, this experience was seen as ‘part 
+and parcel’ of becoming a doctor, but also one of the few educa -
+tional opportunities where students could feel the emotions evoked 
+when engaging in clinical reasoning for real. Though the review set 
+out to identify effective interventions for developing cognitive infor -
+mation-processing pathways associated with clinical reasoning, the 
+findings demonstrate that the self-management of emotions evoked 
+as a result both non-analytical and analytical thinking are also im -
+portant in the development of clinical reasoning ability.
+Finally, educational interventions for clinical reasoning have 
+tended to favour approaches for developing analytical informa -
+tion processing.
+69 However , the findings from this review suggest 
+educational interventions for undergraduate students could do 
+more to encourage students towards non-analytical reasoning 
+even when individuals have developed a sufficiently high level of 
+knowledge within the clinical domain. The challenge for educa -
+tors now is to identify baseline clinical reasoning knowledge using 
+new educational technologies, monitor diagnostic decision-making 
+development over time
+70 a n d  p r o v i d e  f e e d b a c k  a b o u t  w h i c h  a p-
+proaches need further improvement at the level of the individual. 
+Furthermore, the challenge is not just about ‘monitoring for the sake 
+of monitoring’ but also identifying key self-regulatory behaviours 
+known to affect confidence or self-efficacy when students with 
+low or high knowledge states undertake clinical reasoning tasks.
+71 
+Providing all this information for the educator in a way that is useful 
+to them and useable for the learner is the most important first step 
+in the process. Thereafter, both learner and teacher will hopefully 
+be able to identify the most appropriate educational support for im -
+proving clinical reasoning ability, especially given there are at least 
+five different contexts in which the same intervention may have a 
+completely different effect.
+4.1 | Strengths and limitations
+Although there are various reviews of clinical reasoning interven -
+tions highlighting what may ‘work’ in terms of improving diagnos -
+tic performance, 72,73 th i s  i s  th e  fi rst  r e a l i st  r e v i e w  t o  i d e n t i fy  w h y  
+interventions may work, for whom and the contexts in which they 
+work. The outputs from this synthesis add to this knowledge base 
+by providing useful, practical information for teachers responsible 
+for developing both analytical and non-analytical thinking ability of 
+undergraduate students, especially those with low knowledge states. 
+Realist methodology encourages inferences to be made in an itera -
+tive way by triangulating insights from other sources to increase the 
+accuracy of results rather than disregard the evidence altogether. 
+Likewise, not all outcomes or impacts from educational interventions 
+may be explicitly reported by researchers even though they may be 
+apparent when findings are read through different methodological 
+or disciplinary lenses. Better reporting standards for interventions 
+should increase the quality of descriptions and synthesis using realist 
+methods in the future.
+5 |  CONCLUSIONS
+Educational interventions for developing analytical and non-
+analytical reasoning amongst undergraduate students in medical 
+or health care professions education predominantly work by in -
+crease knowledge acquisition, mobilisation and recall alongside 
+encouraging practice in real or simulated environments. Students 
+with low knowledge states affect more whether educational in -
+terventions are successful or not, therefore identifying what 
+individuals know about a particular clinical problem or across a 
+knowledge domain is important. Students with developing ex -
+pertise should be encouraged to use non-analytical reasoning 
+just like experts do, switching back to analytical reasoning when 
+faced with complexity or uncertainty and needing to explain their 
+thinking.
+AUTHOR CONTRIBUTIONS
+AR, WA and RP conceived the study and contributed towards ITP. 
+AR developed the protocol, performed the searches, performed ini -
+tial data extraction, synthesised the results, created visual represen -
+tations of the data and wrote the initial draft manuscript. RP, SG and 
+NC reviewed a sample of full texts and provided feedback on the 
+developing theory and manuscript. AR, RP and NC contributed to 
+the manuscript. WA is the principal supervisor of AR’s PhD, of which 
+this study forms a part. All authors (AR, NC, SG, WA, and RP) agreed 
+the final manuscript prior to submission.
+ACKNOWLEDGEMENTS
+None.
+CONFLICTS OF INTEREST
+None.
+
+===== PAGE 10 =====
+718  |    
+RICHMOND et  al .
+ETHICAL APPROVAL
+None.
+ORCID
+Anna Richmond   https:/ /orcid.org/0000-0003-2791-4294 
+Nicola Cooper   https:/ /orcid.org/0000-0003-2261- 7143 
+Simon Gay  https:/ /orcid.org/0000-0002-1743-9824 
+William Atiomo   https:/ /orcid.org/0000-0002-5027-3504 
+Rakesh Patel  https:/ /orcid.org/0000-0002-5770-328X 
+REFERENCES
+ 1. General Medical Council. Outcomes for Graduates (Tomorrow's 
+Doctors): Working with Doctors Working with Patients . Manchester, 
+UK: GMC; 2015:1-20.
+ 2. Daniel M, Rencic J, Durning SJ, et al. Clinical reasoning assess -
+ment methods: a scoping review and practical guidance. Acad Med 
+2019;94(6):902-912.
+ 3. Monteiro S, Norman G, Sherbino J. The 3 faces of clinical reason -
+ing: epistemological explorations of disparate error reduction strat -
+egies. J Eval Clin Pract . 2018;24(3):666-673.
+ 4. Norman GR, Eva KW. Diagnostic error and clinical reasoning. Med 
+Educ. 2010;44(1):94-100.
+ 5. Evans JSBT, Stanovich KE. Dual-process theories of higher cogni -
+tion: advancing the debate. Perspect Psychol Sci . 2013;8(3):223-241.
+ 6. Norman G, Trott A, Brooks L, Kinsey E, Smith M. Cognitive differ -
+ences in clinical reasoning related to postgraduate training. Teach 
+Learn Med. 1994;6:114-120.
+ 7. Gay S, Bartlett M, McKinley R. Teaching clinical reasoning to medi -
+cal students. Clin Teach . 2013;10(5):308-312.
+ 8. Sherbino J, Kulasegaram K, Howey E, Norman G. Ineffectiveness of 
+cognitive forcing strategies to reduce biases in diagnostic reason -
+ing: a controlled trial. CJEM . 2014;16(1):34-40.
+ 9. Chamberland M, Mamede S, St-Onge C, et al. Students' self-ex -
+planations while solving unfamiliar cases: the role of biomedical 
+knowledge. Med Educ. 2013;47(11):1109-1116.
+ 10. Prakash S, Sladek R, Schuwirth L. Interventions to improve diag -
+nostic decision making: a systematic review and meta-analysis on 
+reflective strategies. Med Teach . 2018;41(5):517-524.
+ 11. Eva KW. What every teacher needs to know about clinical reason -
+ing. Med Educ . 2004;39:98-106.
+ 12. Wong G, Greenhalgh T, Westhorp G, Buckingham J, Pawson R. 
+RAMESES publication standards: realist synthesis. BMC Med . 
+2013;11:21.
+ 13. Pawson R. Evidence-based Policy. A Realist Perspective . London, UK: 
+SAGE Publications Ltd; 2006.
+ 14. Dalkin SM, Greenhalgh J, Jones D, Cunningham B, Lhussier M. 
+What's in a mechanism? Development of a key concept in realist 
+evaluation. Implement Sci . 2015;10:49.
+ 15. Wong G, Greenhalgh T, Westhorp G, Pawson R. Realist methods 
+in medical education research: what are they and what can they 
+contribute? Med Educ. 2012;46(1):89-96.
+ 16. Hautz WE. When i say … diagnostic error. Med Educ . 
+2018;52(9):896-897.
+ 17. Cooper N, Frain J. ABC of Clinical Reasoning , 1st edn. Chichester, 
+UK: Wiley Blackwell/ BMJ Publishing Group; 2016.
+ 18. Patel RS, Sandars J, Carr S. Clinical diagnostic decision-making in 
+real life contexts: a trans-theoretical approach for teaching: AMEE 
+Guide No. 95. Med Teach . 2015;37(3):211-227.
+ 19. Spiro RJ, Coulson RL, Feltovich PJ, Anderson DK, eds. Cognitive 
+Flexibility Theory: Advanced Knowledge Acquisition in Ill-Structured 
+Domains. 10th Annual Conference of the Cognitive Science Society. 
+Hillsdale, NJ: Erlbaum; 1988:1-20.
+ 20. Durning SJ, Artino AR. Situativity theory: a perspective on how 
+participants and the environment can interact: AMEE Guide No. 
+52. Med Teach. 2011;33(3):188-199.
+ 21. Kehoe A, McLachlan J, Metcalf J, Forrest S, Carter M, Illing J. 
+Supporting international medical graduates' transition to their 
+host-country: realist synthesis. Med Educ . 2016;50(10):1015-1032.
+ 22. Kohn LT, Corrigan JM, Donaldson MS. To Err is Human: Building a 
+Safer Health System . Washington, DC: Institute of Medicine; 1999.
+ 23. Ericsson A. Deliberate practice and the acquisition and mainte -
+nance of expert performance in medicine and related domains. 
+Acad Med. 2004;70(Suppl 10):S70-S81.
+ 24. Custers EJFM. Thirty years of illness scripts: theoretical origins and 
+practical applications. Med Teach. 2015;37(5):457-462.
+ 25. Weinstein Y, Madan CR, Sumeracki MA. Teaching the science of 
+learning. Cogn Res Princ Implic . 2018;3(1):2.
+ 26. Kulatunga-Moruzi C, Brooks LR, Norman GR. Coordination of an -
+alytic and similarity-based processing strategies and expertise in 
+dermatological diagnosis. Teach Learn Med. 2001;13(2):110-116.
+ 27. Ark TK, Brooks LR, Eva KW. Giving learners the best of both worlds: 
+do clinical teachers need to guard against teaching pattern recogni -
+tion to novices? Acad Med . 2006;81(4):405-409.
+ 28. Eva KW, Hatala RM, Leblanc VR, Brooks LR. Teaching from the 
+clinical reasoning literature: combined reasoning strategies help 
+novice diagnosticians overcome misleading information. Med Educ. 
+2007;41(12):1152-1158.
+ 29. Ark TK, Brooks LR, Eva KW. The benefits of flexibility: the peda -
+gogical value of instructions to adopt multifaceted diagnostic rea -
+soning strategies. Med Educ . 2007;41(3):281-287.
+ 30. Myung SJ, Kang SH, Phyo SR, Shin JS, Park WB. Effect of enhanced 
+analytic reasoning on diagnostic accuracy: a randomized controlled 
+study. Med Teach. 2013;35(3):248-250.
+ 31. Evered A, Walker D, Watt AA, Perham N. To what extent does 
+nonanalytic reasoning contribute to visual learning in cytopathol -
+ogy? Cancer Cytopathol . 2013;121(6):329-338.
+ 32. Haig A, Dozier M. BEME Guide No 3: systematic searching for ev -
+idence in medical education - Part 1: sources of information. Med 
+Teach. 2003;25(4):352-363.
+ 33. Davies F, Wood F, Bullock A, Wallace C, Edwards A. Shifting mind -
+sets: a realist synthesis of evidence from self-management support 
+training. Med Educ. 2018;52:274-287.
+ 34. Haig A, Dozier M. BEME Guide No. 3: systematic searching for ev -
+idence in medical education - Part 2: constructing searches. Med 
+Teach. 2003;25(5):463-484.
+ 35. Linn A, Khaw C, Kildea H, Tonkin A. Clinical reasoning - a guide to 
+improve teaching and practice. Aust Family Phys . 2012;41(1/2):18.
+ 36. Bender HS, Danielson JA. A novel educational tool for teaching di -
+agnostic reasoning and laboratory data interpretation to veterinary 
+(and medical) students. Clin Lab Med . 2011;31(1):201-215.
+ 37. Graafland M, Vollebergh MF, Lagarde SM, van Haperen M, 
+Bemelman WA, Schijven MP. A serious game can be a valid 
+method to train clinical decision-making in surgery. World J Surg . 
+2014;38(12):3056-3062.
+ 38. Nendaz MR, Gut AM, Louis-Simonet M, Perrier A, Vu NV. Bringing 
+explicit insight into cognitive psychology features during clinical 
+reasoning seminars: a prospective, controlled study. Educ Health . 
+2011;24(1):13.
+ 39. Borleffs JC, Custers EJ, van Gijn J, ten Cate O. ‘Clinical Reasoning 
+Theater’: a new approach to clinical reasoning education. Acad Med. 
+2003;78(3):322-325.
+ 40. Klamen DL, Williams RG. The efficacy of a targeted remediation 
+process for students who fail standardized patient examinations. 
+Teach Learn Med. 2011;23(1):3-11.
+ 41. Jacobson K, Fisher DL, Hoffman K, Tsoulas KD. Integrated cases 
+section: a course designed to promote clinical reasoning in year 2 
+medical students. Teach Learn Med . 2010;22(4):312-316.
+
+===== PAGE 11 =====
+     |  719
+RICHMOND et  al .
+ 42. Mamede S, van Gog T, Moura AS, et al. Reflection as a strategy to 
+foster medical students' acquisition of diagnostic competence. Med 
+Educ. 2012;46(5):464-472.
+ 43. Blissett S, Cavalcanti RB, Sibbald M. Should we teach using schemas? 
+Evidence from a randomised trial. Med Educ . 2012;46(8):815-822.
+ 44. Chamberland M, St-Onge C, Setrakian J, et al. The influence of med -
+ical students' self-explanations on diagnostic performance. Med 
+Educ. 2011;45(7):688-695.
+ 45. Coderre S, Wright B, To MK. Think is good: querying an initial hy -
+pothesis reduces diagnostic error in medical students. Acad Med . 
+2010;85(7):1125-1129.
+ 46. Pinnock R, Spence F, Chung A, Booth R. evPaeds: undergraduate 
+clinical reasoning. Clin Teach . 2012;9(3):152-157.
+ 47. Adams E, Rodgers C, Harrington R, Young M, Sieber V. How we 
+created virtual patient cases for primary care-based learning. Med 
+Teach. 2011;33(4):273-278.
+ 48. Chamberland M, Mamede S, St-Onge C, Setrakian J, Bergeron L, 
+Schmidt H. Self-explanation in learning clinical reasoning: the added 
+value of examples and prompts. Med Educ . 2015;49(2):193-202.
+ 49. Chamberland M, Mamede S, St-Onge C, Setrakian J, Schmidt HG. 
+Does medical students' diagnostic performance improve by observ -
+ing examples of self-explanation provided by peers or experts? Adv 
+Health Sci Educ . 2015;20(4):981-993.
+ 50. McGregor CA, Paton C, Thomson C, Chandratilake M, Scott H. 
+Preparing medical students for clinical decision making: a pilot 
+study exploring how students make decisions and the perceived im -
+pact of a clinical decision making teaching intervention. Med Teach. 
+2012;34(7):e508-e517.
+ 51. Bloice MD, Simonic KM, Holzinger A. Casebook: a virtual patient 
+iPad application for teaching decision-making through the use of 
+electronic health records. BMC Med Inform Decis Mak . 2014;14:66.
+ 52. Pottier P, Hardouin J-B, Dejoie T, et al. Effect of extrinsic and in -
+trinsic stressors on clinical skills performance in third-year medical 
+students. J Gen Int Med. 2015;30(9):1259-1269.
+ 53. Eva KW. Diagnostic error in medical education: where wrongs can 
+make rights. Adv Health Sci . 2009;14:71-81.
+ 54. Young JQ, van Merrienboer J, Durning S, ten Cate O. Cognitive load 
+theory: implications for medical education: AMEE Guide No. 86. 
+Med Teach. 2014;36(5):371-384.
+ 55. LeBlanc VR. The effects of acute stress on performance: implica -
+tions for health professions education. Acad Med . 2009;84(Suppl 
+10):S25-S33.
+ 56. Kopp V, Stark R, Fischer MR. Fostering diagnostic knowl -
+edge through computer-supported, case-based worked exam -
+ples: effects of erroneous examples and feedback. Med Educ . 
+2008;42(8):823-829.
+ 57. Boshuizen HPA, van de Wiel MWJ, Schmidt HG. What and how 
+advanced medical students learn from reasoning through multiple 
+cases. Instruct Sci . 2012;40(5):755-768.
+ 58. Raupach T, Andresen JC, Meyer K, et al. Test-enhanced learn -
+ing of clinical reasoning: a crossover randomised trial. Med Educ . 
+2016;50(7):711-720.
+ 59. Baghdady M, Carnahan H, Lam EW, Woods NN. Test-enhanced 
+learning and its effect on comprehension and diagnostic accuracy. 
+Med Educ. 2014;48(2):181-188.
+ 60. Walberg HJ, Tsai S-L. 'Matthew' effects in education. Am Educ Res J. 
+1983;20(3):359.
+ 61. Kalyuga S, Ayres P, Chandler P, Sweller J. The expertise reversal 
+effect. Educ Psychol . 2003;38(1):23-31.
+ 62. Frank JR, Snell LS, ten Cate O, et al. Competency-based medical 
+education: theory to practice. Med Teach . 2010;32(8):638-645.
+ 63. Monteiro S, Sherbino J, Sibbald M, Norman G. Critical thinking, bi -
+ases and dual processing: the enduring myth of generalisable skills. 
+Med Educ. 2020;54(1):66-73.
+ 64. Norman GR, Monteiro SD, Sherbino J, Ilgen JS, Schmidt HG, 
+Mamede S. The causes of errors in clinical reasoning: cognitive 
+biases, knowledge deficits, and dual process thinking. Acad Med . 
+2017;92(1):23-30.
+ 65. Brown PC, Roediger HL, McDaniel MA. Make it Stick: The Science 
+of Successful Learning . Cambridge, MA: Harvard University Press; 
+2014.
+ 66. Saville BK, Lambert T, Robertson S. Interteaching: bring -
+ing behavioral education into the 21st century. Psychol Rec . 
+2011;61(1):153-165.
+ 67. Richmond A, Cranfield T, Cooper N. Study tips for medical students. 
+BMJ. 2019;365:k663.
+ 68. Croskerry P. Becoming less wrong (and more rational) in clinical de -
+cisionmaking. Ann Emerg Med . 2020;75(2):218-220.
+ 69. Bowen JL. Educational strategies to promote diagnostic reasoning. 
+N Engl J Med. 2006;335:2217-2225.
+ 70. Pusic MV, Boutis K, Hatala R, Cook DA. Learning curves in health 
+professions education. Acad Med . 2015;90(8):1034-1042.
+ 71. Cleary TJ, Durning SJ, Artino AR Jr. Microanalytic assessment of 
+self-regulated learning during clinical reasoning tasks: recent devel -
+opments and next steps. Acad Med . 2016;91(11):1516-1521.
+ 72. Lambe KA, O'Reilly G, Kelly BD, Curristan S. Dual-process cognitive 
+interventions to enhance diagnostic reasoning: a systematic review. 
+BMJ Qual Saf. 2016;25(10):808-820.
+ 73. Schmidt HG, Mamede S. How to improve the teaching of clin -
+ical reasoning: a narrative review and a proposal. Med Educ . 
+2015;49(10):961-973.
+ 74. Krathwohl DR. A revision of Bloom's taxonomy: an overview. 
+Theory Into Practice . 2002;41(4):212-218.
+ 75. Coderre S, Jenkins D, McLaughlin K. Qualitative differences in 
+knowledge structure are associated with diagnostic performance in 
+medical students. Adv Health Sci Educ . 2009;14(5):677-684.
+SUPPORTING INFORMATION
+Additional supporting information may be found online in the 
+Supporting Information section.
+How to cite this article: Richmond A, Cooper N, Gay S, 
+Atiomo W, Patel R. The student is key: A realist review of 
+educational interventions to develop analytical and non-
+analytical clinical reasoning ability. Med Educ. 2020;54:709–
+719. https://doi.org/10.1111/medu.14137
+
+===== PAGE 12 =====
+Copyright
+of
+Medical
+Education
+is
+the
+property
+of
+Wiley-
+Blackwell
+and
+its
+content
+may
+not
+be
+copied
+or
+emailed
+to
+multiple
+sites
+or
+posted
+to
+a
+listserv
+without
+the
+copyright
+holder's
+express
+written
+permission.
+However,
+users
+may
+print,
+download,
+or
+email
+articles
+for
+individual
+use.

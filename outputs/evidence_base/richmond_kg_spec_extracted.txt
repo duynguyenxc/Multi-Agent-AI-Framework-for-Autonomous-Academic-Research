@@ -1,0 +1,1106 @@
+# Extracted text: Richmond-KG-Specification-my-work-before-professor-send-more-documents.pdf
+# Pages: 11
+
+
+
+===== PAGE 1 =====
+Below is a strict Richmond-implied KG specification grounded only in the attached paper .
+1) FINAL_PRODUCTS
+“an initial programme theory (IPT)”
+Evidence: “Literature from a scoping search, combined with expert opinion and researcher experience was synthesised 
+to generate an initial programme theory (IPT).”
+Location: Abstract, p. 709.
+“context, mechanism, outcome configurations (CMOCs)” / “a programme theory”
+Evidence: “Realist research data are analysed and interpreted to form context, mechanism, outcome configurations 
+(CMOCs) and collectively form a programme theory.”
+Location: Methods, p. 710.
+“Key contexts and mechanisms for determining effectiveness”
+Evidence: “Key contexts and mechanisms for determining effectiveness were eventually produced as outputs from the 
+synthesis through this iterative process.”
+Location: Data extraction, analysis and synthesis, p. 712.
+“Five key contexts were identified”
+Evidence: “Five key contexts were identified: (a) students with ‘low knowledge,’ low clinical domain-specific knowledge, 
+or an inability to use knowledge in a reasoning situation; (b) students with high clinical domain-specific knowledge; © 
+positive student coping strategies or appropriate level of self-confidence or self-efficacy; (d) negative student coping 
+strategies or lacking self-confidence or self-efficacy, and (e) students with different levels of knowledge within a 
+group.”
+Location: Results 3.2, pp. 712–714; Figure 2.
+Figure 2: “Individual student contexts important to the outcomes of teaching”
+Evidence: figure title copied verbatim.
+Location: Figure 2, p. 713.
+Figure 3: “Context, mechanism, outcome configurations related to the context of low knowledge, or low case-
+specific knowledge, or inability to apply knowledge in a reasoning situation”
+Evidence: figure title copied verbatim.
+Location: Figure 3, p. 715.
+Mechanism split is explicit, so I use M_resource and M_response
+Evidence: “Mechanisms are conceptualised as resources and responses: interventions offer resources into a context, 
+effecting a change in participants’ responses, which in turn leads to various outcomes.”
+Location: Methods, p. 710.
+2) ENTITIES_TABLE
+id entity_label entity_type evidence_quote location_pointer
+E01 undergraduate 
+students in medical 
+or health care 
+professions 
+education
+P “Educational 
+interventions for 
+developing analytical 
+and non-analytical 
+reasoning amongst 
+undergraduate 
+students in medical 
+or health care 
+professions 
+education”
+Conclusions, p. 717
+E02 students with ‘low 
+knowledge,’ low 
+clinical domain-
+specific knowledge, 
+or an inability to use 
+knowledge in a 
+reasoning situation
+C “students with ‘low 
+knowledge,’ low 
+clinical domain-
+specific knowledge, 
+or an inability to use 
+knowledge in a 
+reasoning situation”
+Results 3.2 / Figure 
+2, pp. 712–714
+ •
+ •
+ •
+ •
+ •
+ •
+ •
+
+===== PAGE 2 =====
+E03 students with high 
+clinical domain-
+specific knowledge
+C “students with high 
+clinical domain-
+specific knowledge”
+Results 3.2, pp. 712–
+714
+E04 positive student 
+coping strategies or 
+appropriate level of 
+self-confidence or 
+self-efficacy
+C “positive student 
+coping strategies or 
+appropriate level of 
+self-confidence or 
+self-efficacy”
+Results 3.2, pp. 712–
+714
+E05 negative student 
+coping strategies or 
+lacking self-
+confidence or self-
+efficacy
+C “negative student 
+coping strategies or 
+lacking self-
+confidence or self-
+efficacy”
+Results 3.2, pp. 712–
+714
+E06 students with 
+different levels of 
+knowledge within a 
+group
+C “students with 
+different levels of 
+knowledge within a 
+group”
+Results 3.2, pp. 712–
+714
+E07 an expert’s 
+reasoning processes 
+or thoughts are 
+explicitly revealed 
+and discussed
+I “When an expert’s 
+reasoning processes 
+or thoughts are 
+explicitly revealed 
+and discussed”
+Results 3.2.2, p. 714
+E08 instructed to use 
+analytical reasoning 
+alone
+I “When students with 
+high clinical domain-
+specific knowledge 
+© are instructed to 
+use analytical 
+reasoning alone”
+Results 3.2.2, p. 714
+E09 teaching resources 
+that allow them to 
+make mistakes
+I “are exposed to 
+teaching resources 
+that allow them to 
+make mistakes”
+Results 3.2.3, p. 714
+E10 real-life scenarios, 
+including simulation 
+and simulated 
+patients
+I “or those based in 
+real-life scenarios 
+(Mresource), 
+including simulation 
+and simulated 
+patients”
+Results 3.2.3, p. 714
+E11 real cases I “When students with 
+positive coping 
+strategies © are 
+exposed to real 
+cases”
+Results 3.2.3, p. 714
+E12 strategies that 
+promote knowledge 
+retention
+I “using strategies 
+that promote 
+knowledge 
+retention”
+Results 3.2.5, p. 716
+E13 accurate and timely 
+feedback
+I “Providing accurate 
+and timely feedback 
+(Mresource)”
+Results 3.2.5, p. 716
+E14 feedback is absent, 
+incomplete or 
+contains errors
+I “When feedback is 
+absent, incomplete 
+or contains errors”
+Results 3.2.5, p. 716
+E15 explicit and clear 
+explanation of 
+expert’s reasoning
+I “Explicit and clear 
+explanation of 
+expert’s reasoning”
+Figure 3, p. 715
+
+===== PAGE 3 =====
+E16 passive observation 
+of experts without 
+receiving 
+explanation about 
+their reasoning 
+processes
+I “Passive observation 
+of experts without 
+receiving 
+explanation about 
+their reasoning 
+processes”
+Figure 3, p. 715
+E17 listen to near-peer 
+think aloud their 
+reasoning with the 
+use of prompts and 
+examples
+I “Listen to near-peer 
+think aloud their 
+reasoning with the 
+use of prompts and 
+examples”
+Figure 3, p. 715
+E18 instructing to use 
+both ‘non-analytical’ 
+or pattern 
+recognition and 
+analytical or step-
+wise approach to 
+reasoning
+I “Instructing to use 
+both ‘non-analytical’ 
+or pattern 
+recognition and 
+analytical or step-
+wise approach to 
+reasoning”
+Figure 3, p. 715
+E19 multiple relevant 
+resources
+M_resource “Multiple relevant 
+resources”
+Figure 2, p. 713
+E20 understanding M_response “this promotes 
+understanding”
+Results 3.2.2, p. 714
+E21 insight into the 
+reasoning process 
+when diagnosing 
+and managing 
+patients
+O “insight … into the 
+reasoning process 
+when diagnosing 
+and managing 
+patients”
+Results 3.2.2, p. 714
+E22 positive learning 
+experience
+O “a positive learning 
+experience”
+Results 3.2.2, p. 714
+E23 frustrated M_response “they may feel 
+frustrated”
+Results 3.2.2, p. 714
+E24 rely on non-
+analytical reasoning
+M_response “they can rely on 
+non-analytical 
+reasoning”
+Results 3.2.2, p. 714
+E25 high diagnostic 
+accuracy
+O “still attain high 
+diagnostic accuracy”
+Results 3.2.2, p. 714
+E26 grateful for the 
+learning experience
+M_response “they feel grateful 
+for the learning 
+experience”
+Results 3.2.3, p. 714
+E27 build understanding M_response “The experience 
+enables them to 
+build understanding”
+Results 3.2.3, p. 714
+E28 positive impact on 
+learning
+O “has a positive 
+impact on learning”
+Results 3.2.3, p. 714
+E29 more complete 
+illness scripts
+O “developing more 
+complete illness 
+scripts”
+Results 3.2.3, p. 714
+E30 more accurate non-
+analytical reasoning
+O “performing more 
+accurate non-
+analytical reasoning”
+Results 3.2.3, p. 714
+
+===== PAGE 4 =====
+3) RELATIONSHIPS_TABLE
+E31 pressure that their 
+decision making 
+could have a real 
+impact
+M_response “they feel pressure 
+that their decision 
+making could have a 
+real impact”
+Results 3.2.3, p. 714
+E32 fear M_response “may experience 
+fear”
+Results 3.2.4, p. 716
+E33 stress M_response “stress” Results 3.2.4, p. 716
+E34 pressure to perform M_response “pressure to 
+perform”
+Results 3.2.4, p. 716
+E35 cognitive load is 
+increased
+M_response “cognitive load is 
+increased”
+Results 3.2.4, p. 716
+E36 poor illness script 
+development
+O “resulting in poor 
+illness script 
+development”
+Results 3.2.4, p. 716
+E37 faulty future non-
+analytical reasoning
+O “faulty future non-
+analytical reasoning”
+Results 3.2.4, p. 716
+E38 negative learning 
+outcomes
+O “negative learning 
+outcomes”
+Results 3.2.4, p. 716
+E39 build upon what they 
+already know
+M_response “will build upon what 
+they already know”
+Results 3.2.5, p. 716
+E40 increased learning O “which leads to 
+increased learning”
+Results 3.2.5, p. 716
+E41 further engagement O “and further 
+engagement”
+Results 3.2.5, p. 716
+E42 develop 
+understanding of 
+their successes and 
+failures and 
+generate plans for 
+improvement
+M_response “to develop 
+understanding of 
+their successes and 
+failures and 
+generate plans for 
+improvement”
+Results 3.2.5, p. 716
+E43 complete illness 
+scripts
+O “promote 
+development of 
+complete illness 
+scripts”
+Results 3.2.5, p. 716
+E44 successful non-
+analytical reasoning 
+in the future
+O “successful non-
+analytical reasoning 
+in the future”
+Results 3.2.5, p. 716
+E45 confusion M_response “this can lead to 
+confusion”
+Results 3.2.5, p. 716
+E46 increase in learning 
+gain or outcomes, or 
+increase in 
+diagnostic accuracy
+O “Increase in learning 
+gain or outcomes, or 
+increase in 
+diagnostic accuracy”
+Figure 3, p. 715
+E47 decrease in learning 
+gain or outcomes, or 
+decrease in 
+diagnostic accuracy
+O “Decrease in 
+learning gain or 
+outcomes, or 
+decrease in 
+diagnostic accuracy”
+Figure 3, p. 715
+
+===== PAGE 5 =====
+id subject predicate object evidence_quote location_pointer
+R01 an expert’s 
+reasoning processes 
+or thoughts are 
+explicitly revealed 
+and discussed
+PROVIDES understanding “When an expert’s 
+reasoning processes 
+or thoughts are 
+explicitly revealed 
+and discussed … this 
+promotes 
+understanding”
+Results 3.2.2, p. 714
+R02 students with high 
+clinical domain-
+specific knowledge
+ENABLES understanding “with students with 
+sufficient domain-
+specific knowledge 
+©, this promotes 
+understanding”
+Results 3.2.2, p. 714
+R03 understanding LEADS_TO insight into the 
+reasoning process 
+when diagnosing 
+and managing 
+patients
+“this promotes 
+understanding … 
+leading to insight … 
+into the reasoning 
+process when 
+diagnosing and 
+managing patients”
+Results 3.2.2, p. 714
+R04 understanding LEADS_TO positive learning 
+experience
+“this promotes 
+understanding … 
+and a positive 
+learning experience”
+Results 3.2.2, p. 714
+R05 instructed to use 
+analytical reasoning 
+alone
+TRIGGERS frustrated “are instructed to 
+use analytical 
+reasoning alone … 
+they may feel 
+frustrated”
+Results 3.2.2, p. 714
+R06 students with high 
+clinical domain-
+specific knowledge
+ENABLES rely on non-
+analytical reasoning
+“they can rely on 
+non-analytical 
+reasoning”
+Results 3.2.2, p. 714
+R07 rely on non-
+analytical reasoning
+LEADS_TO high diagnostic 
+accuracy
+“they can rely on 
+non-analytical 
+reasoning … and still 
+attain high 
+diagnostic accuracy”
+Results 3.2.2, p. 714
+R08 teaching resources 
+that allow them to 
+make mistakes
+TRIGGERS grateful for the 
+learning experience
+“are exposed to 
+teaching resources 
+that allow them to 
+make mistakes … 
+they feel grateful for 
+the learning 
+experience”
+Results 3.2.3, p. 714
+R09 real-life scenarios, 
+including simulation 
+and simulated 
+patients
+TRIGGERS grateful for the 
+learning experience
+“those based in real-
+life scenarios … they 
+feel grateful for the 
+learning experience”
+Results 3.2.3, p. 714
+R10 positive student 
+coping strategies or 
+appropriate level of 
+self-confidence or 
+self-efficacy
+ENABLES grateful for the 
+learning experience
+“When students with 
+the ability to cope … 
+or students with an 
+appropriate level of 
+self-confidence or 
+self-efficacy … they 
+feel grateful”
+Results 3.2.3, p. 714
+
+===== PAGE 6 =====
+R11 grateful for the 
+learning experience
+LEADS_TO build understanding “The experience 
+enables them to 
+build understanding”
+Results 3.2.3, p. 714
+R12 build understanding LEADS_TO positive impact on 
+learning
+“build understanding 
+… which has a 
+positive impact on 
+learning”
+Results 3.2.3, p. 714
+R13 build understanding LEADS_TO more complete 
+illness scripts
+“this is important to 
+developing more 
+complete illness 
+scripts”
+Results 3.2.3, p. 714
+R14 build understanding LEADS_TO more accurate non-
+analytical reasoning
+“and performing 
+more accurate non-
+analytical reasoning”
+Results 3.2.3, p. 714
+R15 real cases TRIGGERS pressure that their 
+decision making 
+could have a real 
+impact
+“When students with 
+positive coping 
+strategies © are 
+exposed to real 
+cases … they feel 
+pressure that their 
+decision making 
+could have a real 
+impact”
+Results 3.2.3, p. 714
+R16 pressure that their 
+decision making 
+could have a real 
+impact
+LEADS_TO positive learning 
+experience
+“which results in a 
+positive learning 
+experience”
+Results 3.2.3, p. 714
+R17 negative student 
+coping strategies or 
+lacking self-
+confidence or self-
+efficacy
+CONSTRAINS negative learning 
+outcomes
+“Students with poor 
+coping strategies or 
+low self-confidence 
+or self-efficacy … 
+resulting in … 
+negative learning 
+outcomes”
+Results 3.2.4, p. 716
+R18 real-life scenarios, 
+including simulation 
+and simulated 
+patients
+TRIGGERS fear “exposed to 
+simulated or real 
+patient encounters 
+… may experience 
+fear”
+Results 3.2.4, p. 716
+R19 real-life scenarios, 
+including simulation 
+and simulated 
+patients
+TRIGGERS stress “exposed to 
+simulated or real 
+patient encounters 
+… may experience … 
+stress”
+Results 3.2.4, p. 716
+R20 real-life scenarios, 
+including simulation 
+and simulated 
+patients
+TRIGGERS pressure to perform “exposed to 
+simulated or real 
+patient encounters 
+… may experience … 
+pressure to perform”
+Results 3.2.4, p. 716
+R21 fear LEADS_TO cognitive load is 
+increased
+“may experience 
+fear … As a 
+consequence, 
+cognitive load is 
+increased”
+Results 3.2.4, p. 716
+
+===== PAGE 7 =====
+R22 stress LEADS_TO cognitive load is 
+increased
+“may experience … 
+stress … As a 
+consequence, 
+cognitive load is 
+increased”
+Results 3.2.4, p. 716
+R23 pressure to perform LEADS_TO cognitive load is 
+increased
+“may experience … 
+pressure to perform 
+… As a 
+consequence, 
+cognitive load is 
+increased”
+Results 3.2.4, p. 716
+R24 cognitive load is 
+increased
+LEADS_TO poor illness script 
+development
+“cognitive load is 
+increased … 
+resulting in poor 
+illness script 
+development”
+Results 3.2.4, p. 716
+R25 cognitive load is 
+increased
+LEADS_TO faulty future non-
+analytical reasoning
+“cognitive load is 
+increased resulting 
+in … faulty future 
+non-analytical 
+reasoning”
+Results 3.2.4, p. 716
+R26 cognitive load is 
+increased
+LEADS_TO negative learning 
+outcomes
+“cognitive load is 
+increased resulting 
+in … negative 
+learning outcomes”
+Results 3.2.4, p. 716
+R27 strategies that 
+promote knowledge 
+retention
+TRIGGERS build upon what they 
+already know
+“using strategies 
+that promote 
+knowledge retention 
+… will build upon 
+what they already 
+know”
+Results 3.2.5, p. 716
+R28 build upon what they 
+already know
+LEADS_TO understanding “will build upon what 
+they already know … 
+and develop 
+understanding”
+Results 3.2.5, p. 716
+R29 understanding LEADS_TO increased learning “develop 
+understanding … 
+which leads to 
+increased learning”
+Results 3.2.5, p. 716
+R30 understanding LEADS_TO further engagement “which leads to … 
+further engagement”
+Results 3.2.5, p. 716
+R31 students with 
+different levels of 
+knowledge within a 
+group
+ENABLES build upon what they 
+already know
+“When teaching 
+students with 
+different levels of 
+pre-existing 
+knowledge in a 
+group … will build 
+upon what they 
+already know”
+Results 3.2.5, p. 716
+R32 accurate and timely 
+feedback
+TRIGGERS develop 
+understanding of 
+their successes and 
+failures and 
+generate plans for 
+improvement
+“Providing accurate 
+and timely feedback 
+… to develop 
+understanding of 
+their successes and 
+failures and 
+generate plans for 
+improvement”
+Results 3.2.5, p. 716
+
+===== PAGE 8 =====
+R33 develop 
+understanding of 
+their successes and 
+failures and 
+generate plans for 
+improvement
+LEADS_TO complete illness 
+scripts
+“This is more likely to 
+promote 
+development of 
+complete illness 
+scripts”
+Results 3.2.5, p. 716
+R34 develop 
+understanding of 
+their successes and 
+failures and 
+generate plans for 
+improvement
+LEADS_TO successful non-
+analytical reasoning 
+in the future
+“and successful 
+non-analytical 
+reasoning in the 
+future”
+Results 3.2.5, p. 716
+R35 feedback is absent, 
+incomplete or 
+contains errors
+TRIGGERS confusion “When feedback is 
+absent, incomplete 
+or contains errors … 
+this can lead to 
+confusion”
+Results 3.2.5, p. 716
+R36 confusion LEADS_TO negative learning 
+outcomes
+“this can lead to 
+confusion … and 
+have a negative 
+impact on learning”
+Results 3.2.5, p. 716
+R37 explicit and clear 
+explanation of 
+expert’s reasoning
+TRIGGERS increase in learning 
+gain or outcomes, or 
+increase in 
+diagnostic accuracy
+“Explicit and clear 
+explanation of 
+expert’s reasoning” 
+→ “Increase in 
+learning gain or 
+outcomes, or 
+increase in 
+diagnostic accuracy”
+Figure 3, p. 715
+R38 passive observation 
+of experts without 
+receiving 
+explanation about 
+their reasoning 
+processes
+TRIGGERS decrease in learning 
+gain or outcomes, or 
+decrease in 
+diagnostic accuracy
+“Passive observation 
+of experts without 
+receiving 
+explanation about 
+their reasoning 
+processes” → 
+“Decrease in 
+learning gain or 
+outcomes, or 
+decrease in 
+diagnostic accuracy”
+Figure 3, p. 715
+R39 listen to near-peer 
+think aloud their 
+reasoning with the 
+use of prompts and 
+examples
+TRIGGERS increase in learning 
+gain or outcomes, or 
+increase in 
+diagnostic accuracy
+“Listen to near-peer 
+think aloud their 
+reasoning with the 
+use of prompts and 
+examples” → 
+“Increase in learning 
+gain or outcomes, or 
+increase in 
+diagnostic accuracy”
+Figure 3, p. 715
+R40 instructing to use 
+both ‘non-analytical’ 
+or pattern 
+recognition and 
+analytical or step-
+wise approach to 
+reasoning
+TRIGGERS increase in learning 
+gain or outcomes, or 
+increase in 
+diagnostic accuracy
+“Instructing to use 
+both ‘non-analytical’ 
+or pattern 
+recognition and 
+analytical or step-
+wise approach to 
+reasoning” → 
+“Increase in learning 
+gain or outcomes, or 
+increase in 
+diagnostic accuracy”
+Figure 3, p. 715
+
+===== PAGE 9 =====
+4) REJECTION_LOG
+candidate_item reason_not_support
+ed
+where_you_checked
+teacher-level 
+contexts as final 
+gold nodes
+Paper says 
+teacher/organisation 
+contexts were 
+“rarely discussed”; 
+no stable teacher-
+context entities are 
+presented in final 
+Results theory
+Results 3.2, p. 712
+organisational-level 
+contexts as final 
+gold nodes
+Same issue; 
+explicitly not the 
+dominant final result 
+structure
+Results 3.2, p. 712
+“retrieval practice” 
+as a Richmond-
+native intervention 
+node
+Mentioned in 
+Discussion, not in 
+Results 
+CMOC/Figure 2–3 
+final programme 
+theory
+Discussion, p. 717
+“interleaving” as a 
+Richmond-native 
+intervention node
+Mentioned in 
+Discussion only
+Discussion, p. 717
+“spaced practice” as 
+a Richmond-native 
+intervention node
+Mentioned in 
+Discussion only
+Discussion, p. 717
+“cognitive biases” as 
+a 
+mechanism/outcom
+e in the final KG
+Mentioned in 
+Introduction/backgro
+und, not used as a 
+final Results CMOC 
+node
+Introduction, p. 710; 
+Results pp. 712–716
+“deliberate practice” 
+as a final 
+intervention node
+Search 
+term/background 
+concept only; not a 
+final Results entity
+Search strategy, p. 
+712
+“illness scripts” as 
+M_response 
+everywhere
+Sometimes 
+outcome-like 
+(“developing more 
+complete illness 
+scripts”), sometimes 
+process; exact 
+placement varies, so 
+I kept only explicit 
+quoted usages
+Results 3.2.3 and 
+3.2.5
+“self-confidence” 
+alone as a 
+standalone context 
+node
+Final results 
+consistently bundle 
+it with coping/self-
+efficacy context 
+labels; standalone 
+node would 
+paraphrase/split 
+beyond explicit final 
+wording
+Results 3.2, pp. 712–
+714
+
+===== PAGE 10 =====
+“self-efficacy” alone 
+as a standalone 
+context node
+Same reason as 
+above
+Results 3.2, pp. 712–
+714
+“knowledge 
+acquisition” as a 
+final outcome node
+In 
+Conclusions/discussi
+on, but not a distinct 
+Results CMOC node
+Conclusions, p. 717
+“knowledge recall” 
+as a final outcome 
+node
+In 
+Conclusions/discussi
+on, not a Results 
+CMOC node
+Conclusions, p. 717
+“clinical experience” 
+as a final context 
+node
+In 
+abstract/conclusion, 
+not one of the five 
+final contexts
+Abstract p. 709; 
+Conclusions p. 717
+“safe mistakes” as a 
+final intervention 
+node
+Phrase appears in 
+Discussion, not as a 
+formal Results-node 
+label
+Discussion, p. 717
+“safe place” as a 
+final 
+context/outcome 
+node
+Discussion language 
+only
+Discussion, p. 717
+“monitor diagnostic 
+decision-making 
+development over 
+time” as an 
+intervention node
+Forward-looking 
+recommendation, 
+not part of final 
+Results theory
+Discussion, p. 717
+“self-management 
+of emotions” as a 
+mechanism node
+Discussed 
+interpretively, but 
+not given as a final 
+CMOC label
+Discussion, p. 717
+“experts” as a 
+population node
+Review scope is 
+undergraduate 
+learners; experts 
+appear as part of 
+teaching situations, 
+not target population
+Abstract/Methods/R
+esults
+“medical students” 
+only as the 
+population node
+Too narrow versus 
+final wording 
+“undergraduate 
+students in medical 
+or health care 
+professions 
+education”
+Conclusions, p. 717
+“teacher present 
+with them as they 
+perform” as a 
+mechanism/resourc
+e node
+Mentioned in 
+discussion sentence, 
+not a formal 
+Results/figure CMOC 
+node
+Discussion, p. 716
+
+===== PAGE 11 =====
+“new understanding 
+about the process of 
+clinical reasoning” as 
+a separate entity
+Figure 2 contains 
+this label, but the 
+narrative CMOC 
+gives the auditable 
+quote 
+“understanding”/“insi
+ght”; I kept the text-
+backed forms to 
+avoid over-
+duplicating near-
+synonyms
+Figure 2 p. 713; 
+Results 3.2.2 p. 714
+“able to trust ‘sense 
+of familiarity’ and 
+maintain diagnostic 
+accuracy” as one 
+node
+Figure-only 
+composite phrase 
+mixes response and 
+outcome; I split only 
+where narrative text 
+explicitly supports 
+the parts
+Figure 2 p. 713
+“multiple relevant 
+reactions” as one 
+node
+Placeholder label in 
+Figure 2; not 
+auditable enough 
+without Figure 3 
+detail
+Figure 2 p. 713
+“multiple relevant 
+resources” 
+expanded into all 
+subtypes 
+automatically
+Figure 2 says 
+“Multiple relevant 
+resources (see 
+additional diagram)”; 
+I only included sub-
+items explicitly 
+visible in Figure 3 or 
+explicit CMOCs
+Figure 2 p. 713; 
+Figure 3 p. 715

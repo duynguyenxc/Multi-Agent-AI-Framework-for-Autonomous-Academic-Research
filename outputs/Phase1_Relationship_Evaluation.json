@@ -1,0 +1,21 @@
+{
+  "metrics": {
+    "strict_precision": 0.08333333333333333,
+    "strict_recall": 0.075,
+    "strict_f1": 0.07894736842105263,
+    "relaxed_precision": 0.08823529411764706,
+    "relaxed_recall": 0.075,
+    "relaxed_f1": 0.08108108108108107,
+    "direction_accuracy": 1.0,
+    "predicate_accuracy": 1.0
+  },
+  "counts": {
+    "instance_level_triples": 171,
+    "unique_programme_level_triples": 36,
+    "gold_triples": 40,
+    "wrong_predicate_cases": 0,
+    "wrong_direction_cases": 0,
+    "missing_gold": 37,
+    "extra_predicted": 33
+  }
+}

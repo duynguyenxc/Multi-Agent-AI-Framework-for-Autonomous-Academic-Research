@@ -1,0 +1,1541 @@
+[
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the teacher explaining the reasoning processes used including hypothesising, hypothesis testing, re-analysis and differential diagnosis."
+  },
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "this is to assist the student to understand what the clinician was thinking and how they were reasoning."
+  },
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "improving time to diagnosis."
+  },
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC2",
+    "pts": "PTS3",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "this approach used with a single student would remain beneficial, even potentially enhanced."
+  },
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "students having a basic understanding of the theoretical concepts behind clinical reasoning to improve understanding."
+  },
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "improving patient satisfaction and being branded with the ‘good doctor’ label."
+  },
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC3",
+    "pts": "PTS4",
+    "source_id": "i3",
+    "target_id": "mr3",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "if the student’s reasoning is unclear, the clinical teacher can interject with questions."
+  },
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC3",
+    "pts": "PTS4",
+    "source_id": "mr3",
+    "target_id": "mresp3",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "students can find it challenging to know how to navigate the information during a patient interaction."
+  },
+  {
+    "study_id": "S001",
+    "cmoc_id": "S001_CMOC3",
+    "pts": "PTS4",
+    "source_id": "mresp3",
+    "target_id": "o3",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "a diagnosis that could have been made with a careful history and physical examination may end up taking two or three consultations."
+  },
+  {
+    "study_id": "S002",
+    "cmoc_id": "S002_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the relative reliance on analytic and similarity-based processes is amenable to instruction."
+  },
+  {
+    "study_id": "S002",
+    "cmoc_id": "S002_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the reliance of these 2 processes was indexed by the performance of 12 preclinical medical students."
+  },
+  {
+    "study_id": "S002",
+    "cmoc_id": "S002_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students enhanced their performance by adopting a similarity-based strategy."
+  },
+  {
+    "study_id": "S002",
+    "cmoc_id": "S002_CMOC2",
+    "pts": "PTS2",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the relative reliance on analytic and similarity-based processes is amenable to instruction."
+  },
+  {
+    "study_id": "S002",
+    "cmoc_id": "S002_CMOC2",
+    "pts": "PTS2",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the reliance of these 2 processes was indexed by the performance of residents."
+  },
+  {
+    "study_id": "S002",
+    "cmoc_id": "S002_CMOC2",
+    "pts": "PTS2",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "residents enhanced their performance by adopting an analytic strategy."
+  },
+  {
+    "study_id": "S003",
+    "cmoc_id": "S003_CMOC1",
+    "pts": "PTS5",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the doctor explains his or her reflections and discusses suggestions from the audience for additional questions"
+  },
+  {
+    "study_id": "S003",
+    "cmoc_id": "S003_CMOC1",
+    "pts": "PTS5",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the interaction between doctor and patient is analyzed in such a way that the repeated cycles of questions and answers are revealed to the students"
+  },
+  {
+    "study_id": "S003",
+    "cmoc_id": "S003_CMOC1",
+    "pts": "PTS5",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students' evaluations of the relevance of CRT reveal that they appreciate CRT"
+  },
+  {
+    "study_id": "S003",
+    "cmoc_id": "S003_CMOC2",
+    "pts": "PTS3",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "demonstrate the process of clinical reasoning to students through the conversation of a doctor with his or her patient"
+  },
+  {
+    "study_id": "S003",
+    "cmoc_id": "S003_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the doctor's clinical reasoning skills are modeled in CRT"
+  },
+  {
+    "study_id": "S003",
+    "cmoc_id": "S003_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students appreciate CRT"
+  },
+  {
+    "study_id": "S004",
+    "cmoc_id": "S004_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the groups instructed to use both strategies (explicitly or implicitly) performed significantly better."
+  },
+  {
+    "study_id": "S004",
+    "cmoc_id": "S004_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "instructions to be feature oriented and to trust similarity improve performance."
+  },
+  {
+    "study_id": "S004",
+    "cmoc_id": "S004_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "performed significantly better (56% and 53%, respectively; p < .01)."
+  },
+  {
+    "study_id": "S004",
+    "cmoc_id": "S004_CMOC2",
+    "pts": "PTS1",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "No difference in diagnostic accuracy was observed between the groups given the feature first (42%) and first impression (41%) instructions."
+  },
+  {
+    "study_id": "S004",
+    "cmoc_id": "S004_CMOC2",
+    "pts": "PTS1",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the groups instructed to use both strategies (explicitly or implicitly) performed significantly better."
+  },
+  {
+    "study_id": "S004",
+    "cmoc_id": "S004_CMOC2",
+    "pts": "PTS1",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "No difference in diagnostic accuracy was observed between the groups."
+  },
+  {
+    "study_id": "S005",
+    "cmoc_id": "S005_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the instruction to utilise a combined reasoning approach resulted in greater diagnostic accuracy."
+  },
+  {
+    "study_id": "S005",
+    "cmoc_id": "S005_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "explicit guidance regarding the value of both analytic and non-analytic reasoning tendencies."
+  },
+  {
+    "study_id": "S005",
+    "cmoc_id": "S005_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "explicitly telling novice diagnosticians to utilise multiple forms of reasoning can result in improved diagnostic accuracy."
+  },
+  {
+    "study_id": "S005",
+    "cmoc_id": "S005_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "INHIBITS",
+    "evidence_quote": "participants in the no-instruction condition would have been influenced by similarity when making their diagnostic decisions."
+  },
+  {
+    "study_id": "S005",
+    "cmoc_id": "S005_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the instruction to utilise a combined reasoning approach resulted in greater diagnostic accuracy."
+  },
+  {
+    "study_id": "S005",
+    "cmoc_id": "S005_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "participants in the no-instruction condition did not perform as successfully."
+  },
+  {
+    "study_id": "S006",
+    "cmoc_id": "S006_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "participants were instructed to carefully identify all features while trusting guidance provided by feelings of familiarity."
+  },
+  {
+    "study_id": "S006",
+    "cmoc_id": "S006_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the combined reasoning strategy was operationalised."
+  },
+  {
+    "study_id": "S006",
+    "cmoc_id": "S006_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Greater diagnostic accuracy was achieved following both contrastive learning and instructions to use a combined reasoning strategy."
+  },
+  {
+    "study_id": "S006",
+    "cmoc_id": "S006_CMOC2",
+    "pts": "PTS3",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the need to assess such a comparison provided the first objective of this study."
+  },
+  {
+    "study_id": "S006",
+    "cmoc_id": "S006_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the provision of explicit and concrete instructions regarding how to do so appears to be beneficial."
+  },
+  {
+    "study_id": "S006",
+    "cmoc_id": "S006_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the conclusion that contrastive learning and combined reasoning instructions hold pedagogical value."
+  },
+  {
+    "study_id": "S007",
+    "cmoc_id": "S007_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the acquisition of diagnostic knowledge is mainly supported by providing erroneous examples in combination with elaborated feedback."
+  },
+  {
+    "study_id": "S007",
+    "cmoc_id": "S007_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "learners must identify the error and understand the correct solution by systematically comparing the incorrect solution with the correct one."
+  },
+  {
+    "study_id": "S007",
+    "cmoc_id": "S007_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the effects of the learning environment proved sustainable."
+  },
+  {
+    "study_id": "S007",
+    "cmoc_id": "S007_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "INHIBITS",
+    "evidence_quote": "When only KCR feedback is given, erroneous examples are detrimental."
+  },
+  {
+    "study_id": "S007",
+    "cmoc_id": "S007_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the information deﬁcit in the conditions with KCR feedback... must be compensated for by effective self-explanation."
+  },
+  {
+    "study_id": "S007",
+    "cmoc_id": "S007_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the unfavourable effect of erroneous examples in combination with KCR feedback on knowledge acquisition replicates findings."
+  },
+  {
+    "study_id": "S008",
+    "cmoc_id": "S008_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "Curricular instruction incorporated analytic and nonanalytic clinical reasoning models."
+  },
+  {
+    "study_id": "S008",
+    "cmoc_id": "S008_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Practice with variable case scenarios enhanced students application of basic science knowledge to clinical problem solving."
+  },
+  {
+    "study_id": "S008",
+    "cmoc_id": "S008_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Students clinical reasoning showed a significant gain after the Integrated Cases Section on a script concordance test."
+  },
+  {
+    "study_id": "S008",
+    "cmoc_id": "S008_CMOC2",
+    "pts": "PTS3",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "Practice with variable case scenarios enhanced students application of basic science knowledge to clinical problem solving."
+  },
+  {
+    "study_id": "S008",
+    "cmoc_id": "S008_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Curricular instruction incorporated analytic and nonanalytic clinical reasoning models."
+  },
+  {
+    "study_id": "S008",
+    "cmoc_id": "S008_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Students clinical reasoning showed a significant gain after the Integrated Cases Section on a script concordance test."
+  },
+  {
+    "study_id": "S009",
+    "cmoc_id": "S009_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "querying an initial diagnostic hypothesis"
+  },
+  {
+    "study_id": "S009",
+    "cmoc_id": "S009_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the same primary data presented to both groups"
+  },
+  {
+    "study_id": "S009",
+    "cmoc_id": "S009_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "allows students to rectify an incorrect diagnosis"
+  },
+  {
+    "study_id": "S009",
+    "cmoc_id": "S009_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "no difference existed in the accuracy of initial and final diagnoses"
+  },
+  {
+    "study_id": "S009",
+    "cmoc_id": "S009_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the same primary data presented to both groups"
+  },
+  {
+    "study_id": "S009",
+    "cmoc_id": "S009_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "initial diagnoses were retained only 23.3% of the time"
+  },
+  {
+    "study_id": "S010",
+    "cmoc_id": "S010_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the educational tool provides explicit explanations of diagnostic reasoning."
+  },
+  {
+    "study_id": "S010",
+    "cmoc_id": "S010_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the tool includes multiple resources for understanding laboratory data."
+  },
+  {
+    "study_id": "S010",
+    "cmoc_id": "S010_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students demonstrated improved diagnostic accuracy after using the tool."
+  },
+  {
+    "study_id": "S010",
+    "cmoc_id": "S010_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "students received minimal feedback during the learning process."
+  },
+  {
+    "study_id": "S010",
+    "cmoc_id": "S010_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the tool provided various resources but lacked effective feedback."
+  },
+  {
+    "study_id": "S010",
+    "cmoc_id": "S010_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students struggled to develop coherent illness scripts."
+  },
+  {
+    "study_id": "S011",
+    "cmoc_id": "S011_CMOC1",
+    "pts": "PTS3",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the tutors made each step explicit to students and encouraged self-reflection on their reasoning processes"
+  },
+  {
+    "study_id": "S011",
+    "cmoc_id": "S011_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "bringing them explicit insight into cognitive aspects of their reasoning"
+  },
+  {
+    "study_id": "S011",
+    "cmoc_id": "S011_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "improved aspects of diagnostic competence"
+  },
+  {
+    "study_id": "S011",
+    "cmoc_id": "S011_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "INHIBITS",
+    "evidence_quote": "the overall differences in accuracy of the final diagnosis given to the patient at the end of the encounter were not statistically significant"
+  },
+  {
+    "study_id": "S011",
+    "cmoc_id": "S011_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "students in the control group had lower accuracy in diagnosis"
+  },
+  {
+    "study_id": "S011",
+    "cmoc_id": "S011_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the overall differences in accuracy of the final diagnosis given to the patient at the end of the encounter were not statistically significant"
+  },
+  {
+    "study_id": "S012",
+    "cmoc_id": "S012_CMOC1",
+    "pts": "PTS3",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "VP cases can be tailored using decision-making software to give students experience of primary care specific clinical reasoning skills."
+  },
+  {
+    "study_id": "S012",
+    "cmoc_id": "S012_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "genuine patient video clips can be collected and integrated into decision-making software."
+  },
+  {
+    "study_id": "S012",
+    "cmoc_id": "S012_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students found the scenarios useful for developing consulting skills."
+  },
+  {
+    "study_id": "S012",
+    "cmoc_id": "S012_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "Feedback was collected on the accessibility, popularity and any perceived disadvantages of each VP case."
+  },
+  {
+    "study_id": "S012",
+    "cmoc_id": "S012_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "VP cases can be tailored using decision-making software to give students experience of primary care specific clinical reasoning skills."
+  },
+  {
+    "study_id": "S012",
+    "cmoc_id": "S012_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students expressed confusion about the scenarios."
+  },
+  {
+    "study_id": "S013",
+    "cmoc_id": "S013_CMOC1",
+    "pts": "PTS4",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "a month-long clinical performance course, targeted to treat specific types of clinical performance deficiencies"
+  },
+  {
+    "study_id": "S013",
+    "cmoc_id": "S013_CMOC1",
+    "pts": "PTS4",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "assessed on pre- and postperformance measures, including multiple-choice tests"
+  },
+  {
+    "study_id": "S013",
+    "cmoc_id": "S013_CMOC1",
+    "pts": "PTS4",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the mean postintervention scores for the participants were above the passing standard for these two examinations"
+  },
+  {
+    "study_id": "S013",
+    "cmoc_id": "S013_CMOC2",
+    "pts": "PTS1",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the purpose is to determine the impact of a specifically targeted clinical performance course"
+  },
+  {
+    "study_id": "S013",
+    "cmoc_id": "S013_CMOC2",
+    "pts": "PTS1",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "students were assessed on pre- and postperformance measures"
+  },
+  {
+    "study_id": "S013",
+    "cmoc_id": "S013_CMOC2",
+    "pts": "PTS1",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the mean postintervention scores for the participants were above the passing standard"
+  },
+  {
+    "study_id": "S014",
+    "cmoc_id": "S014_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "generating self-explanations while solving a clinical case"
+  },
+  {
+    "study_id": "S014",
+    "cmoc_id": "S014_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "self-explanations were generated after minimal instructions and no feedback was provided to students"
+  },
+  {
+    "study_id": "S014",
+    "cmoc_id": "S014_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students in the self-explanation condition... demonstrated better diagnostic performance on subsequent clinical cases"
+  },
+  {
+    "study_id": "S014",
+    "cmoc_id": "S014_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "INHIBITS",
+    "evidence_quote": "no feedback was provided to students"
+  },
+  {
+    "study_id": "S014",
+    "cmoc_id": "S014_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "self-explanations were generated after minimal instructions and no feedback was provided to students"
+  },
+  {
+    "study_id": "S014",
+    "cmoc_id": "S014_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the performance of the two groups did not differ in the training phase"
+  },
+  {
+    "study_id": "S015",
+    "cmoc_id": "S015_CMOC1",
+    "pts": "PTS3",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "A tripartite teaching intervention was developed, consisting of a clinical decision making tool, a tutorial and scenarios within a simulated ward environment."
+  },
+  {
+    "study_id": "S015",
+    "cmoc_id": "S015_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Experiencing complex decision making scenarios through individually orientated simulation results in students being subjectively more prepared for work as FY1s."
+  },
+  {
+    "study_id": "S015",
+    "cmoc_id": "S015_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "A teaching intervention... appeared to be useful in improving medical students’ decision making."
+  },
+  {
+    "study_id": "S015",
+    "cmoc_id": "S015_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "A tripartite teaching intervention was developed, consisting of a clinical decision making tool, a tutorial and scenarios within a simulated ward environment."
+  },
+  {
+    "study_id": "S015",
+    "cmoc_id": "S015_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "students continue to feel unprepared for the responsibility of clinical decision making."
+  },
+  {
+    "study_id": "S015",
+    "cmoc_id": "S015_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students feel unprepared for clinical decision making as FY1s, and lack effective decision making strategies."
+  },
+  {
+    "study_id": "S016",
+    "cmoc_id": "S016_CMOC1",
+    "pts": "PTS3",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "structured reflection while practising with cases appears to foster the learning of clinical knowledge."
+  },
+  {
+    "study_id": "S016",
+    "cmoc_id": "S016_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "elaboration on the case information and search for meaning helps to activate additional relevant knowledge."
+  },
+  {
+    "study_id": "S016",
+    "cmoc_id": "S016_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "scores in the reﬂection condition...significantly outperformed those in the other conditions."
+  },
+  {
+    "study_id": "S016",
+    "cmoc_id": "S016_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "structured reflection seems to lead to poorer performance than the other conditions."
+  },
+  {
+    "study_id": "S016",
+    "cmoc_id": "S016_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "reﬂection imposes a high cognitive load during the learning phase."
+  },
+  {
+    "study_id": "S016",
+    "cmoc_id": "S016_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students in the reﬂection condition performed worse than those in the other conditions."
+  },
+  {
+    "study_id": "S017",
+    "cmoc_id": "S017_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "Students receiving schema-based instruction performed better on structured knowledge questions."
+  },
+  {
+    "study_id": "S017",
+    "cmoc_id": "S017_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "The provision of schemas is hypothesised to aid in the development of compiled knowledge."
+  },
+  {
+    "study_id": "S017",
+    "cmoc_id": "S017_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Schema-based instruction was associated with improved retention of structured knowledge and diagnostic performance among novices."
+  },
+  {
+    "study_id": "S017",
+    "cmoc_id": "S017_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "The traditional instruction group did generate a greater number of correct features for untaught lesions."
+  },
+  {
+    "study_id": "S017",
+    "cmoc_id": "S017_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Incorrect features may have a derailing effect on diagnostic reasoning."
+  },
+  {
+    "study_id": "S017",
+    "cmoc_id": "S017_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "We anticipated lower diagnostic accuracy on untaught lesions among students instructed with schemas."
+  },
+  {
+    "study_id": "S018",
+    "cmoc_id": "S018_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the study reported in this article concerns the questions what and how fourth-year medical students can learn from a series of cases that have a similar underlying problem."
+  },
+  {
+    "study_id": "S018",
+    "cmoc_id": "S018_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "integration of biomedical knowledge into the fault component was, however, hampered by lack of knowledge and by misconceptions that students were unable to debug."
+  },
+  {
+    "study_id": "S018",
+    "cmoc_id": "S018_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "continued and repeated experience with classes of similar cases may result in the integration of biomedical knowledge in clinical knowledge."
+  },
+  {
+    "study_id": "S018",
+    "cmoc_id": "S018_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "the present results do not tell whether students will use resource information to debug a misconception in biomedical knowledge."
+  },
+  {
+    "study_id": "S018",
+    "cmoc_id": "S018_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "students are well able to learn the patterns and variations of enabling conditions and consequences independently."
+  },
+  {
+    "study_id": "S018",
+    "cmoc_id": "S018_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the role of the coach is that all participants are active and to prevent cognitive errors from being made."
+  },
+  {
+    "study_id": "S019",
+    "cmoc_id": "S019_CMOC1",
+    "pts": "PTS3",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "evPaeds incorporates the Paediatric Decision Tree, which encourages students to make decisions on investigations and management."
+  },
+  {
+    "study_id": "S019",
+    "cmoc_id": "S019_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Close collaboration with students and teachers ensured that evPaeds met the unique learning needs of undergraduate students."
+  },
+  {
+    "study_id": "S019",
+    "cmoc_id": "S019_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "evPaeds has proven popular with students to practise and develop clinical reasoning."
+  },
+  {
+    "study_id": "S019",
+    "cmoc_id": "S019_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "INHIBITS",
+    "evidence_quote": "Close collaboration with students and teachers ensured that evPaeds met the unique learning needs of undergraduate students."
+  },
+  {
+    "study_id": "S019",
+    "cmoc_id": "S019_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "These are popular with students but provide little opportunity for interaction."
+  },
+  {
+    "study_id": "S019",
+    "cmoc_id": "S019_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "These are popular with students but provide little opportunity for interaction."
+  },
+  {
+    "study_id": "S020",
+    "cmoc_id": "S020_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the analytic reasoning group was requested to list differential diagnoses and findings compatible or not compatible with each diagnosis"
+  },
+  {
+    "study_id": "S020",
+    "cmoc_id": "S020_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "an answer sheet containing a table designed to enhance analytic reasoning"
+  },
+  {
+    "study_id": "S020",
+    "cmoc_id": "S020_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Mean diagnostic accuracy scores were significantly higher in the analytic reasoning group than in the control group"
+  },
+  {
+    "study_id": "S020",
+    "cmoc_id": "S020_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "INHIBITS",
+    "evidence_quote": "the control group provided a diagnosis without these processes"
+  },
+  {
+    "study_id": "S020",
+    "cmoc_id": "S020_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "students in the control group provided a diagnosis without these processes"
+  },
+  {
+    "study_id": "S020",
+    "cmoc_id": "S020_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "diagnostic accuracy was significantly lower in the control group than in the analytic reasoning group"
+  },
+  {
+    "study_id": "S021",
+    "cmoc_id": "S021_CMOC1",
+    "pts": "PTS5",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "Self-explanation while solving clinical cases may be an effective strategy to foster reasoning."
+  },
+  {
+    "study_id": "S021",
+    "cmoc_id": "S021_CMOC1",
+    "pts": "PTS5",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Self-explanation triggers monitoring processes."
+  },
+  {
+    "study_id": "S021",
+    "cmoc_id": "S021_CMOC1",
+    "pts": "PTS5",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Self-explanation fosters learning and helps students to create a coherent representation of a case."
+  },
+  {
+    "study_id": "S021",
+    "cmoc_id": "S021_CMOC2",
+    "pts": "PTS1",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "Self-explanation while diagnosing cases improved diagnostic performance."
+  },
+  {
+    "study_id": "S021",
+    "cmoc_id": "S021_CMOC2",
+    "pts": "PTS1",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Self-explanation provides opportunities to link biomedical to clinical knowledge."
+  },
+  {
+    "study_id": "S021",
+    "cmoc_id": "S021_CMOC2",
+    "pts": "PTS1",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Self-explanation improved diagnostic performance on new cases."
+  },
+  {
+    "study_id": "S022",
+    "cmoc_id": "S022_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the remaining 25 participants were simply shown 20 nonannotated paired images of normal and abnormal cervical cells."
+  },
+  {
+    "study_id": "S022",
+    "cmoc_id": "S022_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Encouraging trainees to adopt pattern recognition strategies may help to expedite the acquisition of visual interpretation skills."
+  },
+  {
+    "study_id": "S022",
+    "cmoc_id": "S022_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Diagnostic accuracy in both groups improved significantly between tests 1 and 2."
+  },
+  {
+    "study_id": "S022",
+    "cmoc_id": "S022_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "both groups were instructed to adopt a combined analytic/nonanalytic diagnostic strategy."
+  },
+  {
+    "study_id": "S022",
+    "cmoc_id": "S022_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the remaining 25 participants were simply shown 20 nonannotated paired images of normal and abnormal cervical cells."
+  },
+  {
+    "study_id": "S022",
+    "cmoc_id": "S022_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "combining analytic and non-analytic reasoning do not appear to be effective."
+  },
+  {
+    "study_id": "S023",
+    "cmoc_id": "S023_CMOC1",
+    "pts": "PTS2",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "A serious game was developed to train surgical residents in clinical decision-making regarding biliary tract disease."
+  },
+  {
+    "study_id": "S023",
+    "cmoc_id": "S023_CMOC1",
+    "pts": "PTS2",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Players are required to develop and test hypotheses to overcome a given challenge relating to experiential learning."
+  },
+  {
+    "study_id": "S023",
+    "cmoc_id": "S023_CMOC1",
+    "pts": "PTS2",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Trainees performed significantly better in their second play session than in the first (median 72 vs. 48 %, p = 0.00)."
+  },
+  {
+    "study_id": "S023",
+    "cmoc_id": "S023_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "INHIBITS",
+    "evidence_quote": "The performance of the participants was automatically measured through the following parameters: correct, incorrect, or neither correct/incorrect solution."
+  },
+  {
+    "study_id": "S023",
+    "cmoc_id": "S023_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "The serious game contained 97 cases: cholecystolithiasis (15), laparoscopic cholecystectomy (15), bile duct injuries (9), biliary pancreatitis (8), choledocholithiasis (5), cholecystitis (4), gallbladder carcinoma (5), adenomyomatosis (3), a variety of minor topics regarding biliary tract disease (33)."
+  },
+  {
+    "study_id": "S023",
+    "cmoc_id": "S023_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Of the students, 8 of 17 found the game frustrating."
+  },
+  {
+    "study_id": "S024",
+    "cmoc_id": "S024_CMOC1",
+    "pts": "PTS3",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "students learn decision-making skills by observing and interacting with real patient cases in this simulated environment."
+  },
+  {
+    "study_id": "S024",
+    "cmoc_id": "S024_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the application has been designed to read specially formatted patient cases that have been created using electronic health records."
+  },
+  {
+    "study_id": "S024",
+    "cmoc_id": "S024_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "learning theory research has shown that students learn decision-making skills best when they have access to multitudes of patient cases."
+  },
+  {
+    "study_id": "S024",
+    "cmoc_id": "S024_CMOC2",
+    "pts": "PTS5",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "annotations can be defined as physician notes that have been added to electronic health records for the purpose of providing some insight for the student into the physician’s decision-making rationale."
+  },
+  {
+    "study_id": "S024",
+    "cmoc_id": "S024_CMOC2",
+    "pts": "PTS5",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the cases consist of data and patient records from real-life medical situations that genuinely occurred."
+  },
+  {
+    "study_id": "S024",
+    "cmoc_id": "S024_CMOC2",
+    "pts": "PTS5",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the more experience a student has, the more likely they will make a correct diagnosis from the data available to them."
+  },
+  {
+    "study_id": "S025",
+    "cmoc_id": "S025_CMOC1",
+    "pts": "PTS4",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "CFS training provided multiple relevant resources for students."
+  },
+  {
+    "study_id": "S025",
+    "cmoc_id": "S025_CMOC1",
+    "pts": "PTS4",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "These resources triggered confusion among students."
+  },
+  {
+    "study_id": "S025",
+    "cmoc_id": "S025_CMOC1",
+    "pts": "PTS4",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the interventions... failed to show any reduction in diagnostic error by novices."
+  },
+  {
+    "study_id": "S025",
+    "cmoc_id": "S025_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "CFS training provided multiple relevant resources."
+  },
+  {
+    "study_id": "S025",
+    "cmoc_id": "S025_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "students expressed frustration with the lack of effective feedback."
+  },
+  {
+    "study_id": "S025",
+    "cmoc_id": "S025_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "the interventions... did not improve diagnostic accuracy."
+  },
+  {
+    "study_id": "S026",
+    "cmoc_id": "S026_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "Combining SE and examples or models of clinical reasoning may provide such a condition."
+  },
+  {
+    "study_id": "S026",
+    "cmoc_id": "S026_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "Through SE, students engage in knowledge elaboration, generation of inferences, integration of new information with prior knowledge."
+  },
+  {
+    "study_id": "S026",
+    "cmoc_id": "S026_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students who generated SE while solving clinical cases demonstrated better diagnostic performance 1 week later."
+  },
+  {
+    "study_id": "S026",
+    "cmoc_id": "S026_CMOC2",
+    "pts": "PTS4",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "INHIBITS",
+    "evidence_quote": "students were not given prompts or other specific tasks to ensure that they listened actively to the examples."
+  },
+  {
+    "study_id": "S026",
+    "cmoc_id": "S026_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "CONSTRAINS",
+    "evidence_quote": "students may have been passive, even though their prior SE on the same case was expected to act as a preparatory task."
+  },
+  {
+    "study_id": "S026",
+    "cmoc_id": "S026_CMOC2",
+    "pts": "PTS4",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "there seems to be limited value of adding SE examples, at least examples from peers or experts."
+  },
+  {
+    "study_id": "S027",
+    "cmoc_id": "S027_CMOC1",
+    "pts": "PTS3",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "Group 1 listened to examples of residents’ SEs with prompts."
+  },
+  {
+    "study_id": "S027",
+    "cmoc_id": "S027_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "listening to residents’ examples helped them to elaborate further on their own ideas."
+  },
+  {
+    "study_id": "S027",
+    "cmoc_id": "S027_CMOC1",
+    "pts": "PTS3",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Group 1 showed a signiﬁcantly higher diagnostic performance score after 1 week than the control group."
+  },
+  {
+    "study_id": "S027",
+    "cmoc_id": "S027_CMOC2",
+    "pts": "PTS1",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the addition of prompts (specific questions) while working with examples."
+  },
+  {
+    "study_id": "S027",
+    "cmoc_id": "S027_CMOC2",
+    "pts": "PTS1",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the incorporation of only three general prompts to each of the four examples of resident SE."
+  },
+  {
+    "study_id": "S027",
+    "cmoc_id": "S027_CMOC2",
+    "pts": "PTS1",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "Group 1 obtained signiﬁcantly higher diagnostic accuracy and diagnostic performance scores than the control group."
+  },
+  {
+    "study_id": "S028",
+    "cmoc_id": "S028_CMOC1",
+    "pts": "PTS1",
+    "source_id": "i1",
+    "target_id": "mr1",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "the intervention condition used the same content but augmented case presentation with a sequence of key feature questions."
+  },
+  {
+    "study_id": "S028",
+    "cmoc_id": "S028_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mr1",
+    "target_id": "mresp1",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "the observed score difference can be attributed to an effect of repeated testing on the storage and retrieval of knowledge."
+  },
+  {
+    "study_id": "S028",
+    "cmoc_id": "S028_CMOC1",
+    "pts": "PTS1",
+    "source_id": "mresp1",
+    "target_id": "o1",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "mean student scores on intervention items were significantly higher than those on control items."
+  },
+  {
+    "study_id": "S028",
+    "cmoc_id": "S028_CMOC2",
+    "pts": "PTS3",
+    "source_id": "i2",
+    "target_id": "mr2",
+    "relation_type": "PROVIDES",
+    "evidence_quote": "repeated testing with key feature questions is more effective than repeated case-based learning."
+  },
+  {
+    "study_id": "S028",
+    "cmoc_id": "S028_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mr2",
+    "target_id": "mresp2",
+    "relation_type": "TRIGGERS",
+    "evidence_quote": "students expressed appreciation for the structured approach to learning."
+  },
+  {
+    "study_id": "S028",
+    "cmoc_id": "S028_CMOC2",
+    "pts": "PTS3",
+    "source_id": "mresp2",
+    "target_id": "o2",
+    "relation_type": "LEADS_TO",
+    "evidence_quote": "students reported that the repeated testing improved their understanding."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-06-15T19:04:36.869139",
+  "source_of_truth": {
+    "official_cmoc_file": "outputs/evidence_table.json",
+    "official_relationship_file": "outputs/relationships_triples.json",
+    "gold_file": "data/gold_standard.json"
+  },
+  "current_run_stats": {
+    "total_studies": 28,
+    "total_cmocs": 57,
+    "raw_relationships": 171
+  },
+  "notes": [
+    "This manifest defines the canonical input and output files used for KG evaluation.",
+    "Relationships are explicitly split into instance_level_triples (all 171) and unique_programme_level_triples for deduplicated evaluation."
+  ]
+}

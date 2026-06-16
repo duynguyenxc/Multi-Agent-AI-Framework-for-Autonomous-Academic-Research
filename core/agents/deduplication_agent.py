@@ -51,15 +51,19 @@ def build_study_registry_from_input(input_dir: str, metadata_file: str) -> dict:
 
                     # Read abstract from text file if available
                     txt_path = os.path.join(input_dir, source + ".txt")
-                    abstract = "No abstract extracted"
+                    # Fallback: if source_id is a PubMed URL, look for pubmed_PMID.txt
+                    if not os.path.exists(txt_path) and "pubmed.ncbi.nlm.nih.gov" in source:
+                        pmid = source.rstrip("/").split("/")[-1]
+                        txt_path = os.path.join(input_dir, f"pubmed_{pmid}.txt")
+
+                    abstract = record.get("abstract", "") or "No abstract extracted"
                     if os.path.exists(txt_path):
                         with open(txt_path, "r", encoding="utf-8", errors="replace") as tf:
                             content = tf.read(2000)
-                            # Extract abstract-like text (first 800 chars after CONTENT:)
                             if "CONTENT:" in content:
-                                abstract = content.split("CONTENT:")[-1][:800].strip()
+                                abstract = content.split("CONTENT:")[-1][:1800].strip()
                             else:
-                                abstract = content[:800].strip()
+                                abstract = content[:1800].strip()
 
                     study_id = f"S{study_counter:03d}"
                     study_counter += 1

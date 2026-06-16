@@ -1,0 +1,2554 @@
+
+
+===== PAGE 1 =====
+framework of agentic framework
+7 sources
+The provided documents outline a multi-agent AI framework designed to automate
+and enhance realist systematic reviews within complex educational systems. This
+system utilizes a core-and-plugin architecture to ensure methodological
+transparency, integrating Microsoft Graph for traceable data retrieval
+and knowledge graphs to map intricate relationships between contexts, mechanisms,
+and outcomes. By benchmarking the framework against the established Richmond et
+al. (2020) study, the authors demonstrate how specialized agents can replicate
+rigorous human synthesis while maintaining an auditable evidence trail . The sources
+emphasize a human-in-the-loop approach, where AI agents handle high-throughput
+tasks like screening and data extraction while human researchers adjudicate complex
+theoretical refinements. Ultimately, this research seeks to provide a
+scalable, methodologically explicit infrastructure that meets the high standards for
+evidence synthesis required by modern educational research.
+How does pre-existing knowledge impact the success of clinical reasoning?
+Explain the difference between analytical and non-analytical reasoning in students.
+How can AI agents improve transparency in systematic review methods?
+Today • 3:26  PM
+Based on the uploaded file, it contains a multi-agent (agentic) framework that can be
+used to conduct a systematic literature review, consistent with the recent progress
+document dated February 20. I want to read through those materials to understand the
+core idea: how this framework can simulate the kind of research workflow that
+Richardman and his colleagues would carry out (the related paper should already be
+uploaded).
+Specifically, I want the description to explain how the framework can perform the job
+we proposed. Before running the framework, we will conduct web crawling so the AI
+can access publication databases and search for relevant literature as the first step.
+After collecting results, we will iteratively refine and filter the retrieved literature and
+outputs to keep only what fits our purpose—similar to how a human researcher would
+screen and select papers. I will add the specific publication details later
+The proposed multi-agent (agentic) framework is designed to simulate the rigorous,
+theory-driven research workflow of a realist review, specifically modeled after the
+study conducted by Richmond et al. (2020) . The framework's core idea is to
+automate the labor-intensive stages of a systematic review while preserving the
+
+===== PAGE 2 =====
+interpretive depth and methodological transparency required by human
+researchers.
+1. Initial Harvesting: Web Crawling and Database Access
+The first stage of the workflow replicates the search strategy used by Richmond and
+colleagues, who searched four major databases (MEDLINE, PsycINFO, ERIC, and
+CINAHL). In the proposed framework, a specialized Search and Retrieval Agent
+performs this job.
+ Reconstructing the Search Space: The agent replicates the original search
+strings, keywords, and temporal limits to harvest candidate records from
+publication databases.
+ Web Crawling Integration: This agent uses web-querying and crawling
+components to collect a superset of potentially relevant publications.
+ Infrastructure: This process is powered by a core review infrastructure
+(using LangChain or LangGraph) that maintains a stable registry of all
+retrieved citations, ensuring every decision is traceable and auditable.
+2. Iterative Refinement: Human-in-the-Loop Screening
+Following the collection of results, the framework employs an iterative filtering
+process that mimics how human researchers screen papers for inclusion. This is
+handled by a Screening Agent through a two-stage process:
+ First-Stage (Title/Abstract): The AI classifies records as include, exclude, or
+uncertain based on researcher-defined criteria encoded into its decision logic.
+ Human Calibration: To ensure the AI accurately reflects human judgment,
+researchers review a small, stratified sample of the model's initial decisions.
+These corrections are used as few-shot examples to refine the agent's behavior
+before it re-runs the screening across the entire corpus.
+ Second-Stage (Full-Text): For records that pass the initial screen, the pipeline
+attempts to access full texts and applies the same inclusion criteria using a
+second-stage classifier.
+3. Simulating the Realist Workflow: CMOC Extraction
+The most distinctive part of the Richmond workflow is the development of an Initial
+Programme Theory (IPT) and the identification of Context–Mechanism–Outcome
+configurations (CMOCs). The agentic framework simulates this through specialized
+reasoning agents:
+ CMOC Extraction Agent: This agent analyzes full-text papers to identify
+candidate contexts (e.g., student knowledge levels), mechanism resources (e.g.,
+expert explanations), mechanism responses (e.g., student self-confidence), and
+outcomes (e.g., diagnostic accuracy).
+
+===== PAGE 3 =====
+ Iterative Theory Refinement: Just as Richmond et al. re-analyzed earlier
+studies in light of new theories, a Synthesis and Refinement Agent compares
+CMOCs across studies to identify recurrent patterns and proposes updates to
+the overall programme theory.
+ Knowledge Graph (KG) Support: To better handle the complex relationships
+in a realist review, the framework optionally constructs a Literature
+Knowledge Graph. This allows agents to reason over connected claims and
+configurations—such as "why an intervention works for whom and in what
+circumstances"—rather than just summarizing isolated text passages.
+Summary of the Framework's Job
+By combining multi-agent orchestration with graph-based retrieval and human-
+in-the-loop checkpoints, the framework ensures that the AI does not merely
+summarize literature but actively simulates the systematic filtering and theory-
+building logic of an expert researcher. It preserves an audit trail for every action,
+making the results reproducible and aligned with established systematic review
+standards like RAMESES.
+How do agents identify implicit mechanisms in the realist workflow?
+Which human-in-the-loop checkpoints are used for the screening calibration?
+How does GraphRAG improve retrieval compared to standard vector search?
+Identify the agents: State clearly that this is a multi-agent framework and specify how
+many agents are included (or indicate that the number is configurable, then list the
+default set).
+Align agents with human research roles: Explain how each agent corresponds to a
+specific human role in a systematic literature review and how their outputs combine to
+reproduce the Richman research outcomes.
+Start from Richman’s workflow: Before defining agents, first summarize what
+Richman’s publication actually does: identify the tasks, the sequence of steps, and the
+human actions performed (e.g., search, screening, coding, synthesis, quality appraisal,
+reporting).
+Map tasks to agents: Based on the identified human tasks, define corresponding
+agents and specify:
+Each agent’s responsibility
+Inputs and outputs
+Decision criteria (e.g., inclusion/exclusion rules)
+
+===== PAGE 4 =====
+How agents communicate (handoffs, shared memory, voting, arbitration)
+Define agent assignments: For each agent, explicitly state what work the framework
+assigns to that agent (i.e., what the agent “does” in operational terms).
+Prompting and control: Extend the description by explaining (at an implementation
+level) how the agent framework is developed using prompts:
+How prompts constrain each agent’s role, scope, and format
+How we guide the LLM to act as the intended agent (system prompts, role prompts,
+tool-use prompts)
+How we enforce structure (schemas, templates, rubrics) and quality control (self-
+check, peer review, verifier agent)
+Level of detail: Provide as much operational detail as possible (agent list, workflow
+steps, prompt strategy, and coordination mechanism).
+The proposed framework is a multi-agent orchestration system built using stateful
+workflow technology (such as LangGraph), designed to automate and scale the
+theory-driven processes of a realist systematic review. While the framework is
+configurable to accommodate various synthesis traditions, the default set for
+reproducing a realist review consists of 11 specialized agents .
+I. The Human Reference Standard: Richmond et al. (2020) Workflow
+To design the framework, we first map the workflow performed by Richmond and
+colleagues. Their publication follows a rigorous realist synthesis process defined by
+the RAMESES standards:
+1. Theory Seeding: Synthesizing scoping searches and expert opinion to generate
+an Initial Programme Theory (IPT) .
+2. Search Strategy: Executing structured searches across four major databases
+(MEDLINE, PsycINFO, ERIC, CINAHL) using specific keywords and
+temporal limits (post-2000).
+3. Two-Stage Appraisal: Screening titles and abstracts for relevance to theory
+building, followed by a full-text review for methodological rigour and
+contribution to the developing theory.
+4. Data Extraction (Coding): Analyzing full texts to identify
+Context–Mechanism–Outcome configurations (CMOCs) .
+5. Synthesis and Refinement: Comparing studies, identifying recurrent patterns
+(demi-regularities), and iteratively re-analyzing earlier studies as new evidence
+emerges to produce an overall programme theory.
+
+===== PAGE 5 =====
+II. Identifying the Agents and Mapping to Human Roles
+The framework aligns its agents with the specific roles and cognitive tasks performed
+by the Richmond research team.
+Agent Role Human Research
+Role Responsibility
+Protocol & IPT
+Agent Lead Theorist Encodes the scope and seeding theory (IPT) to guide
+all subsequent agent actions.
+Search & Retrieval
+Agent Librarian/Searcher Reconstructs the search space and executes queries
+across publication databases and enterprise folders.
+Deduplication
+Agent Technical Assistant Clusters duplicate records across sources and assigns
+stable StudyIDs.
+Title/Abstract
+Screener Primary Reviewer Applies inclusion/exclusion criteria to harvest
+candidate records at the metadata level.
+Full-Text
+Acquisition Agent Librarian Automates retrieval of PDFs and flags missing texts
+for manual human upload.
+Full-Text Eligibility
+Agent Secondary Reviewer Conducts second-stage screening on full texts for
+rigour and theory contribution.
+CMOC Extraction
+Agent
+Subject Matter
+Expert
+Extracts contexts, mechanism resources, mechanism
+responses, and outcomes with evidence spans.
+Theory Synthesis
+Agent Synthesis Expert Performs cross-study comparisons and proposes
+updates to the overall programme theory.
+Contradiction
+Agent Quality Auditor Detects CMOC conflicts (e.g., same resource,
+different outcome) to force resolution logic.
+Reporting &
+Artifact Agent Technical Writer Generates PRISMA flow counts, evidence tables, and
+synthesis diagrams.
+Benchmark Agent External Evaluator Computes precision/recall by comparing results
+against the 28 studies in the original review.
+III. Task Mapping: Inputs, Outputs, and Communication
+The agents communicate through a shared state (Study Registry, CMOC Store,
+and Theory Store) , ensuring a single source of truth for the entire pipeline.
+ Communication Mechanism: The system uses a state-machine orchestrator
+where agents hand off tasks via shared memory. For example, the
+Title/Abstract Screener writes an "include" flag to the Study Registry, which
+triggers the Full-Text Acquisition Agent to search for the PDF.
+ Decision Criteria: Agents use researcher-defined rule logic . For the
+Screening Agent, this includes encoded criteria such as: "Population:
+undergraduate medical students," "Intervention: clinical reasoning training,"
+and "Outcome: diagnostic accuracy".
+ Handoffs and Arbitration: If the Contradiction Agent detects a CMOC
+conflict, it triggers a Human-in-the-Loop (HITL) checkpoint for adjudication
+rather than forcing a simplistic AI summary.
+
+===== PAGE 6 =====
+IV. Operational Agent Assignments
+In operational terms, the framework assigns the following work:
+ Protocol Agent: Formulates the "Initial Programme Theory" into versioned
+hypotheses.
+ Search Agent: Uses Microsoft Graph retrieval to access institutional
+repositories (Teams/SharePoint) and external database connectors to harvest
+publications.
+ Extraction Agent: Converts narrative passages into structured tuples
+(Context, Resource, Response, Outcome) with provenance pointers back to
+specific document spans.
+ Synthesis Agent: Proposes updates to the IPT by clustering shared
+mechanisms or contexts across studies.
+V. Prompting and Implementation Control
+The framework is developed using a multi-layered prompting strategy to ensure high-
+quality research outputs.
+1. Role and Scope Constraints: System prompts define the professional identity
+of each agent (e.g., "Act as a specialist in realist medical education synthesis").
+Role prompts constrain the scope to specific RAMESES standards.
+2. Enforcing Structure: The system uses schemas and templates to force the
+LLM to output structured data (like JSON or evidence tables) rather than free-
+form prose. Rubrics are embedded in the prompt to define what constitutes a
+valid CMOC configuration.
+3. Quality Control:
+o Self-Check/Reflexion: Agents utilize a Reflexion framework to assess
+their own reasoning across multiple attempts before finalizing a decision.
+o Verifier Agents: A separate Verifier Agent audits extraction against
+source text to prevent hallucinations.
+o Human Calibration: Researchers review a stratified sample of early
+decisions; these corrections are recycled as few-shot examples to refine
+agent policies in real-time.
+This infrastructure ensures that every action—whether the inclusion of a study or the
+refinement of a theory—is auditable, traceable, and reproducible , directly
+addressing the transparency gaps in traditional manual reviews.
+How many agents are in the default framework?
+How does the framework handle conflicting literature findings?
+How are human researchers integrated into this pipeline?
+Saturday, February 21
+
+===== PAGE 7 =====
+Make sure to specify the agent role and specify what each agent's role will play that
+corresponds to the human action, particularly in that Richmond paper and how
+Richmond and his colleagues and team did to conclude their systematic review. And
+also, you need to clearly identify which is the core part of the framework and which is
+the foundation of understanding effective relations and find the ground truth from the
+publication that is the core framework. And then the plug-in framework that is aligned
+with the specific review method, logistics, logic, and review logic. And make it clear
+how they are distinguishing them and how they can be realized using multiple agents
+in a large language model framework. What is the template? What are the prompts
+and the template? Give some examples of prompts for functions, particularly agents.
+What is the input of the agent? What is the output of the agent? How does the human
+verify the output and provide feedback to the system, so that the system can modify
+the outcome based on the human's comments and evaluation.
+The proposed multi-agent (agentic) framework is a stateful orchestration system
+designed to automate the theory-driven processes of a systematic review while
+maintaining the methodological rigor of a human research team. To understand its
+core idea, we must first map it against the research workflow established by
+Richmond et al. (2020) .
+I. The Reference Standard: Richmond et al.’s Workflow
+The study by Richmond and colleagues followed the RAMESES standards for
+realist synthesis to understand how educational interventions develop clinical
+reasoning. Their human-led workflow involved the following actions:
+1. Theory Seeding: The lead author (AR) synthesized scoping searches and
+expert consensus from the team (RP, SG, NC) to generate an Initial
+Programme Theory (IPT) .
+2. Structured Searching: They searched four major databases (MEDLINE,
+PsycINFO, ERIC, CINAHL) for studies published from 2000 onwards.
+3. Two-Stage Screening: A title-abstract screen for relevance to theory building,
+followed by a full-text review to assess methodological rigour and contribution
+to the theory.
+4. Data Extraction (Coding): They analyzed 28 included papers to identify
+Context–Mechanism–Outcome configurations (CMOCs) .
+5. Synthesis and Refinement: Studies were compared, recurrent patterns (demi-
+regularities) were identified, and earlier studies were re-analyzed in light of
+new theories to refine the overall programme theory.
+II. Core Framework vs. Plugin Framework
+The framework distinguishes between the "infrastructure" of a review and its
+"intellectual logic":
+
+===== PAGE 8 =====
+ The Core Infrastructure (Method-Agnostic): This is the foundation of the
+framework. It handles the "plumbing" common to nearly all systematic
+reviews: corpus ingestion, Microsoft Graph-enabled retrieval, study registry
+management, deduplication, and the Human-in-the-Loop (HITL) control
+layer.
+ The Plugin Framework (Method-Specific): This is the Realist Synthesis
+Plugin, which aligns with Richmond's specific review logic. It contains the
+rules for IPT management and CMOC extraction.
+ Foundation of Effective Relations (The Knowledge Graph): To find the
+"ground truth" and understand complex relations (why/for whom/in what
+circumstances), the framework constructs a Literature Knowledge Graph
+(LKG). While the LLM provides interpretive reasoning, the LKG supplies the
+structured, graph-grounded evidence of causal configurations (CMOCs) that
+are often lost in flat text summaries.
+III. Identifying the Agents and Roles
+The framework assigns work to specialized agents that correspond to Richmond’s
+team roles:
+Agent Role Human Action
+Corresponded Operational Assignment
+Protocol & IPT
+Agent Lead Theorist (AR) Encodes the scope, IPT hypotheses, and extraction
+schemas.
+Search & Retrieval
+Agent Librarian/Searcher Executes queries via Microsoft Graph API across
+databases and Teams/SharePoint folders.
+Deduplication
+Agent Technical Assistant Clusters duplicate records and assigns stable
+StudyIDs.
+Title/Abstract
+Screener Primary Reviewer Classifies records as include, exclude, or uncertain
+based on eligibility rules.
+Full-Text Eligibility
+Agent
+Secondary Reviewer
+(RP/SG/NC)
+Applies inclusion criteria to retrieved PDFs for
+rigour and theory contribution.
+CMOC Extraction
+Agent Subject Matter Expert
+Extracts structured tuples: Context
+(student/teacher level), Mechanism
+(resource/response), and Outcome.
+Synthesis &
+Refinement Agent Synthesis Expert Compares CMOCs across studies to identify demi-
+regularities and update the programme theory.
+Contradiction
+Agent Quality Auditor Detects CMOC conflicts (e.g., same resource
+leading to different outcomes) to force resolution.
+Benchmark Agent External Evaluator Computes recall/precision by comparing model
+results to Richmond's 28 studies.
+IV. Prompts, Templates, and Implementation
+The framework is realized using Large Language Models (LLMs) orchestrated
+through a state-machine (like LangGraph).
+The Prompting Strategy:
+
+===== PAGE 9 =====
+ System Prompts: Constrain the agent’s role and scope (e.g., "Act as a
+specialist in RAMESES-compliant realist synthesis").
+ Structured Templates/Schemas: Ensure outputs are structured (JSON/tables)
+rather than narrative, making them auditable.
+Agent Examples:
+ Function: CMOC Extraction
+ Input: Full-text PDF chunk + IPT Schema.
+ Prompt Example: "Identify the student-level Context (C), the Mechanism
+Resource provided (M-res), the student's cognitive Response (M-resp), and the
+Reasoning Outcome (O). Link each to a specific text span." .
+ Output: A structured JSON object containing the CMOC configuration with
+provenance pointers.
+V. Human Verification and Feedback Loop
+The framework is designed for lifelong (continual) learning through human
+interaction.
+1. Checkpoints: Humans intervene at predefined stages: screening adjudication,
+CMOC validation, and theory sign-off.
+2. Calibration: In the screening stage, the human reviews a small sample of the
+agent's decisions. Corrections are recycled into the system as few-shot
+examples to refine the agent's logic for the remaining corpus.
+3. Feedback & Modification: If a researcher is unsatisfied with a synthesis
+outcome (e.g., an extraction is too generic), they provide feedback. The system
+then updates its decision policies (prompts or rule logic) and reruns the
+relevant agent to modify the outcome.
+This interactive process ensures the system accommodates human requirements and
+adapts as the researcher's understanding of the theory evolves.
+How do agents handle contradictions in realist synthesis?
+Tell me more about the human-in-the-loop calibration step.
+What analytical artifacts does the framework export for repositories?
+Okay, I said that the framework should not miss the interaction with the human at
+each step, and how the human decision rules will play a role in this framework. Also,
+you should not include a final agent that compares the machine's outcome with the
+human's outcome. In a real, practical framework, this step does not exist. We only do
+model-vs-human comparison manually or separately (independent of the model) for
+evaluation/research purposes to verify the model — not as part of the model in
+practical application. For the model in practical application, there should be a channel
+
+===== PAGE 10 =====
+or points where people can review and audit the outcomes and procedures, provide
+feedback, and then have the system redo or improve the results based on that feedback
+before moving forward. Yeah, that is what we want.
+In the practical application of this multi-agent framework, the system is designed as a
+Human-in-the-Loop (HITL) orchestration pipeline , where human researchers are
+not passive observers but active governors of the review's logic and outcomes. The
+framework is partitioned into a method-agnostic core review infrastructure and a
+method-specific synthesis plugin (e.g., the Realist Synthesis plugin), ensuring that
+every automated step is governed by human-defined decision rules.
+I. Operational Multi-Agent Framework (Practical Model)
+The following agents constitute the operational set. Per your requirement, the
+"Benchmark Agent" is excluded as it serves purely for separate evaluation and
+research verification rather than live production.
+1. Protocol & IPT Agent: Encodes the researcher’s initial hypotheses and
+inclusion rules into versioned templates.
+2. Search & Retrieval Agent: Uses Microsoft Graph to pull search strings and
+literature from enterprise folders (SharePoint/Teams) while logging every
+query for auditability.
+3. Deduplication Agent: Clusters duplicate records and ensures a stable study
+registry.
+4. Title/Abstract Screening Agent: Classifies records based on human-defined
+eligibility criteria.
+5. Full-Text Eligibility Agent: Re-evaluates studies at the full-text level for
+methodological rigour and theory contribution.
+6. CMOC Extraction Agent: Deconstructs text into Context, Mechanism, and
+Outcome configurations.
+7. Synthesis & Refinement Agent: Proposes updates to the programme theory by
+comparing CMOCs across the corpus.
+8. Contradiction & Sensitivity Agent: Surfaces conflicting evidence (e.g., same
+intervention leading to different outcomes) for human adjudication.
+9. Reporting & Artifact Agent: Generates audit-ready evidence tables, PRISMA
+counts, and theory diagrams.
+II. Human Interaction Points and Feedback Loop
+The framework replaces the final "automated comparison" with predefined
+interaction checkpoints where researchers audit outcomes, provide feedback, and
+trigger the system to redo or improve results before proceeding.
+ Checkpoint 1: Screening Calibration & Adjudication
+
+===== PAGE 11 =====
+o Action: Researchers review a stratified sample of the AI’s screening
+decisions.
+o Feedback/Redo: If the AI misinterprets a criterion (e.g., "clinical
+reasoning" vs. "general knowledge"), the researcher provides
+corrections. These corrections are recycled as few-shot examples to
+refine the agent's decision logic, and the screening agent reruns the task
+on the affected corpus to improve accuracy.
+ Checkpoint 2: CMOC Extraction Validation
+o Action: Humans spot-check the extracted CMOC tuples to ensure they
+reflect the "ground truth" found in the publication.
+o Feedback/Redo: Researchers can modify the extraction schema or
+specific prompt templates if the AI is missing implicit mechanisms. The
+system then re-extracts data using the updated rules.
+ Checkpoint 3: Contradiction Adjudication
+o Action: When the system identifies conflicting evidence (e.g., an
+intervention works for experts but fails for novices), it stops and presents
+a contradiction register to the researcher.
+o Feedback/Redo: The human provides an interpretive explanation (e.g.,
+"this is a context-specific moderating factor"). This feedback is stored in
+the Theory Store, and the synthesis agent incorporates this logic into the
+final programme theory.
+ Checkpoint 4: Programme Theory Sign-off
+o Action: Before generating final artifacts, the human reviews the entire
+evidence path from theory claim to specific text spans.
+o Feedback/Redo: The researcher can reject theory updates that lack
+interpretive depth, forcing the Synthesis Agent to re-analyze the
+Literature Knowledge Graph using a different reasoning structure.
+III. Lifelong (Continual) Learning Mechanism
+This interaction protocol enables lifelong (continual) learning within the model. By
+capturing human feedback at each checkpoint, the framework iteratively updates its
+decision policies (prompts, rubrics, and rule-logic). This ensures the framework
+accommodates evolving stakeholder requirements and adapts its behavior throughout
+the lifecycle of the review.
+IV. Transparency and Auditability
+Every human intervention, feedback note, and system "redo" is logged in the Audit &
+Repository Export module . This creates a complete, transparent record of how
+human expertise and AI automation combined to produce the synthesis, fulfilling the
+RRE Call's requirement for methodologically explicit guidelines and verifiable
+analytical artifacts.
+How does the realist synthesis plugin ensure RAMESES standard compliance?
+
+===== PAGE 12 =====
+What specific audit artifacts are exported for the RRE repository?
+How do the human-in-the-loop checkpoints improve CMOC extraction quality?
+combine the above agentic framework with the above modificiation to layout the
+framework, with detailed how each agent will be prompted and provide prompt
+example or template
+The proposed multi-agent framework is a stateful orchestration system designed to
+automate the labor-intensive stages of a systematic review while maintaining the
+interpretive depth of the Richmond et al. (2020) study. The system consists of 10
+specialized agents in its default configuration, which are coordinated through a Core
+Review Infrastructure and a method-specific Realist Synthesis Plugin .
+I. The Richmond Human Reference Standard
+Before mapping the agents, it is necessary to identify the specific tasks performed by
+Richmond and colleagues:
+ Theory Seeding: The team synthesized expert opinion to generate an Initial
+Programme Theory (IPT) .
+ Structured Search: They conducted keyword searches across four major
+databases (MEDLINE, PsycINFO, ERIC, CINAHL) for studies published from
+2000 onwards.
+ Two-Stage Screening: Reviewers performed a title/abstract screen for
+relevance, followed by a full-text review for methodological rigour.
+ CMOC Extraction: The team analyzed 28 papers to extract
+Context–Mechanism–Outcome configurations (CMOCs) .
+ Iterative Synthesis: They compared CMOCs across studies to identify "demi-
+regularities" and refined the IPT into a final programme theory.
+II. Core Infrastructure vs. Method Plugin
+The framework distinguishes between universal review "plumbing" and intellectual
+synthesis logic:
+ Core Review Infrastructure: Handles method-agnostic tasks such as
+Microsoft Graph-enabled retrieval , deduplication, study registry
+management, and the Human-in-the-loop (HITL) control layer .
+ Realist Synthesis Plugin: Provides the method-specific "semantics," including
+rules for CMOC extraction and theory refinement.
+III. Detailed Agent Layout and Prompting Strategy
+The agents communicate through a shared state (Study Registry and Literature
+Knowledge Graph) where one agent’s output triggers the next.
+Agent Role Richmond Input Output Operational
+
+===== PAGE 13 =====
+Alignment Assignment
+Protocol & IPT
+Agent
+Lead Theorist
+(AR)
+Review
+Question/Scope
+IPT Schema &
+JSON Template
+Encodes IPT
+hypotheses to guide
+extraction rules.
+Search &
+Retrieval
+Agent
+Librarian/Searcher IPT
+Themes/Keywords
+Raw Publication
+Superset
+Executes Microsoft
+Graph-based queries
+across indexed
+literature.
+Deduplication
+Agent Tech Assistant Raw Superset Unique Study
+Registry
+Clusters duplicates and
+assigns stable
+StudyIDs.
+Title/Abstract
+Screener Primary Reviewer Study Metadata Decision
+(Inc/Exc/Unc)
+Classifies records
+based on eligibility
+rules; triggers HITL if
+"Uncertain".
+Full-Text
+Acquisition
+Agent
+Librarian "Include"
+Decisions
+PDF/Full Text
+Chunks
+Automates retrieval
+and flags missing
+PDFs for human
+upload.
+Full-Text
+Eligibility
+Agent
+Secondary
+Reviewer Full Text PDFs Eligibility
+Report
+Applies rigour/theory
+contribution criteria at
+the full-text level.
+CMOC
+Extraction
+Agent
+Subject Expert Full Text + IPT
+Schema
+LKG Triples (C-
+M-O)
+Extracts structured
+configurations with
+evidence-span links.
+Theory
+Synthesis
+Agent
+Synthesis Expert LKG Subgraphs
+Refined
+Programme
+Theory
+Clusters CMOCs into
+recurrent patterns to
+update theory.
+Contradiction
+Agent Quality Auditor CMOC Store Conflict Register
+Detects CMOC
+conflicts (e.g., same
+resource, different
+outcome) for human
+adjudication.
+Reporting
+Agent Tech Writer Shared State
+PRISMA
+Flow/Evidence
+Tables
+Generates auditable
+artifacts for repository
+deposit.
+IV. Prompting and Control Implementation
+The framework uses Role Prompts to define identity and Schemas to enforce
+structure.
+1. Role and Context Constraints:
+ System Prompt Template: "Act as a specialist in RAMESES-compliant realist
+synthesis. Your goal is to identify how educational interventions develop
+
+===== PAGE 14 =====
+clinical reasoning. You must follow researcher-defined inclusion rules strictly
+and link every claim to a specific document section ID."
+2. Enforcement of Structure (CMOC Extraction Example):
+ Input Agent Prompt: "Analyze the following text chunk. Extract CMOC
+configurations according to this schema: {Context: Student Knowledge Level,
+Mechanism_Resource: Pedagogical Tool, Mechanism_Response: Cognitive
+Reaction, Outcome: Diagnostic Accuracy}. If a mechanism is implicit, state
+your reasoning for the inference."
+ Output Format: JSON-structured tuples mapped to the Literature
+Knowledge Graph (LKG) .
+3. Quality Control (HITL and Redo Triggers):
+ Calibration Checkpoint: For the Screening Agent, the human reviews a 5%
+stratified sample. Feedback Prompt: "The human researcher marked StudyID
+123 as 'Exclude' because it was postgraduate, not undergraduate. Update your
+decision logic and re-screen the remaining records."
+ Adjudication Checkpoint: When the Contradiction Agent flags a conflict, it
+stops the pipeline. The human provides a resolution (e.g., "This outcome is
+moderated by the teacher's experience" ), which is added to the Theory Store
+as a new rule for the Synthesis Agent to "redo" its theory refinement.
+This interaction ensures that the system accommodates evolving human requirements
+and creates a traceable evidence path from theory claims back to verifiable source
+passages, fulfilling the transparency requirements of the RRE call.
+How will the framework handle implicit mechanisms during extraction?
+Can you elaborate on the repository artifacts required by AERA?
+What criteria will experts use to evaluate CMOC validity?
+Please lay out the details of the framework so that people can clearly see:
+How each agent will be prompted What is the input for each large language model
+agent What is the expected output of each agent How the output of one agent is passed
+/ loaded / sent to the next agent in the workflow
+Among all the agents, please clarify:
+Which agent(s) are the core of the framework (essential / always present) Which
+agent(s) belong to the plug-in functions (optional / modular / aligned with specific
+review methods)
+
+===== PAGE 15 =====
+Thank you.
+The details of the multi-agent framework are structured to separate the Core Review
+Infrastructure (essential plumbing) from Method-Specific Plugins (specialized
+synthesis logic). This architecture ensures that the system can be adapted to various
+review traditions while maintaining a stable, auditable foundation.
+I. Core Review Infrastructure (Essential / Always Present)
+These agents provide method-agnostic services required for any systematic review.
+They are governed by a stateful orchestrator (e.g., LangGraph) that manages a
+Shared Study Registry —the "single source of truth" for the pipeline.
+Agent Role Input Expected Output Prompting Strategy
+Search &
+Retrieval
+Agent
+Search strings and
+IPT themes.
+Raw publication superset with
+metadata.
+Role Prompt: "Act as a
+librarian executing
+Microsoft Graph queries
+across Teams, SharePoint,
+and external databases".
+Deduplication
+Agent
+Raw publication
+list.
+Unique Study Registry with
+stable StudyIDs.
+Template Prompt:
+"Compare record A and B;
+if identical, merge metadata
+and assign a primary
+StudyID".
+Title/Abstract
+Screener
+Study metadata
+(Title/Abstract) +
+Eligibility rules.
+Label
+(Include/Exclude/Uncertain) +
+Short Rationale.
+Schema-Enforced
+Prompt: "Evaluate against
+the criteria: [Criteria].
+Output JSON with rationale
+and confidence score".
+Full-Text
+Acquisition
+"Include" decisions
+and StudyIDs.
+Full-text PDFs or text chunks;
+flags missing files.
+Tool-Use Prompt: "Search
+M365 folders via Microsoft
+Graph for the PDF
+matching StudyID X".
+Full-Text
+Eligibility
+Full-text
+documents +
+Eligibility rules.
+Final eligibility report; justifies
+exclusions.
+Role Prompt: "Secondary
+Reviewer: Audit the full
+text for methodological
+rigour and theoretical fit".
+Reporting &
+Audit Agent
+Full Study Registry
+and shared state.
+PRISMA flow counts, evidence
+tables, and artifact logs.
+Formatting Prompt:
+"Generate a RAMESES-
+compliant audit trail from
+the decision logs for
+repository deposit".
+II. Method-Specific Plugins (Realist Synthesis Plugin)
+These agents are modular and aligned with the specific logic of the Richmond et al.
+(2020) benchmark. They reason over a Literature Knowledge Graph (LKG) to find
+configurations of causal mechanisms.
+Agent Role Input Expected Output Prompting Strategy
+
+===== PAGE 16 =====
+Protocol &
+IPT Agent
+Review
+questions and
+seeding
+expertise.
+Initial Programme Theory (IPT)
+hypotheses and extraction schemas.
+Theory Seeding Prompt:
+"Synthesize the provided
+expertise to generate an IPT
+focused on student-level
+clinical reasoning".
+CMOC
+Extraction
+Agent
+Full-text
+chunks + IPT
+Schema.
+Structured
+Context–Mechanism–Outcome
+tuples with evidence spans.
+Inference Prompt:
+"Identify implicit responses
+(Mechanism-Response)
+from the text. Link each
+claim to a specific span
+ID".
+Synthesis &
+Refinement
+Extracted
+CMOCs from
+the LKG.
+Refined Programme Theory
+(Updated IPT) and demi-regularity
+patterns.
+Pattern Recognition
+Prompt: "Compare
+CMOCs across studies.
+Propose an update to the
+IPT if context X
+consistently alters outcome
+Y".
+Contradiction
+Agent
+LKG
+subgraphs.
+Contradiction Register identifying
+conflicting evidence.
+Conflict Detection
+Prompt: "Flag instances
+where the same resource
+leads to different outcomes.
+Present for human
+adjudication".
+III. Workflow Orchestration and Handoffs
+The framework does not use simple linear passing; instead, it uses Stateful Handoffs
+via the Shared Registry and Literature Knowledge Graph .
+ Passing Mechanisms: When the Deduplication Agent writes a unique StudyID
+to the registry, the Screening Agent is automatically triggered to process that
+record.
+ Loading Evidence: The Extraction Agent loads full-text chunks and pushes
+extracted "triples" (entities and relations) into the Literature Knowledge
+Graph (LKG).
+ Sending for Feedback: If the Contradiction Agent detects a conflict, it pauses
+the synthesis and sends a notification to the Human-in-the-Loop (HITL)
+control module.
+IV. Human-in-the-Loop and Lifelong Learning
+The human researcher interacts with the framework at four predefined checkpoints:
+1. Screening Adjudication: Human reviews a stratified sample of AI decisions
+and provides corrections.
+
+===== PAGE 17 =====
+2. Extraction Validation: Human spot-checks extracted CMOCs for "ground
+truth" fidelity.
+3. Contradiction Resolution: Human provides the interpretive logic to explain
+conflicting findings.
+4. Theory Sign-off: Human approves the final synthesized programme theory
+before artifact generation.
+Lifelong Update Mechanism: Human feedback at these points is recycled to update
+the system's decision policies (prompts and rules). This allows the agents to "learn"
+and accommodate evolving stakeholder requirements as the review moves into new
+cycles or as new studies appear.
+How does the framework automate realist CMOC extraction?
+Explain the role of human-in-the-loop checkpoints in the pipeline.
+How do knowledge graphs improve reasoning over flat text summaries?
+Please look at the framework. We particularly emphasize that human decisions will
+dominate this process. There are multiple checkpoints to let humans review the
+process, provide feedback, and ensure the system follows the human's decisions with
+human oversight and master control over this process. Explain how this is integrated
+into those frameworks and how the machine will incorporate the human response to
+revise its efforts through an iterative process. Please give a good picture, not only
+based on the content provided, but also based on your knowledge and an extensive
+search of the internet to propose something that goes beyond the provided material.
+In this multi-agent framework, human researchers do not simply provide an initial
+input and wait for a result; they act as the master controllers of an iterative, state-
+aware system. The agents are designed as specialized assistants that handle the labor-
+intensive "plumbing" of a review while pausing at critical junctures for human
+adjudication and policy refinement . This integration is realized through a series of
+"Master Control" checkpoints and a feedback-to-policy loop that enables the system
+to learn from human corrections in real-time.
+1. Integration of Human Oversight: The Four Checkpoints
+The framework incorporates human judgment at four predefined "gates" where the
+automated process halts until a human provides a "sign-off" or corrective feedback.
+ Checkpoint 1: Screening Calibration (The "Few-Shot" Loop): Instead of
+screening the entire corpus blindly, the Screening Agent first classifies a small,
+stratified sample of records. The human reviews these decisions, correcting any
+misclassifications. These corrections are then automatically converted into few-
+shot examples that the system uses to refine its internal decision logic before
+re-running the screening across the remaining thousands of papers.
+
+===== PAGE 18 =====
+ Checkpoint 2: CMOC Validation (The "Ground Truth" Audit): For a
+realist review like the Richmond et al. (2020) study, identifying
+Context–Mechanism–Outcome configurations (CMOCs) is an interpretive act.
+Humans spot-check extracted CMOC tuples to ensure they reflect the "ground
+truth" of the publications. If a human identifies that an agent is missing
+implicit mechanisms, they can update the extraction schema or the specific role
+prompt for that agent.
+ Checkpoint 3: Contradiction Adjudication (The "Conflict Registry"):
+When the Contradiction Agent identifies conflicting evidence—such as the
+same educational intervention leading to different outcomes in different
+settings—it pauses the pipeline and presents a "conflict register" to the
+researcher. The human provides an interpretive explanation for the conflict
+(e.g., explaining why "low knowledge" students respond differently than
+experts), which the system then incorporates into the overall Programme
+Theory.
+ Checkpoint 4: Theory Sign-off: Before final reporting, the researcher reviews
+the entire evidence path. They can reject updates to the theory that lack
+interpretive depth, forcing the Synthesis Agent to "redo" its comparative
+analysis based on new constraints.
+2. The Iterative Revision Process: Feedback-to-Policy
+The machine incorporates human response not just as a one-time correction, but as a
+revision of its future efforts through two primary mechanisms:
+ Dynamic Prompt & Rule Revision: Human feedback is used to iteratively
+update the system's decision policies (e.g., prompts, rubrics, and extraction
+rules). For example, if a researcher provides feedback that "clinical reasoning"
+should include "diagnostic accuracy," the Protocol Agent updates the project-
+wide rules, and all downstream agents (Search, Screen, and Extract) adapt their
+behavior to this new master definition.
+ The "Redo" Trigger: The framework utilizes a state-machine orchestrator
+(such as LangGraph) that maintains a "Shared Registry". If a human provides
+negative feedback at any checkpoint, the orchestrator can trigger a recursive
+"redo" loop. This means the system doesn't just edit the text; it re-invokes the
+relevant agent with the updated human instruction, ensuring the entire evidence
+chain remains consistent and auditable.
+3. Beyond the Provided Material: Proposing "Master Control" Innovations
+To move beyond current implementations, the framework can integrate the following
+"Master Control" concepts:
+
+===== PAGE 19 =====
+ Semantic Policy Anchoring: Instead of just using "fixed prompts," the system
+could maintain a "Living Project Handbook" —a centralized knowledge store
+of all human decisions and comments. When an agent encounters an ambiguous
+study, it would first query this handbook to see how the human handled similar
+cases previously, ensuring that the machine's "internal policy" remains
+perfectly aligned with the human's evolving intent.
+ Active Preference Learning: The system could utilize Reinforcement
+Learning from Human Feedback (RLHF) specifically tuned for evidence
+synthesis. By observing which studies a researcher prioritizes and which
+CMOCs they "upvote" during validation, the agents could autonomously adjust
+their retrieval and synthesis strategies to match the researcher's specific
+intellectual style and theoretical focus .
+ Master Intervention UI: A specialized dashboard—an Adjudication UI—
+would allow researchers to see the "uncertainty score" for every AI decision.
+By sorting the workload by uncertainty, the human can focus their limited time
+on the most contested pieces of evidence, providing the high-level reasoning
+that the machine lacks, while the AI handles the bulk of the repetitive tasks.
+Summary of Human Master Control
+By integrating predefined checkpoints, stateful redo-loops, and lifelong learning
+mechanisms, the framework ensures that human decisions dominate the process. The
+machine acts as an auditable executor of human intent, where every revision is
+logged, traceable to a specific human comment, and verified against the original
+publication evidence.
+How do these plugins specifically manage different synthesis logics?
+Could you explain the specific artifacts produced for auditability?
+How does human feedback improve the system's decision policies?
+How do these plugins specifically manage different synthesis logics?
+In the proposed multi-agent framework, the management of diverse synthesis logics is
+achieved through a modular "core-and-plugin" architecture. While the core review
+infrastructure handles method-agnostic tasks like retrieval and deduplication, the
+synthesis plugins instantiate the specific intellectual logic, rules, and "synthesis
+semantics" of a particular review tradition.
+These plugins specifically manage different synthesis logics through three primary
+mechanisms:
+1. Method-Specific Schemas and Extraction Rules
+Each plugin provides the schema definitions and rule-based decision logic that
+constrain how agents extract and interpret evidence. For example:
+
+===== PAGE 20 =====
+ Realist Synthesis Plugin: Operationalizes Initial Programme Theory (IPT)
+and Context–Mechanism–Outcome Configurations (CMOCs) . Agents are
+prompted specifically to identify "mechanism resources" and "mechanism
+responses," even when they are implicit in the text.
+ Thematic/Framework Synthesis Plugin: Directs agents to code findings into
+pre-specified frameworks or translate study concepts into emergent themes.
+ QCA (Qualitative Comparative Analysis) Plugin: Focuses on case
+calibration and the discovery of necessity/sufficiency patterns among various
+configurations of causal factors.
+2. Relational Reasoning via Literature Knowledge Graphs (LKG)
+Plugins utilize a Literature Knowledge Graph to manage the complex, non-linear
+relationships required by advanced synthesis methods. While a standard search might
+only retrieve text chunks, the plugin enables Graph-enhanced Retrieval-Augmented
+Generation (GraphRAG).
+ In a Realist logic, this allows agents to query the graph for "subgraphs" that
+link specific context factors to mechanism responses.
+ For complex-system synthesis, this enables the framework to surface
+"configurations" and "contingencies" rather than just isolated findings.
+3. Iterative Refinement and Contradiction Handling
+The plugins manage the iterative synthesis loops unique to their specific
+methodology.
+ Theory Refinement: In a realist review, the plugin manages a "Theory Store"
+that versions the programme theory. As new CMOCs are identified, a
+specialized Synthesis Agent compares them against the current theory and
+proposes refinements.
+ Contradiction Adjudication: The Contradiction Agent identifies conflicts in
+the evidence—such as the same intervention leading to different outcomes in
+different contexts—and presents these to a human for adjudication. The plugin
+then incorporates this human explanation back into the synthesis logic as a
+"contextual contingency".
+4. Human-in-the-Loop (HITL) Policy Updates
+Plugins define the specific interaction protocol where human researchers oversee the
+synthesis logic. Through lifelong (continual) learning , human feedback at method-
+specific checkpoints (like CMOC validation) is used to update the plugin’s decision
+policies, prompts, and templates . This ensures the framework's "synthesis logic"
+evolves to match the researcher's intent as the review progresses.
+How do multi-agent frameworks handle complex causal configurations?
+
+===== PAGE 21 =====
+What repository artifacts are required for RRE compliance?
+How does human feedback refine the AI's screening logic?
+Sunday, February 22
+Please address each of the specific plug-in methods for the systematic review based
+on the uploaded call for papers. Include all drafts and proposals regarding the different
+specific review requirements, and give more details on each method: how the plug-in
+will align with that specific systematic review, how the methods differ from each
+other, and the different perspectives of systematic reviews. Can you find the proposals
+and those relevant contents in the uploaded proposal or uploaded call for papers
+issued by the Journal Editor?
+The proposed multi-agent framework is designed around a core-and-plugin
+architecture specifically to meet the diverse methodological requirements of the
+Review of Research in Education (RRE) 2026 call . While the core infrastructure
+handles method-agnostic tasks like provenance-tracked retrieval and study registry,
+the method-specific synthesis plugins instantiate the distinct review logics needed to
+address complex educational systems.
+1. Realist Synthesis Plugin (Primary Worked Example)
+As established in the source materials, Realist Synthesis serves as the primary anchor
+for the framework because its focus on Context–Mechanism–Outcome
+configurations (CMOCs) directly aligns with the RRE call’s emphasis on
+"interacting elements," "causal mechanisms," and "contextual contingencies".
+ Alignment: This plugin operationalizes the Initial Programme Theory (IPT)
+and iterative theory refinement, addressing the "why, how, and for whom"
+questions essential for informing change in complex systems.
+ Agentic Logic: Specialized reasoning agents extract structured configurations
+(CMOCs) from literature, linking mechanism resources (what an intervention
+provides) to learner responses and subsequent outcomes.
+ Core Difference: Unlike descriptive methods, this plugin is theory-driven
+and explanatory, focusing on the generative causation that occurs when
+interventions interact with specific contexts.
+2. Qualitative Comparative Analysis (QCA) Plugin
+The RRE call highlights the need for methods that can reveal "configurations of
+causal mechanisms".
+ Alignment: A QCA plugin supports causal discovery by identifying which
+combinations of conditions are necessary or sufficient for an outcome.
+
+===== PAGE 22 =====
+ Agentic Logic: This plugin manages case calibration—transforming
+qualitative or quantitative data into set relations—and applies set-theoretic
+logic to find patterns that simple aggregation might miss.
+ Core Difference: It differs from realist synthesis by focusing on set-theoretic
+configurations rather than the narrative "mechanism-response" logic.
+3. Framework and Thematic Synthesis Plugins
+These plugins are designed for the structured coding of large evidence bases to
+identify recurring patterns and demi-regularities.
+ Alignment: These methods provide the "systematic approach" required by the
+call to ensure that conclusions are warranted through transparent and auditable
+coding.
+ Agentic Logic:
+o Framework Synthesis: Agents use a pre-specified framework to code
+evidence, ensuring alignment with existing educational theories.
+o Thematic Synthesis: Agents identify emergent themes through
+inductive coding, allowing for the synthesis of heterogeneous studies.
+ Perspective: These represent a pattern-seeking perspective, where the goal is
+to aggregate findings across diverse study designs into a coherent set of themes
+or categories.
+4. Meta-Ethnography and Critical Interpretive Synthesis (CIS) Plugins
+The call invites "diverse approaches to research," including those emphasizing
+theoretical critique.
+ Alignment: These plugins address the "theorize and warrant conclusions"
+requirement of the call by moving beyond mere summary toward theoretical
+innovation.
+ Agentic Logic: Agents perform conceptual translation across studies,
+identifying how concepts from one study can be reconciled or expanded by
+another to build a new overarching theory.
+ Perspective: These represent a highly interpretive perspective , prioritizing
+theoretical depth and critique over the procedural standardization of meta-
+analysis.
+5. Meta-Analysis and Mixed-Method Synthesis Plugins
+To satisfy the call's emphasis on "methodologically diverse evidence," the framework
+supports quantitative and integrative plugins.
+
+===== PAGE 23 =====
+ Alignment: These plugins provide the rigor needed to handle the "measurable
+effects" of interventions while integrating them with qualitative insights to
+inform systemic change.
+ Agentic Logic:
+o Meta-Analysis: Specialized agents extract effect sizes, perform risk-of-
+bias assessments, and apply quantitative pooling models.
+o Mixed-Method: The framework embeds text and numeric data into
+unified graph structures (Literature Knowledge Graphs), allowing
+agents to reason across diverse data types for causal discovery.
+ Difference: These methods differ by their reliance on statistical pooling
+(meta-analysis) or integrative triangulation (mixed-methods), providing a
+quantitative baseline that interpretive plugins lack.
+Summary of Plugin Alignment with RRE Requirements
+The sources emphasize that by maintaining a method-neutral core—which provides
+the audit trails and provenance required by RRE standards—the framework can
+remain a "living" methodological infrastructure. Each plugin allows the system to
+switch its reasoning substrate: for a realist synthesis, it queries the knowledge graph
+for CMOC subgraphs; for QCA, it queries for set-theoretic configurations; and for
+thematic synthesis, it clusters emergent semantic embeddings. This ensures that the AI
+is not merely summarizing literature but is performing the specific analytical and
+warranting tasks defined by each unique research tradition.
+How do core infrastructure and synthesis plugins work together?
+What specifically are the methodologically explicit guidelines for these plugins?
+How does the framework manage contradiction adjudication in complex systems?
+could you expand the above? Could you make details for each plugin as a
+methodology method? This is a method in the agent-based model agent framework.
+Please, for each one, provide a detailed method. And then, in this paper, we only work
+on one method, but we need to lay out the method or method framework for the other
+plugins or other systematic reviews. Do you understand? So look at the call for papers
+and the uploaded proposal that is uploaded for this draft paper, the proposal for the
+draft paper, and lay out this plugin as part of the methodology. That is the core part of
+this draft paper. And also, we need to make sure we have the core, C-O-R-E, core part
+of that framework.
+The following methodology section details the architecture of the proposed multi-
+agent system, distinguishing between the method-agnostic Core Review
+Infrastructure and the method-specific Synthesis Plugins. This architecture is
+designed to satisfy the Review of Research in Education (RRE) 2026 requirements
+for methodological innovation and transparent warranting in complex educational
+systems.
+
+===== PAGE 24 =====
+4. Methodology: The Multi-Agent Framework
+This method employs a stateful orchestration architecture (implemented via
+LangGraph) where a specialized set of agents collaborates under a Human-in-the-
+Loop (HITL) governance model. The framework is partitioned into two distinct
+layers: a method-agnostic core and a method-specific plugin layer.
+4.1 The Core Review Infrastructure (CORE)
+The CORE provides the foundational services required for any systematic review,
+ensuring that every automated step is auditable, reproducible, and grounded in
+institutional data. It consists of the following essential modules:
+ Protocol & Scope Module: Encodes researcher-defined review questions,
+inclusion/exclusion rules, and extraction schemas into versioned prompt
+templates.
+ Retrieval & Provenance Module: Utilizing Microsoft Graph as the
+enterprise retrieval layer, this module executes search strings and harvests
+literature from project folders (Teams/SharePoint) while logging every query
+and source for absolute auditability.
+ Study Registry & Deduplication Module: Clusters harvested records, assigns
+stable StudyIDs, and maintains a "Single Source of Truth" registry for the
+entire pipeline.
+ Screening Workflow Module: A multi-stage classifier applying eligibility
+rules at title/abstract and full-text levels. It categorizes studies as include,
+exclude, or uncertain while generating detailed rationales for every decision.
+ Extraction & Evidence-Linking Module: Deconstructs documents into
+structured data objects. Every extracted item is persistently linked (provenance)
+to a specific text span ID to prevent hallucinations and support manual
+verification.
+ Audit & Repository Export Module: Automatically packages all decision
+logs, search queries, extraction tables, and human feedback records into
+analytical artifacts ready for deposition in the AERA-RRE repository.
+4.2 Synthesis Plugin Framework
+Synthesis plugins are modular extensions that instantiate the intellectual logic and
+coding rules of a specific review tradition. While this manuscript focuses on the
+Realist Synthesis plugin as the primary worked example, the framework is designed
+to support the diverse methodological landscape required by the RRE call.
+4.2.1 Realist Synthesis Plugin (Worked Example)
+This plugin operationalizes the RAMESES standards to explain why, how, and for
+whom interventions develop clinical reasoning ability.
+ Methodology: It manages the Initial Programme Theory (IPT) and drives
+agents to extract Context–Mechanism–Outcome configurations (CMOCs) .
+
+===== PAGE 25 =====
+ Extraction Logic: Specialized agents extract structured tuples: Context (e.g.,
+learner knowledge level), Mechanism Resource (the pedagogical tool
+provided), Mechanism Response (the cognitive/emotional reaction), and the
+resulting Outcome (e.g., diagnostic accuracy).
+ Iterative Refinement: Agents query a Literature Knowledge Graph to
+identify recurrent patterns (demi-regularities) across studies and propose
+evidence-based updates to the overall programme theory.
+4.2.2 Framework and Thematic Synthesis Plugin
+ Methodology: Aligns with the call's emphasis on identifying recurring patterns
+and themes across diverse research designs.
+ Implementation: The Framework module uses a pre-specified theoretical
+framework to guide extraction agents. The Thematic module identifies
+emergent themes through inductive coding and clustering, allowing for the
+synthesis of heterogeneous evidence bases into coherent categories.
+4.2.3 Qualitative Comparative Analysis (QCA) Plugin
+ Methodology: Supports the discovery of "causal configurations" and
+"contextual contingencies" specified in the RRE call.
+ Implementation: Agents perform case calibration, transforming qualitative or
+quantitative data into fuzzy or crisp set memberships. The plugin identifies
+which combinations of conditions are necessary or sufficient for an outcome,
+enabling the system to reason about causal "paths" rather than isolated
+variables.
+4.2.4 Meta-Ethnography and Critical Interpretive Synthesis (CIS) Plugin
+ Methodology: Prioritizes theoretical innovation and concept translation across
+different methodological and disciplinary boundaries.
+ Implementation: Agents perform conceptual translation across studies,
+identifying how concepts from one study can be reconciled or expanded by
+another to build a new overarching theory.
+4.2.5 Meta-Analysis and Mixed-Method Synthesis Plugin
+ Methodology: Integrates methodologically diverse evidence to inform
+systemic change.
+ Implementation: Agents extract effect sizes and conduct risk-of-bias
+assessments for quantitative pooling. The mixed-method logic embeds text and
+
+===== PAGE 26 =====
+numeric data into unified graph structures , allowing agents to reason across
+diverse data types for causal discovery.
+4.3 Human-in-the-Loop (HITL) and Lifelong Learning
+The framework is governed by a formal Master Control protocol where human
+researchers act as the ultimate arbiters of synthesis logic through four predefined
+checkpoints:
+1. Screening Adjudication: Reviewing AI-labeled samples to refine eligibility
+rules through few-shot calibration.
+2. Extraction Validation: Spot-checking extracted CMOCs to ensure fidelity to
+the "ground truth" found in the literature.
+3. Contradiction Adjudication: Reviewing a "Conflict Register" where same
+interventions lead to different outcomes, and providing interpretive
+explanations to resolve these contingencies.
+4. Theory Sign-off: Approving the final synthesized programme theory and
+evidence map before artifact generation.
+Every human intervention is recycled to update the system’s decision policies (e.g.,
+prompts and rules), enabling lifelong (continual) and online learning . This ensures
+that the framework accommodates evolving stakeholder requirements and matures its
+reasoning throughout the review lifecycle.
+How does the realist synthesis plugin handle CMOC configurations?
+How will you evaluate the framework's programme theory fidelity?
+What analytical artifacts will be produced for the RRE repository?
+too simple, lack sufficient details ,redo the above as the section of draft paper
+2. Literature Review and Gap Analysis
+2.1 The Paradigm Shift in AI-Augmented Evidence Synthesis Post-2023
+The emergence of Large Language Models (LLMs) and multi-agent orchestration
+frameworks after 2023 has fundamentally reshaped the landscape of research
+synthesis. Prior to this "generative AI sensation," automation was largely confined to
+machine-learning-based citation screening and structured metadata extraction . In the
+post-2023 era, the focus has shifted toward agentic workflows that attempt to
+replicate the interpretive and reasoning-heavy tasks once reserved for human experts .
+Current research explores the capacity of LLMs to support high-recall abstract
+screening and the extraction of complex constructs from full-text corpora, often
+employing collaborative "two-reviewer" agent designs to resolve discordant outputs .
+2.2 Critical Assessment of General AI-Assisted Literature Review Platforms
+The market for AI-driven research tools has expanded rapidly with the launch of
+platforms such as Elicit, Consensus, and Scite Assistant . These platforms optimize
+
+===== PAGE 27 =====
+the "speed-to-summary" pipeline, allowing researchers to screen thousands of papers
+and generate report-like syntheses in a fraction of the traditional time . For instance,
+recent product updates in Elicit claim to support "Scaled Systematic Reviews" of up
+to 40,000 papers, integrating search, screen, and extraction into a unified parallelized
+task .
+However, from the perspective of the RRE Volume 50 methodological
+requirements, these general literature review platforms exhibit several decisive
+disadvantages for synthesizing evidence in complex educational systems :
+ Methodological Opacity and Weak Warranting: Unlike a formal systematic
+review, which must be methodologically explicit and evaluable , many
+general platforms utilize ad hoc prompting and "black-box" reasoning . This
+prevents researchers from tracing claims back to specific evidence spans with
+the auditability required for scholarly critique .
+ Suppression of Contradictions: General platforms often optimize for
+narrative "consensus" or "smoothing over" contested findings . This fails to
+meet the needs of researchers examining contextual contingencies, where the
+primary goal is often to identify why results differ across settings .
+ Lack of Configurational Logic: Current platforms typically lack the capacity
+to operationalize method-specific synthesis logics, such as the
+Context–Mechanism–Outcome configurations (CMOCs) foundational to
+realist synthesis . They primarily function as productivity tools rather than as
+methodological infrastructures capable of producing the structured,
+depositable artifacts required by journals like RRE .
+2.3 Advances in Multi-Agent Orchestration and Knowledge Graphs
+To address the "global" reasoning failures of traditional Retrieval-Augmented
+Generation (RAG), post-2023 research has prioritized Graph-enhanced Retrieval
+(GraphRAG) and multi-agent orchestration . Multi-agent systems (e.g., using
+LangGraph) enable specialized agents to collaborate on discrete tasks—such as
+screening, coding, and synthesis—while maintaining a shared "state" of the review
+protocol .
+Furthermore, the construction of a Literature Knowledge Graph (LKG) allows
+agents to reason over connected claims and evidence paths rather than isolated text
+passages . This enables the discovery of demi-regularities and causal configurations
+by mapping how specific intervention resources trigger learner responses within
+varied educational contexts . By integrating Microsoft Graph as an enterprise-grade
+retrieval layer, these frameworks can ensure that every decision is logged and every
+PDF is managed within a traceable institutional repository .
+2.4 The Methodological Gap: From Automation to Adjudicated Governance
+
+===== PAGE 28 =====
+The primary gap in the current evidence-synthesis ecosystem is the absence of an
+infrastructure that combines the interpretive depth of human experts with the
+scalability of agentic AI . While general platforms can accelerate search, they do not
+accommodate the iterative refinement of programme theories seen in human-led
+reviews like Richmond et al. (2020) .
+The proposed core-and-plugin framework addresses this gap by separating method-
+agnostic "Review OS" functions (retrieval, provenance, registry, and audit) from
+method-specific synthesis logics . This framework uniquely prioritizes:
+1. Human-in-the-Loop (HITL) Adjudication: Formalizing checkpoints for
+screening calibration, CMOC validation, and theory sign-off to prevent
+"automation bias" .
+2. Lifelong (Continual) Learning: Incorporating human feedback at each stage
+to iteratively update decision policies, prompts, and extraction rules as new
+literature emerges and stakeholder requirements evolve .
+3. Auditability for Sustainable Change: Producing repository-ready artifacts—
+including contradiction registers and provenance-linked CMOC tables—to
+ensure the synthesis is not a "one-time" report but a living, auditable evidence
+map suitable for driving systemic educational innovation .
+--------------------------------------------------------------------------------
+References (APA)
+American Educational Research Association. (2026). Call for proposals: Systematic
+review methods for synthesizing evidence from diverse approaches to research to
+inform change efforts in complex educational systems (RRE Volume 50) .
+https://www.aera.net/Portals/38/2026_RRE_CallForProposals.pdf
+Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mody, A., Truitt, S., & Larson,
+J. (2024). From local to global: A Graph RAG approach to query-focused
+summarization. Microsoft Research. https://arxiv.org/abs/2404.16130
+Elicit. (2026, February 19). Scaled Systematic Reviews and Report Templates . Elicit
+Blog. https://elicit.com/blog/systematic-review/
+Khan, M. A., et al. (2025). Collaborative large language models for automated data
+extraction in living systematic reviews. Journal of the American Medical Informatics
+Association, 32(4), 638–647. https://doi.org/10.1093/jamia/ocae325
+Li, M., Sun, J., & Tan, X. (2024). Evaluating the effectiveness of large language
+models in abstract screening: A comparative analysis. Systematic Reviews, 13, 219.
+https://doi.org/10.1186/s13643-024-02609-x
+Microsoft. (2025). Microsoft Graph overview . Microsoft Learn.
+https://learn.microsoft.com/en-us/graph/overview
+Richmond, A., Cooper, N., Gay, S., Atiomo, W., & Patel, R. (2020). The student is
+key: A realist review of educational interventions to develop analytical and non-
+
+===== PAGE 29 =====
+analytical clinical reasoning ability. Medical Education, 54(8), 709–719.
+https://doi.org/10.1111/medu.14137
+Wong, G., et al. (2013). RAMESES publication standards: Realist syntheses. BMC
+Medicine, 11, 21. https://doi.org/10.1186/1741-7015-11-21
+How do CMOCs help model configurations of causal mechanisms?
+What analytical artifacts are required for the RRE repository?
+Explain how the pipeline handles contradictions in educational research.
+I ask for method section, what you did does not meet the instruction
+3. Methodology: A Multi-Agent Framework for Generative AI-Augmented
+Research Synthesis
+This section details the proposed multi-agent orchestration framework, designed to
+satisfy the Review of Research in Education (RRE) 2026 requirements for
+methodological innovation and transparent warranting in complex educational
+systems. The framework is implemented as a stateful agentic pipeline using post-2023
+orchestration technology (e.g., LangGraph), allowing it to replicate the interpretive
+depth of human expert reviews, specifically the realist synthesis conducted by
+Richmond et al. (2020) .
+3.1 Architectural Principles: Core Review Infrastructure and Plugin Functions
+The framework is partitioned into two distinct layers to ensure both methodological
+stability and flexibility.
+ The Core Review Infrastructure (Essential): This "Review OS" provides the
+method-agnostic services required for any systematic review. It manages
+corpus ingestion, stable study registries, deduplication, and the Human-in-
+the-Loop (HITL) control module . It is powered by Microsoft Graph as the
+enterprise retrieval layer , ensuring that every retrieved document and
+decision is logged within a traceable institutional repository.
+ Method-Specific Plugins (Modular): Plugins instantiate the distinct synthesis
+logic of a particular tradition. The Realist Synthesis Plugin used here
+operationalizes the Initial Programme Theory (IPT) and
+Context–Mechanism–Outcome configurations (CMOCs) . By swapping
+plugins, the same core infrastructure can support framework synthesis, thematic
+synthesis, QCA, or meta-ethnography.
+3.2 Operational Agent Roles and Task Decomposition
+The framework employs specialized agents that collaborate through a Shared State
+Registry, serving as the single source of truth for the entire pipeline.
+Agent Role Input Expected Output Agent Responsibility
+Protocol & IPT
+Agent
+Review
+Question +
+IPT Schema + Extraction
+Rubrics
+Encodes the "Initial Programme
+Theory" to guide search and
+
+===== PAGE 30 =====
+Seeding Theory extraction.
+Search &
+Retrieval Agent
+IPT Themes +
+Search Strings Raw Publication Superset
+Executes queries via Microsoft
+Graph API across project
+folders and databases.
+Deduplication
+Agent Raw Metadata Unique Study Registry Clusters records and assigns
+stable StudyIDs for auditability.
+Title/Abstract
+Screener
+Metadata +
+Eligibility
+Rules
+include/exclude/uncertain
+Label
+Performs first-stage
+classification with structured
+rationales.
+Full-Text
+Eligibility Agent
+PDFs +
+Protocol Rules Final Inclusion Report
+Audits full texts for
+methodological rigour and
+theoretical fit.
+CMOC
+Extraction Agent
+Full-Text
+Chunks + IPT
+Schema
+LKG Triples (C, M-res, M-
+resp, O)
+Converts passages into
+structured Context,
+Mechanism, and Outcome
+configurations.
+Synthesis &
+Refinement
+Agent
+LKG Subgraphs Updated Programme
+Theory
+Clusters CMOCs into demi-
+regularities and proposes theory
+revisions.
+Contradiction
+Agent CMOC Store Conflict Register
+Detects conflicting evidence
+(same resource, different
+outcomes) for human
+adjudication.
+Reporting &
+Audit Agent
+Shared State
+Logs
+PRISMA Flow + Evidence
+Tables
+Generates final artifacts for
+repository deposition.
+3.3 Prompting and Enforcement of Methodological Logic
+To ensure the Large Language Model (LLM) acts as a specialized research agent, the
+framework uses a multi-layered prompting strategy:
+ System Prompts: Define the agent's professional identity (e.g., "Act as a
+specialist in RAMESES-compliant realist synthesis").
+ Role Prompts: Constrain the agent's scope to specific tasks (e.g., "Extract only
+student-level mechanism responses").
+ Structure Enforcement: Agents are guided by schemas and templates to
+output structured JSON or evidence tables rather than narrative prose, ensuring
+every claim is linked to a specific text span ID.
+3.4 Human-in-the-Loop (HITL) Governance and Checkpoints
+The framework is governed by a Master Control protocol where the system pauses
+for human adjudication at four critical checkpoints:
+1. Screening Adjudication: Humans review a stratified sample of decisions to
+calibrate the agent's logic through few-shot examples.
+
+===== PAGE 31 =====
+2. CMOC Validation: Humans spot-check extracted configurations against the
+"ground truth" of the publications.
+3. Contradiction Resolution: When the system identifies conflicting evidence, it
+stops to let the human provide an interpretive explanation.
+4. Theory Sign-off: The researcher approves the final synthesized programme
+theory before the Reporting Agent generates repository artifacts.
+3.5 Lifelong (Continual) and Online Learning Mechanism
+This framework supports lifelong learning by recycling human feedback into the
+system’s decision policies. When a researcher corrects an agent's output, the system
+does not just edit the text; it updates its underlying prompts, rubrics, and
+extraction rules. This allows the agents to "learn" the researcher’s intent, enabling
+the system to accommodate evolving stakeholder requirements and improve its
+accuracy throughout the lifecycle of the "living" review.
+3.6 Literature Knowledge Graph and GraphRAG Integration
+To support the configuration-level reasoning required by Richmond et al. (2020), the
+framework constructs a Literature Knowledge Graph (LKG) . Unlike traditional
+RAG which retrieves isolated text passages, Graph-enhanced Retrieval
+(GraphRAG) allows agents to retrieve subgraphs of connected claims . This enables
+the framework to reason over complex relationships—how specific pedagogical
+resources trigger cognitive responses in varied student contexts—providing a
+transparent evidence path from theory claims back to verifiable source passages.
+How do CMOCs help reveal causal mechanisms in complex systems?
+Why use Microsoft Graph instead of just a vector store?
+How does human feedback improve the AI's future screening efforts?
+too simple, more details are needed
+3. Methodology: A Multi-Agent Orchestration Framework
+This section details the proposed agentic infrastructure, designed to replicate the
+interpretive and theory-driven workflow of the Richmond et al. (2020) realist review.
+The framework is architected as a stateful, human-governed system that separates
+method-agnostic "Review Infrastructure" from method-specific "Synthesis Plugins".
+3.1 Architectural Philosophy: The Core-and-Plugin Model
+The framework addresses the scalability and transparency limitations of traditional
+reviews by utilizing a core-and-plugin architecture.
+ Core Review Infrastructure (Method-Agnostic): Provides foundational
+services such as enterprise-grade retrieval, deduplication, and a unified audit
+trail.
+ Method-Specific Plugins: These modular extensions instantiate the unique
+logic of a synthesis tradition. This manuscript focuses on the Realist Synthesis
+
+===== PAGE 32 =====
+Plugin, which operationalizes the Context–Mechanism–Outcome (CMO)
+logic required to analyze complex educational systems.
+3.2 Agent Roles, Inputs, and Prompting Strategy
+The framework employs 10 specialized agents coordinated via a stateful orchestrator
+(e.g., LangGraph). Each agent operates under role-specific system prompts and
+structured output schemas to ensure methodological rigor.
+Agent Role Input Expected Output Prompt Strategy/Example
+Search &
+Retrieval Agent
+IPT Themes
+& Search
+Strings
+Raw Publication Superset
+Role: "Act as a librarian using
+Microsoft Graph API to harvest
+literature from project folders".
+Deduplication
+Agent
+Raw
+Metadata Unique Study Registry
+Logic: Clusters duplicate records
+and assigns stable StudyIDs for
+cross-agent tracking.
+Title/Abstract
+Screener
+Metadata +
+Eligibility
+Rules
+include/exclude/uncertain
+Decision
+Schema: "Output JSON with
+rationale and confidence score based
+on the following criteria...".
+CMOC
+Extraction
+Agent
+Full-Text
+Chunks + IPT
+Schema
+LKG Triples (C, M-res,
+M-resp, O)
+Inference: "Identify Context,
+Mechanism Resource, Mechanism
+Response, and Outcome. Link each
+to a specific text span".
+Synthesis &
+Refinement
+LKG
+Subgraphs
+Updated Programme
+Theory
+Patterning: "Identify demi-
+regularities across studies to refine
+the initial programme theory".
+Contradiction
+Agent CMOC Store Conflict Register
+Critique: "Flag instances where the
+same resource leads to different
+outcomes in different contexts".
+3.3 The Role of Microsoft Graph and Literature Knowledge Graphs
+The framework utilizes two distinct graph-based technologies to ground AI reasoning:
+1. Microsoft Graph (Enterprise Layer): Functions as the retrieval and
+provenance backbone. It allows agents to securely access and version project
+artifacts, such as PDFs, screening logs, and human notes stored in Teams or
+SharePoint.
+2. Literature Knowledge Graph (LKG): A method-facing representation built
+from the literature where nodes represent interventions, mechanisms, and
+outcomes. This enables Graph-enhanced Retrieval (GraphRAG) , allowing
+agents to reason over connected causal paths rather than isolated text snippets.
+3.4 Master Control: Human-in-the-Loop (HITL) and Lifelong Learning
+Crucial to the framework is the Master Control protocol , which ensures human
+decisions dominate the synthesis process. The system pauses for human adjudication
+at four predefined checkpoints:
+
+===== PAGE 33 =====
+ Checkpoint 1: Screening Adjudication: Humans review a stratified sample of
+the AI’s screening decisions. Feedback is recycled as few-shot examples to
+refine the Screener Agent’s policy before it re-runs the task.
+ Checkpoint 2: Extraction Validation: Humans spot-check extracted CMOC
+tuples against the "ground truth" evidence spans.
+ Checkpoint 3: Contradiction Resolution: When the Contradiction Agent
+detects conflicting evidence, it presents a Conflict Register. The human
+provides an interpretive explanation which is stored as a new rule for the
+Synthesis Agent.
+ Checkpoint 4: Theory Sign-off: The lead researcher approves the final
+synthesized programme theory and evidence map before artifact generation.
+Lifelong (Continual) Update Mechanism: Every human correction—whether a
+modified screening label or a refined CMOC—is used to iteratively update the
+system’s decision policies (prompts and rules) . This ensures the framework adapts
+to evolving human requirements and creates an auditable record of how human
+expertise shaped the final synthesis.
+3.5 Benchmark Evaluation Design (Richmond et al. 2020)
+To verify the framework, we replicate the search space and synthesis products of the
+Richmond et al. (2020) review.
+ Search/Screening Evaluation: The pipeline's included set is compared against
+Richmond's 28 studies, computing recall (proportion of Richmond's studies
+identified) and precision.
+ Synthesis Fidelity: We evaluate the correspondence of system-generated
+CMOC patterns and programme theory against the human-authored synthesis
+reported in the benchmark paper.
+ Artifact Transparency: To satisfy the RRE call, the framework exports a full
+package of analytical artifacts, including logged queries, screening rationales,
+and LKG-derived configuration maps for deposition in the AERA-RRE
+repository.
+How do these plugins specifically manage different synthesis logics?
+Tell me more about the human-in-the-loop governance checkpoints.
+How does GraphRAG improve reasoning compared to standard RAG?
+Please only focus on "medical education" uploaded and read carefully the Richmond
+Medical Education literature review carefully, and give more detail on what
+essentially they give as well as a full explanation of what their procedure is. Give it in
+language that is spoken to the layman. Particularly say how they initiate the initial
+theory as a kind of hypothesis, and then they try to look for from the literature
+anything similar to this hypothesis, based on all relevant information, and then they
+
+===== PAGE 34 =====
+try to check if there is any contradiction, consolidate this contradiction, and then they
+come out with the theory that is verified by previous research, that is stated for what
+kind of population, what kind of intervention has some effect. And please give more
+detail, more detail. And eventually what their paper is about. They review 28 papers,
+and what they try to do, and what is their final result. Please provide more concrete
+details about their process. For each process, what they try to do, and what is the
+outcome from this particular process. And then the outcome from the previous process
+will become the input for the next process. And eventually, the final output identifies
+the effect on some people, the effect of certain pedagogy, how they interact with the
+people. It's the kind of thing like this. Please give more detail and understanding so
+that we can let the AI agent do this in a more specific way. And how this knowledge
+graph plays a role. How their work will turn into an automatic process powered by a
+large language model. Yeah, please read that paper carefully. How they start with the
+initial theory, how they identify keywords to search the literature, and what is their
+criteria to identify 28 studies. Such things like give more detail and eventually what
+the result is based on reviewing, summarizing, or synthesizing the outcomes from
+these 28 publications. What eventually the output is and what is the practical
+significance.
+The research conducted by Richmond and colleagues (2020) in the field of medical
+education is a "realist review," which is a fancy way of saying they didn't just want to
+know if a teaching method works, but why it works for some students and not others,
+and in what specific situations.
+1. The Starting Point: The "Initial Theory" (Hypothesis)
+Before looking at a single research paper, the team started with a hypothesis, known
+in their field as an Initial Programme Theory (IPT) .
+ The Input: They combined their own expertise as clinical teachers with a
+quick "scoping" search of existing ideas.
+ The Process: They sketched out a rough map of how they thought medical
+students learn to make diagnoses. They focused on "Dual-Process Theory,"
+which suggests we think in two ways: fast/intuitive (non-analytical) and
+slow/deliberate (analytical).
+ The Outcome: A draft set of "if-then" statements (called CMOCs) that served
+as the roadmap for the entire project.
+2. Searching the Literature: Finding the "Matches"
+Once they had their hypothesis, they needed to see if the real world (the literature)
+agreed with them.
+ The Input: They identified key themes from their IPT—like "pattern
+recognition," "deliberate practice," and "illness scripts".
+
+===== PAGE 35 =====
+ The Process: They searched four major databases for any study published
+since the year 2000.
+ The Outcome: A mountain of papers that they had to narrow down. They used
+a two-stage screening process : first, they checked titles and abstracts to see if
+the papers were relevant to their theory; second, they read the full texts to
+ensure the research was high-quality and actually added something to the
+"theory building".
+3. Sifting Through 28 Papers: Identifying Patterns and Contradictions
+After their rigorous screening, they were left with 28 specific papers that formed the
+core of their review.
+ The Input: These 28 papers acted as the "evidence" for their trial.
+ The Process: This is where it gets interesting. They looked for Context-
+Mechanism-Outcome configurations (CMOCs) . Think of this like a
+chemistry formula: Context (the type of student) + Mechanism (the teaching
+resource and the student’s reaction) = Outcome (how well they diagnosed the
+patient).
+ Handling Contradictions: They didn't ignore studies that disagreed. Instead,
+they looked for why they disagreed. For example, they found that an
+intervention that helped a "high-knowledge" student might actually confuse a
+"low-knowledge" student. This is called the "Expertise Reversal Effect".
+ The Outcome: By re-analyzing early papers in light of new things they learned
+from later ones, they consolidated all these "puzzle pieces" into one final,
+verified theory.
+4. The Final Result: What Actually Works?
+The final output of their work identifies exactly how different teaching styles interact
+with different types of students.
+ The Population: They found that the student is the key variable. They
+identified five specific types of student contexts, primarily based on their pre-
+existing knowledge and self-confidence.
+ The Pedagogy: Effective teaching requires more than just giving facts; it
+requires "safe places" (like simulations) where students can make mistakes and
+receive immediate feedback.
+ The Interaction:
+o Novices ("Low-Knowledge"): They need explicit explanations of an
+expert’s thinking. Without it, they might feel panic or resentment.
+o Developing Experts: Once they have enough knowledge, they should be
+encouraged to use "non-analytical" (intuitive) reasoning, just like real
+doctors do.
+
+===== PAGE 36 =====
+5. Practical Significance: Why Does This Matter?
+This paper proves that a "one-size-fits-all" approach to medical education is a
+failure. For teachers, the significance is that they must identify a student's baseline
+knowledge before choosing a teaching method. If you give a task that is too hard for a
+novice, you aren't just wasting time—you might actually be causing "negative
+learning outcomes" like faulty future reasoning.
+6. Powering This with AI: The Role of the Knowledge Graph
+To turn this human process into an automatic one powered by an AI agent, we use a
+Literature Knowledge Graph (LKG) .
+ How it works: Instead of the AI just reading text, the LKG turns Richmond's
+28 papers into a web of relationships .
+ The Nodes: Each "node" in the graph is a specific student type, a teaching
+method, or a result.
+ The Edges: The connections (edges) represent the "because of." For example:
+[Low Knowledge Student] --(is confused by)--> [Observing Expert without
+Explanation].
+ The Agent Workflow: The AI agents replicate Richmond's steps. A Screening
+Agent finds the papers; an Extraction Agent pulls out the C-M-O formulas;
+and a Contradiction Agent flags when the graph shows two different results
+for the same method.
+By using GraphRAG, the AI doesn't just summarize a paper; it "reasons" through the
+graph to see how a specific context (like a student's low confidence) changes the
+whole outcome, exactly as the human researchers did.
+How do AI agents handle inferred mechanisms from research texts?
+Tell me more about the expertise reversal effect findings.
+How is the knowledge graph used for detecting evidentiary contradictions?
+How the work done by Richmond in their process can be better represented by a
+knowledge graph, particularly by using the Microsoft knowledge graph. The entity is
+a kind of big concept, and the relation could be a kind of thing related to the relation
+between entities. And how those knowledge graphs can be mapped or related to
+Richmond's human works. How their close alignment could be, how this knowledge
+graph will better match or align with their work? How can we verify by using their
+publication? The data available from their publication and use those data to verify our
+knowledge graph's correctness or the appropriateness of our knowledge graph.
+Because we will have a big concept as an entity, and if any Richmond's publication
+includes those entities and includes the type of relation that can guide us to identify
+the big concept, knowledge in the field or words as an entity in building the
+knowledge graph by using Microsoft graph through using some community related to
+
+===== PAGE 37 =====
+identification for identifying the entity. Just look at this, have a close look from this
+perspective.
+The work performed by Richmond et al. (2020) is inherently relational, making it
+uniquely suited for representation through a Literature Knowledge Graph (LKG) .
+By utilizing Microsoft Graph as a retrieval backbone and a method-specific
+knowledge graph for reasoning, the framework can automate the identification of "big
+concepts" (entities) and their causal links (relations) with a high degree of alignment
+to the original human-led research.
+1. Representing Richmond’s "Big Concepts" as Entities
+In a realist review, the core units of evidence are not isolated facts but configurations.
+A knowledge graph represents these configurations as nodes (entities) and edges
+(relations):
+ Entities (Big Concepts): These correspond to Richmond’s identified
+categories, such as Context factors (e.g., "Low Knowledge Student," "Self-
+Confidence"), Mechanism Resources (e.g., "Explicit Explanations,"
+"Simulated Patients"), and Outcomes (e.g., "Diagnostic Accuracy," "Faulty
+Reasoning").
+ Relations (Causal Links): Instead of flat text, the graph stores the causal paths
+Richmond theorized. For example, a relation might be [Intervention] --
+triggers--> [Mechanism:Response] or [Context] --moderates--> [Outcome] .
+ Community Identification: Using GraphRAG logic, the system can identify
+"communities" of related entities. This mirrors Richmond's manual process of
+identifying demi-regularities—patterns that recur across multiple studies—by
+clustering related CMOC (Context-Mechanism-Outcome Configuration)
+subgraphs.
+2. Alignment with Richmond’s Human Workflow
+The knowledge graph is the "reasoning substrate" that allows AI agents to replicate
+Richmond’s iterative synthesis:
+ IPT to Graph Schema: Richmond’s Initial Programme Theory (IPT) serves
+as the initial schema for the graph, defining what types of entities and relations
+the agents should look for.
+ CMOCs as Subgraphs: Every time Richmond identified a CMOC in one of
+the 28 papers, the AI creates a provenance-linked subgraph.
+ Contradiction and Sensitivity: Richmond specifically looked for why the
+same intervention worked for some and not others. A knowledge graph makes
+this computable by flagging graph motifs where the same "Mechanism
+Resource" leads to divergent "Outcomes" based on different "Context" nodes.
+
+===== PAGE 38 =====
+3. The Role of Microsoft Graph as the Backbone
+Microsoft Graph serves as the enterprise-grade provenance and retrieval layer
+rather than the synthesis logic itself.
+ Retrieval Traceability: It provides the agents with governed access to the
+project’s PDFs, screening logs, and human notes stored in institutional
+repositories (Teams/SharePoint).
+ Ground Truth Mapping: Every entity and relation in the LKG is persistently
+linked via Microsoft Graph to a specific Evidence Span (a unique ID for a
+section of a document), ensuring that every claim in the synthesis is traceable
+back to the raw publication data.
+4. Verification and Validation of Correctness
+The framework uses Richmond’s 2020 publication as the "human reference
+standard" to verify the appropriateness of the knowledge graph:
+ Study Set Overlap: The framework is verified by its ability to correctly
+identify and include the same 28 studies Richmond selected, using recall and
+precision metrics.
+ Synthesis Fidelity: The "correctness" of the knowledge graph is evaluated by
+comparing the system-generated Programme Theory (the final graph state)
+against Richmond’s narrative synthesis.
+ Data-Driven Verification: If the LKG identifies the same "big concepts" (e.g.,
+the "Expertise Reversal Effect") and the same "relations" (e.g., "Low
+knowledge leads to panic when observing experts without explanation") that
+Richmond reported, the graph is considered a valid representation of the
+research field.
+By converting the 28 publications into a structured, relational graph, the framework
+ensures that the AI does not just summarize text but performs the same
+configurational reasoning Richmond and his colleagues used to conclude their
+review.
+How can AI agents handle the CMOC extraction process?
+How does Microsoft Graph support the provenance of evidence?
+What practical benefits does a knowledge graph offer researchers?
+what is it meant by "demi-regularities"
+In the context of a realist synthesis—such as the study conducted by Richmond et al.
+(2020)—demi-regularities refer to recurrent patterns of
+Context–Mechanism–Outcome configurations (CMOCs) that are identified by
+comparing multiple studies.
+
+===== PAGE 39 =====
+Because realist research acknowledges that causal relationships are not linear but are
+instead generative and dependent on complexity , these patterns are not viewed as
+universal laws. Instead, they represent observable trends in how specific intervention
+resources trigger particular cognitive or emotional responses (mechanisms) within
+varied student contexts to produce specific outcomes.
+Key aspects of demi-regularities within this framework include:
+ Cross-Study Patterning: The identification of these patterns is a core task of
+the Synthesis Agent, which performs comparisons across the literature to find
+where similar "configurations of causal processes" occur.
+ Theory Refinement: Identifying demi-regularities allows researchers (or AI
+agents) to propose updates to an Initial Programme Theory (IPT) , eventually
+refining it into an overall programme theory that explains "what works, for
+whom, and in what circumstances".
+ Knowledge Graph Discovery: In the proposed multi-agent framework, demi-
+regularities are discovered by querying a Literature Knowledge Graph
+(LKG) to identify subgraphs where specific contexts consistently moderate the
+relationship between an intervention resource and its outcome.
+ Addressing Contradictions: Finding these patterns helps in resolving apparent
+contradictions in the data; for example, if an intervention resource leads to
+different outcomes, identifying a demi-regularity might reveal that the outcome
+is consistently moderated by a specific student context, such as their pre-
+existing level of knowledge.
+Ultimately, the discovery of demi-regularities provides the warranted evidence
+needed to build a comprehensive theory of how educational interventions function in
+complex systems.
+How do demi-regularities appear as patterns within a knowledge graph?
+What are the specific student contexts Richmond identified in the final theory?
+How does the Contradiction Agent resolve divergent outcomes for the same
+pedagogy?
+By using a knowledge graph for different research studies, each knowledge graph
+entity will contain the ID from different research, right? And through entity
+identification for big concepts that are used in the Microsoft knowledge graph, we can
+find similar results from different research, or we can find contradictions among the
+different research through the sub-knowledge graph — that is, the sub-graph about the
+same nodes. Can we say it like this? The knowledge graph can particularly facilitate
+identifying similar trends across different research by using different IDs for the
+different nodes and relations that you mentioned above. With this ID embedded in the
+entities and relations, the same trends or similar trends found in different research can
+
+===== PAGE 40 =====
+be consolidated, and the contradictory parts of the research can also be easily
+identified. Is that correct?
+Your description is correct and aligns closely with the proposed agentic framework's
+logic for managing complex research data. By representing literature as a Literature
+Knowledge Graph (LKG) , the framework transforms narrative text into a structured,
+relational reasoning substrate where every entity and relation is embedded with stable
+identifiers for provenance and cross-study comparison.
+ID Embedding and Provenance
+Each entity in the knowledge graph contains unique identifiers, such as StudyIDs and
+EvidenceSpan pointers, which link specific concepts (nodes) and causal claims
+(edges) back to their original research sources. This persistent metadata ensures that
+every claim in the synthesis is traceable to a verifiable section of a document,
+fulfilling the requirement for methodological explicitness and auditability .
+Identifying Trends and "Demi-Regularities"
+The framework uses unified entity identification for "big concepts"—such as specific
+student-level contexts (e.g., "low knowledge") or mechanism resources (e.g., "explicit
+explanations")—to find similar results across different studies. By querying
+subgraphs centered on these shared nodes, the Synthesis Agent identifies recurrent
+patterns known as demi-regularities. This process allows the system to consolidate
+similar trends found in disparate research into a coherent programme theory.
+Surfacing and Resolving Contradictions
+The use of subgraphs is particularly powerful for identifying contradictions. The
+Contradiction Agent performs motif detection to flag specific graph patterns where
+a similar intervention or mechanism resource leads to divergent outcomes in different
+studies.
+ Consolidation: The graph identifies when research agrees on a causal path.
+ Conflict Detection: When research disagrees, the graph surfaces the conflict as
+a relational discrepancy (e.g., same resource, different result).
+ Adjudication: These contradictory subgraphs are presented to the human
+researcher in a Conflict Register for interpretive resolution, such as identifying
+a moderating contextual factor that explains the difference.
+The Role of Microsoft Graph
+In this workflow, Microsoft Graph serves as the enterprise retrieval and
+provenance layer. It is the API gateway that allows agents to securely fetch the raw
+research studies, screening logs, and team notes from institutional repositories like
+SharePoint or Teams to build the review-specific knowledge graph. While Microsoft
+Graph provides the "plumbing" to access the data, the LKG provides the "intellectual
+logic" to reason over it.
+
+===== PAGE 41 =====
+If you would like a detailed look at how these graph structures are used to generate
+evidence tables or theory diagrams, I can provide more information on the Reporting
+& Artifact Agent . Or, I could create a report summarizing the specific "big
+concepts" Richmond identified in their 28-paper review.
+How will you present the guidelines for using the method?
+What are the specific artifacts produced for the RRE repository?
+How does the human-in-the-loop control handle contradiction adjudication?
+what it is meant by "motif detection"
+In the context of the proposed multi-agent framework, motif detection refers to a
+structural graph-analysis technique used by AI agents to identify specific, recurring
+patterns or configurations within a Literature Knowledge Graph (LKG) . Rather
+than searching for isolated keywords, the system uses motif detection to query the
+graph for complex relational structures that represent the logic of a realist review.
+Specifically, motif detection is utilized in the following ways:
+ Identifying Configurations: It allows agents to recognize specific
+Context–Mechanism–Outcome configurations (CMOCs) by treating them as
+distinct "graph patterns". This mirrors the human process of identifying "demi-
+regularities"—recurrent patterns across multiple studies—by searching for
+subgraphs where specific context factors consistently influence outcomes.
+ Contradiction and Sensitivity Detection: The Contradiction Agent uses
+motif detection to flag instances where the evidence is inconsistent. For
+example, it can identify a graph pattern where the same intervention and
+resource lead to different outcomes depending on the specific student
+context (such as low vs. high pre-existing knowledge).
+ Configuration-Level Reasoning: By identifying these motifs, the framework
+can perform the "why, how, and for whom" reasoning central to the Richmond
+et al. (2020) study. For instance, it can detect the "Expertise Reversal Effect"
+by finding motifs where directive teaching resources improve outcomes for
+novices but frustrate or hinder experts.
+ Structured Adjudication: When a specific motif representing a contradiction
+is detected, the system can pause the automated workflow and present that
+specific subgraph to a human researcher for resolution, ensuring that every
+interpretive decision is grounded in a traceable evidence path.
+Essentially, motif detection transforms the narrative findings of 28 or more research
+papers into computable graph motifs , making the identification of causal trends and
+theoretical conflicts an auditable and systematic process.
+How does GraphRAG specifically detect conceptual patterns and contradictions?
+How can researchers verify the correctness of a knowledge graph?
+
+===== PAGE 42 =====
+What analytical artifacts does the framework export for the repository?
+what is i meant by motif, is it special term in AI or CS
+In the context of the framework described in the sources, a motif refers to a specific,
+recurring structural pattern or sub-graph configuration within a knowledge
+graph. Motif detection is the computational process used by AI agents to identify
+these patterns to perform high-level relational reasoning.
+Within this multi-agent system, motif detection is primarily used to:
+ Identify configurations: Agents treat Context–Mechanism–Outcome
+configurations (CMOCs) as distinct graph patterns, which allows them to
+recognize "demi-regularities" (recurrent trends) across multiple research
+papers.
+ Surface contradictions: The system can flag discrepancies—such as the same
+intervention and resource resulting in different outcomes based on different
+contexts (e.g., student knowledge levels)—by identifying specific relational
+patterns in the graph.
+ Support configuration-level reasoning: By querying for these motifs, agents
+can determine "why, how, and for whom" an intervention works, replicating the
+theory-driven logic used by human researchers like Richmond et al. .
+Regarding whether it is a "special term" in AI or Computer Science (CS) , the
+sources frame it as a foundational technique within graph-based AI reasoning and
+Graph-enhanced Retrieval-Augmented Generation (GraphRAG) .
+Information outside of the sources: In the broader fields of Computer Science and
+Network Science, the term "network motif" is a standard technical term referring to
+small sub-graphs that appear in a network significantly more frequently than would be
+expected by chance. These motifs are often considered the functional "building
+blocks" of complex networks, much like a recurring melody is a motif in music.
+How do multi-agent systems handle implicit mechanisms in research?
+Can you detail the human-in-the-loop checkpoints for theory refinement?
+How does GraphRAG specifically improve contradiction detection in synthesis?
+please directly answer to this: what is i meant by motif, is it special term in AI or CS
+In the context of the proposed multi-agent framework, a motif refers to a specific,
+recurring structural pattern or sub-graph configuration within a knowledge
+graph.
+Is "Motif" a Special Term in AI or Computer Science?
+Yes, it is a technical term used in AI and Computer Science , particularly within the
+fields of graph-based AI reasoning and Graph-enhanced Retrieval-Augmented
+
+===== PAGE 43 =====
+Generation (GraphRAG). While traditional search methods look for isolated
+keywords, motif detection is a structural analysis technique that allows AI agents to
+identify complex relational patterns.
+How Motifs are Used in the Framework
+ Identifying Configurations: Agents treat Context–Mechanism–Outcome
+configurations (CMOCs) as distinct graph patterns or "motifs". This allows
+the system to recognize "demi-regularities" (recurrent trends) across different
+research papers by identifying shared sub-graph structures.
+ Detecting Contradictions: The Contradiction Agent utilizes motif detection
+to flag relational discrepancies in the evidence. For example, it can
+automatically find a "motif" where a single intervention resource leads to two
+different outcomes based on different student contexts.
+ Enabling Relational Reasoning: By querying for these motifs, the framework
+can perform the "why, how, and for whom" reasoning central to a realist
+review, such as identifying the "Expertise Reversal Effect" through specific
+graph patterns.
+Information outside of the sources: In broader Computer Science and Network
+Science, the term "network motif" is a well-established standard for describing small
+sub-graphs that appear in a network more frequently than would be expected by
+chance, often serving as the functional building blocks of that network. You may want
+to independently verify this broader application in network theory.
+How do multi-agent systems specifically improve contradiction handling in reviews?
+What criteria verify the fidelity of AI-generated programme theories?
+How does Microsoft Graph support the auditability of evidence spans?
+in KG, identify subgraph similary is N-P prpobilem , is it hard?
+In the context of the proposed multi-agent framework, the task of identifying
+subgraph similarity or specific relational patterns—referred to in the sources as
+motif detection—is indeed a computationally challenging problem, although the
+sources do not explicitly use the term "NP-hard."
+The Technical Complexity (Expert Context)
+Information outside of the sources: In computer science, identifying whether one
+graph is contained within another (subgraph isomorphism) or calculating the
+similarity between two subgraphs is a well-established NP-hard problem. This
+means that as the size and complexity of the Knowledge Graph (KG) grow, the time
+required to find exact matches increases exponentially, making it "hard" for traditional
+algorithms to solve efficiently for very large datasets.
+How the Framework Addresses This "Hardness"
+
+===== PAGE 44 =====
+While the underlying problem is computationally intensive, the proposed framework
+manages this complexity through its specialized agentic architecture and Graph-
+enhanced Retrieval-Augmented Generation (GraphRAG) :
+ Motif Detection for Reasoning: The framework uses motif detection to allow
+agents to recognize specific Context–Mechanism–Outcome configurations
+(CMOCs) as distinct graph patterns. This allows the Synthesis Agent and
+Contradiction Agent to focus on small, meaningful "motifs" rather than
+attempting to analyze the entire global graph at once.
+ GraphRAG and Subgraph Retrieval: Instead of performing an exhaustive
+search of the entire literature database, the system uses GraphRAG to retrieve
+subgraphs of related entities . This effectively "prunes" the search space,
+allowing the LLM-based agents to reason over connected claims and evidence
+paths that are relevant to a specific query.
+ Identifying Similarity and Trends: The framework facilitates identifying
+similar trends (demi-regularities) across different research studies by centering
+queries on shared nodes, such as a specific "Mechanism Resource" or "Context
+factor". By assigning stable identifiers (StudyIDs) to these nodes and relations,
+the agents can more easily consolidate similar trends and surface contradictory
+evidence within these specific sub-graph neighborhoods.
+Practical Significance in the Framework
+In a practical sense, while identifying subgraph similarity is "hard" in a general
+mathematical context, it is precisely what makes the Literature Knowledge Graph
+(LKG) superior to traditional text-based search. By turning the narrative findings of
+the 28 benchmark papers into a structured graph, the framework enables agents to
+detect relational motifs—such as the "Expertise Reversal Effect"—which would be
+nearly impossible to find consistently through naive keyword searches.
+Note: The specific classification of this problem as "NP-hard" is a concept from
+broader computer science and is not explicitly discussed in the provided sources. You
+may wish to independently verify the computational theory of subgraph isomorphism
+for further technical depth.
+How does GraphRAG specifically improve reasoning over flat text chunks?
+Tell me more about the 'Expertise Reversal Effect' found by Richmond.
+What specific human-in-the-loop checkpoints are built into the framework?
+I want you to provide the additional info on the above, and argue the proposed method
+workable and implementable
+The proposed multi-agent framework is a stateful orchestration system designed to
+automate the interpretive and labor-intensive processes of a systematic review while
+maintaining the methodological rigor of a human research team. The framework is
+
+===== PAGE 45 =====
+architected as a core-and-plugin system, separating a method-agnostic core review
+infrastructure from method-specific synthesis plugins.
+I. Additional Framework Details: Agent Roles and Workflow
+The system utilizes specialized agents coordinated through a shared state (the "single
+source of truth"), ensuring that all decisions are auditable and traceable.
+ Core Review Infrastructure (Always Present):
+o Protocol & Scope Agent: Encodes researcher-defined questions,
+eligibility rules, and Initial Programme Theory (IPT) schemas.
+o Search & Retrieval Agent: Executes queries across databases and uses
+Microsoft Graph to harvest literature from enterprise folders
+(Teams/SharePoint) with full provenance logging.
+o Deduplication & Record-Linking Agent: Clusters duplicate records
+across sources and assigns stable StudyIDs.
+o Screening Agents (Title/Abstract & Full Text): Apply criteria to
+classify records as include, exclude, or uncertain, maintaining detailed
+rationales for every decision.
+o Reporting & Artifact Agent: Packages all decision logs, PRISMA
+counts, and evidence tables into a repository-ready format.
+ Realist Synthesis Plugin (Method-Specific):
+o CMOC Extraction Agent: Deconstructs full-text passages into
+structured Context–Mechanism–Outcome configurations (CMOCs) ,
+identifying both explicit and inferred mechanisms.
+o Theory Synthesis & Refinement Agent: Compares CMOCs across
+studies to identify demi-regularities (recurrent patterns) and proposes
+evidence-based updates to the programme theory.
+o Contradiction & Sensitivity Agent: Uses motif detection to flag
+instances where similar interventions lead to divergent outcomes, forcing
+explicit resolution by human researchers.
+II. Argument for Workability and Implementability
+The framework is highly workable and implementable using current post-2023
+technologies for the following reasons:
+1. Technical Substrate: The system is built on established orchestration
+frameworks like LangChain and LangGraph , which are specifically designed
+to manage stateful, multi-step agent workflows.
+2. Enterprise-Grade Retrieval: Utilizing Microsoft Graph as the retrieval
+backbone ensures the system is not a "black box"; every retrieved PDF and
+search query is securely logged and versioned within institutional repositories,
+providing a durable audit trail.
+
+===== PAGE 46 =====
+3. Enhanced Reasoning via Knowledge Graphs: Unlike traditional "flat" text
+retrieval, the use of a Literature Knowledge Graph (LKG) and GraphRAG
+allows agents to reason over connected causal paths. This is particularly critical
+for identifying complex configurations (CMOCs) that naive summarization
+tools often overlook.
+4. Evidence of LLM Capability: Recent empirical studies (post-2023) confirm
+that LLMs are already capable of high-accuracy screening and extraction when
+governed by "two-reviewer" collaborative workflows and cross-critique logic.
+5. Human Master Control: The framework is implementable because it does not
+attempt "total automation". Instead, it uses predefined checkpoints (Screening
+Adjudication, CMOC Validation, Contradiction Adjudication, Theory Sign-off)
+to ensure human judgment remains the governing force over interpretive steps.
+6. Benchmarked Validity: The framework’s workability is verifiable against the
+Richmond et al. (2020) human reference standard. By replicating Richmond's
+set of 28 included studies and their final programme theory, the system
+provides measurable recall and precision metrics to prove its effectiveness.
+7. Lifelong Update Capacity: The system implements a continual learning loop
+where human feedback at each checkpoint is recycled to update the underlying
+prompts and decision rules. This ensures the framework accommodates
+evolving stakeholder requirements and adapts as the evidence base grows.
+This architecture directly addresses the scalability and transparency gaps of traditional
+reviews, offering a transparent, auditable, and extensible infrastructure suitable for
+informing change in complex educational systems.
+How does GraphRAG specifically detect conceptual patterns and lineages?
+Could you explain the Expertise Reversal Effect in more detail?
+What repository artifacts are exported by the Reporting Agent?
+I means that motif is workable for subgraph similarity determination. please make it
+The use of motifs within the Literature Knowledge Graph (LKG) provides a robust
+and implementable method for determining subgraph similarity, which is essential
+for identifying recurrent patterns across disparate research studies. In this framework,
+a motif is defined as a specific, recurring structural pattern or sub-graph configuration
+that represents the underlying logic of the synthesis method—most notably the
+Context–Mechanism–Outcome configurations (CMOCs) required for realist
+synthesis.
+I. Workability of Motif Detection for Subgraph Similarity
+Motif detection effectively transforms the task of identifying similar trends (demi-
+regularities) from a narrative search into a computable graph-matching process .
+The framework enables this through the following mechanisms:
+
+===== PAGE 47 =====
+ Pattern Consolidation: By embedding stable StudyIDs and EvidenceSpan
+identifiers within the entities (e.g., "low knowledge student") and relations
+(e.g., "triggers response"), the system can identify where similar configurations
+of evidence appear across different studies. When the same motif—such as a
+specific resource leading to a positive outcome for a certain population—
+appears in multiple study subgraphs, the system can consolidate these into a
+single "demi-regularity".
+ Contradiction Identification: Conversely, if the system detects a motif where
+the same intervention resource leads to divergent outcomes, it identifies a
+relational discrepancy. This "conflict motif" signals to the human researcher
+that a contextual contingency (e.g., student confidence levels) may be
+moderating the outcome, mirroring the human reasoning performed in the
+Richmond et al. (2020) benchmark.
+ Contextual Reasoning: The framework uses Graph-enhanced Retrieval-
+Augmented Generation (GraphRAG) to retrieve these subgraphs rather than
+isolated text chunks. This allows agents to reason over the similarity of the
+configurations themselves, which is more powerful than naive keyword-based
+similarity.
+II. Implementation and Alignment with Generative AI
+This method is implementable using post-2023 orchestration and graph technologies:
+ Agentic Orchestration: The framework utilizes a stateful orchestrator (such
+as LangGraph) to manage specialized agents that populate the graph and
+perform motif queries.
+ GraphRAG Integration: Modern GraphRAG techniques allow for the
+extraction of a Knowledge Graph from raw text and the use of its community
+structures to improve reasoning over narrative data.
+ Traceability: Every edge in the motif remains linked to a specific evidence
+span via Microsoft Graph, fulfilling the RRE Call’s requirement for
+methodologically explicit warranting and auditable analytical artifacts.
+By representing the findings of the 28 benchmark papers as structured graph patterns,
+the framework ensures that subgraph similarity is not merely a statistical
+approximation but a theoretically grounded identification of the "why, how, and for
+whom" of educational interventions.
+How does motif detection help identify contradictions in educational studies?
+What specific student contexts did the Richmond review identify?
+How can human-in-the-loop checkpoints improve the AI's extraction accuracy?
+how to address NP problem for the above , is it NP problems or can be solved
+
+===== PAGE 48 =====
+In the context of the proposed multi-agent framework, identifying subgraph similarity
+and detecting motifs (such as Context–Mechanism–Outcome configurations or
+CMOCs) does involve significant computational complexity. While the general
+problem of subgraph isomorphism is recognized in computer science as NP-hard—
+meaning the time required to find exact matches can grow exponentially with graph
+size—the framework is designed with specific strategies to make this problem
+solvable and implementable for systematic reviews.
+I should note that the classification of graph similarity as an "NP problem" is a
+concept from broader computer science and is not explicitly discussed within the
+provided sources; however, the framework's architecture directly addresses the
+practical challenges associated with this complexity.
+The framework addresses the "hardness" of graph reasoning through the following
+mechanisms:
+1. Targeted Motif Detection vs. Global Search
+The framework does not attempt a brute-force search for any possible pattern across
+the entire global graph. Instead, it utilizes motif detection to look for small,
+predefined structural configurations that represent the logic of the synthesis.
+ Structured Schemas: The agents are guided by a specific schema involving
+entities like Context, Mechanism (Resource/Response), and Outcome .
+ Query-Focused Summarization: By searching for these specific "building
+blocks" (the CMOCs), the search space is significantly restricted compared to a
+general subgraph similarity task.
+2. Graph-enhanced Retrieval-Augmented Generation (GraphRAG)
+The framework utilizes GraphRAG to manage complexity by retrieving subgraphs
+of related entities rather than trying to process the entire Literature Knowledge Graph
+(LKG) at once.
+ Neighborhood Retrieval: Agents reason over connected claims and evidence
+paths within specific local neighborhoods of the graph.
+ Community Summarization: Drawing on the GraphRAG approach, the
+system builds "community structures" within the graph. This allows the agents
+to summarize and query high-level patterns across the corpus without needing
+to traverse every individual node-to-node path in a single operation.
+3. Use of Graph Embeddings and Link Prediction
+To address missing information and avoid the pitfalls of exact combinatorial
+matching, the framework employs Graph embeddings and link prediction .
+ Vector Representations: Embeddings translate high-dimensional graph data
+into lower-dimensional vector representations. This allows the system to
+
+===== PAGE 49 =====
+identify "similar" results and "demi-regularities" across different studies based
+on semantic and structural proximity rather than purely identical subgraph
+matching.
+ Denoising: These methods help to "denoise" the graph and complete missing
+edges, ensuring that the agents can identify patterns even when studies report
+evidence with varying levels of detail.
+4. Human-in-the-Loop Adjudication (HITL)
+The framework incorporates Master Control checkpoints where human researchers
+adjudicate the most complex or contradictory subgraphs.
+ Contradiction Registers: When the Contradiction Agent flags a "conflict
+motif" (e.g., the same intervention leading to different outcomes), it pauses the
+automated pipeline.
+ Human Decision Rules: Instead of the machine attempting to resolve every
+combinatorial ambiguity, the human researcher provides the final interpretive
+explanation for the "contextual contingency". This human intervention
+effectively "solves" the interpretive challenge that purely computational
+methods struggle with.
+Summary of Workability
+By focusing on small relational motifs , using localized GraphRAG retrieval , and
+leveraging vector embeddings, the framework transforms an theoretically "hard" NP
+problem into a workable, auditable, and traceable methodological process. This
+ensures that the system can scale to handle the 28 papers in the Richmond
+benchmark—or even tens of thousands of papers in an enterprise setting—while
+maintaining the interpretive depth required for high-stakes educational research.
+How do motifs handle contradictions in research findings?
+What is the computational challenge of identifying subgraph similarity?
+How does Microsoft Graph support the provenance of evidence spans?
+You should not mention the 28 papers. These 28 papers are just a particular
+verification database. For general application, there may be more than 28 papers —
+many more papers. Do not specifically say '28 papers.' Instead, just say that for
+practical application in systematic reviews, the collection of identified relevant papers
+is not too large and can be resolved by the proposed method using MOTIF (M-O-T-I-
+F) for those.
+For practical application in systematic reviews, the collection of identified relevant
+papers typically reaches a volume that is manageable for high-depth, configuration-
+level analysis through the proposed multi-agent framework. Rather than performing
+
+===== PAGE 50 =====
+simple narrative summaries, the framework utilizes a Literature Knowledge Graph
+(LKG) to represent each study as a relational structure.
+The core synthesis logic is executed through MOTIF detection, a computational
+method that identifies specific, recurring graph configurations representing
+Context–Mechanism–Outcome patterns. By embedding stable identifiers within
+each entity and relation, the agents use MOTIF patterns to consolidate similar trends
+across different research studies or to surface contradictions within specific sub-graph
+neighborhoods. This approach ensures that the final synthesis is not just a summary of
+a fixed dataset, but an auditable, configuration-level discovery process capable of
+handling the increasing volume and complexity of contemporary educational research.
+Synthesis and Pattern Recognition via MOTIF Detection
+The framework's ability to resolve complex evidence bases rests on its structural
+reasoning layer. Once the relevant literature has been identified and screened, the
+Synthesis Agent populates the LKG with extracted causal claims. This transformation
+from flat text to a relational graph allows the system to employ MOTIF detection for
+high-order analysis:
+ Consolidating Trends: The system identifies "demi-regularities" by detecting
+MOTIFs that recur across the literature, even when studies originate from
+diverse contexts. These motifs represent the generative mechanisms that
+explain how specific educational interventions achieve their effects.
+ Surfacing Contradictions: When the graph identifies a conflict—such as the
+same intervention resource leading to divergent outcomes—it flags this as a
+contradiction motif. This prevents the "smoothing over" of contested findings
+common in general-purpose AI summary tools.
+ Traceable Warranting: Every node and edge within a detected MOTIF is
+persistently linked back to its original source via stable StudyIDs and
+EvidenceSpan pointers. This fulfills the requirement for methodologically
+explicit warranting by ensuring every claim in the final programme theory can
+be traced back to a specific passage in the primary literature.
+By utilizing this MOTIF-based approach, the framework effectively addresses the
+challenges of scalability and transparency that often limit traditional manual reviews
+of large and heterogeneous literatures. The result is a transparent and controllable
+pipeline where the final output—identifying the effects of specific pedagogies on
+particular populations—is anchored in a rigorous, computable evidence base.
+How does MOTIF detection resolve causal configurations in complex systems?
+What makes MOTIF-based trend consolidation more auditable than traditional
+summaries?
+How can MOTIF patterns identify contradictions in educational intervention research?
+what is the method for identifying similar subgraph
+
+===== PAGE 51 =====
+In the multi-agent framework, the method for identifying similar subgraphs is
+primarily driven by MOTIF detection (also referred to as relational graph queries or
+pattern recognition) performed over a Literature Knowledge Graph (LKG) .
+The identification process works through the following structured steps:
+1. Representation of Evidence as Relational Patterns
+Instead of processing flat text, the framework deconstructs studies into
+Context–Mechanism–Outcome configurations (CMOCs) , which are stored as first-
+class relational objects in the knowledge graph. Each CMOC is represented as a
+subgraph motif containing nodes for the population (context), the pedagogical
+intervention (mechanism resource), the learner's reaction (mechanism response), and
+the result (outcome).
+2. Pattern Discovery via MOTIF Detection
+The framework's Synthesis Agent uses MOTIF detection to identify recurrent
+configurations across the graph.
+ Consolidating Trends: By querying for specific structural patterns that repeat
+across different StudyIDs, the system identifies demi-regularities (recurrent
+trends). For example, a motif might represent a specific type of student (e.g.,
+"low knowledge") consistently experiencing "panic" when observing an expert
+without explanation.
+ Identifying Contradictions: The system uses motif detection to flag
+relational discrepancies. A "conflict motif" is detected when the same
+intervention resource leads to divergent outcomes in different study subgraphs,
+signaling a contextual contingency that requires human adjudication.
+3. Similarity Resolution through Embeddings and GraphRAG
+To overcome the computational "hardness" of exact subgraph matching, the
+framework employs two advanced techniques:
+ Graph Embeddings: The system uses graph embeddings and link
+prediction to denoise the data and complete missing edges, allowing it to
+identify "similar" configurations based on semantic and structural proximity
+rather than purely identical labels.
+ GraphRAG (Neighborhood Retrieval): Instead of a global search, agents use
+Graph-enhanced Retrieval-Augmented Generation (GraphRAG) to
+retrieve local subgraphs of related entities . This enables the agents to reason
+over connected claims and evidence paths specific to a context factor or
+intervention type.
+4. Traceability and Provenance
+A critical component of this method is that every node and edge within an identified
+motif remains linked to a specific EvidenceSpan pointer. Through Microsoft Graph,
+
+===== PAGE 52 =====
+the system maintains a traceable "audit trail," ensuring that any identified trend or
+contradiction can be verified against the original text passages in the primary
+literature.
+Note on Computational Complexity: Outside of the provided sources, the general
+task of identifying exact subgraph similarity is known in computer science as the NP-
+hard problem of subgraph isomorphism. The proposed framework makes this
+"workable" for systematic reviews by using structured templates (CMOC schemas)
+and localized GraphRAG retrieval to narrow the search space to theoretically relevant
+motifs.
+How does the framework manage contradictory evidence across research studies?
+What are the four human master control checkpoints in the system?
+How does MOTIF detection help identify trends in educational research?
+in terms of multi LLM agent frame, Provide a description of how the large language
+model will be used as an agent — through prompts — to perform the tasks of the
+required work or to automatically replace the human researchers in doing the work
+that Richmond and his colleagues did in that example publication.
+In a multi-agent framework, Large Language Models (LLMs) act as the specialized
+"reasoning engines" within an orchestrated pipeline, performing the interpretive tasks
+once reserved for human researchers. By utilizing role-specific system prompts and
+structured templates, the LLM is transformed from a general chatbot into a series of
+coordinated agents—such as Screening, Extraction, and Synthesis agents —that
+replicate the realist review process conducted by Richmond et al. (2020) .
+1. Task Decomposition: Automating the Richmond Workflow
+The framework decomposes the labor-intensive steps of the Richmond review into
+discrete agentic responsibilities governed by researcher-defined prompts:
+ Protocol & IPT Construction: Instead of human consensus-building, a
+Protocol Agent uses prompts to encode the review's scope and Initial
+Programme Theory (IPT) into a machine-readable schema. This schema
+directs all subsequent agent actions.
+ Two-Stage Screening: Richmond's team manually screened titles, abstracts,
+and full texts. In this framework, a Screening Agent is prompted with
+eligibility rules to classify records as include, exclude, or uncertain. The LLM
+generates a rationale for every decision, ensuring the process is auditable
+rather than a "black box".
+ Evidence Extraction (The Core Realist Task): The framework automates the
+extraction of Context–Mechanism–Outcome configurations (CMOCs) . An
+Extraction Agent identifies specific entities (e.g., "low-knowledge students")
+and relations (e.g., "how feedback triggers learning responses"). Every
+
+===== PAGE 53 =====
+extracted item is persistently linked to a specific text span to prevent
+hallucinations.
+ Synthesis and Refinement: A Synthesis Agent replicates Richmond's cross-
+study comparison to identify demi-regularities (recurrent patterns). A
+Contradiction Agent uses structural motif detection to flag instances where
+the same intervention leads to different outcomes, forcing explicit resolution.
+2. Prompting and Rule-Based Governance
+The LLM is governed through a multi-layered prompting strategy that ensures it
+follows the specific "logic" of a systematic review:
+ System Prompts: These define the agent's professional persona (e.g., "Act as
+an expert in RAMESES-compliant realist synthesis").
+ Domain-Adapted Templates: Prompts include researcher-defined schemas
+that force the LLM to output structured data (e.g., JSON or tables) rather than
+free-form prose.
+ Few-Shot Calibration: During the "usage phase," human researchers review a
+small sample of the model's decisions. These corrections are fed back into the
+agent's prompt as few-shot examples, allowing the model to "learn" the
+researcher's intent and refine its screening or extraction logic in real-time.
+3. Replacing Human Labor with "Master Control" Checkpoints
+While the framework uses LLMs to automate high-volume tasks, it does not remove
+human judgment entirely. Instead, it creates Master Control checkpoints where the
+agents must pause for human adjudication:
+1. Screening Calibration: Humans review a sample of labels to refine the agent's
+screening policy.
+2. CMOC Validation: Humans spot-check extracted configurations against the
+"ground truth" found in the original publications.
+3. Contradiction Adjudication: The system stops when it detects conflicting
+evidence (e.g., the "Expertise Reversal Effect"), requiring a human to provide
+an interpretive explanation.
+4. Theory Sign-Off: The lead researcher approves the final synthesized
+programme theory before the Reporting Agent generates artifacts for
+repository deposition.
+4. Knowledge Graph and GraphRAG Integration
+To achieve the "relational reasoning" Richmond's team used to link mechanisms to
+contexts, the framework utilizes Graph-enhanced Retrieval-Augmented
+Generation (GraphRAG). Instead of the LLM reading isolated text snippets, it
+retrieves subgraphs of connected claims . This allows the agents to reason over
+
+===== PAGE 54 =====
+complex interactions—such as how a student's confidence levels (Context) moderate
+their response to a simulated patient (Mechanism)—ensuring the synthesis stays
+aligned with the complex educational system being studied.
+How do prompts transform the LLM into a Synthesis agent?
+What specifically is identified during the CMOC extraction process?
+How does human feedback refine the agents' screening logic?
+Please describe those in LangChain and GraphChain terms. Will GraphChain be used
+to build the multi-agent agentic framework, or will we just use LangChain? Please
+describe those terms and the interactive pipeline in terms of LangChain or
+GraphChain.
+The proposed multi-agent framework is built on the LangChain ecosystem, utilizing
+LangGraph as the primary stateful orchestrator for managing the complex, iterative
+logic of a realist review. While "GraphChain" is not a term explicitly mentioned in the
+provided sources, the framework heavily incorporates graph-based orchestration
+and GraphRAG (Graph-enhanced Retrieval-Augmented Generation) to manage the
+relationship between data and agents.
+The interactive pipeline and framework are described through the following terms and
+mechanisms:
+1. LangChain: The Orchestration Framework
+LangChain serves as the foundational framework for building the orchestrated
+workflows.
+ Multi-Agent Orchestration: It allows specialized agents (Screening,
+Extraction, Synthesis, and Contradiction agents) to collaborate by maintaining
+a shared "state" of the review protocol.
+ Domain-Adapted Templates: LangChain uses researcher-defined prompt
+templates to comprehensively encode rules and schema definitions for specific
+review tasks, ensuring every agent action is guided by the Initial Programme
+Theory (IPT).
+2. LangGraph: The Stateful State-Machine
+The sources recommend LangGraph (a specialized extension within LangChain) as
+the "ideal" orchestrator for this project.
+ Stateful Orchestration: Unlike a simple linear chain, LangGraph models the
+review as a graph-based state machine . This is essential for the iterative
+loops required in realist synthesis, such as moving from extraction back to re-
+searching when new mechanisms are inferred.
+
+===== PAGE 55 =====
+ Shared State Registry: All agents read from and write to a "single source of
+truth" (the Shared State), which includes the study registry, versioned
+programme theories, and audit logs.
+3. The Interactive Pipeline (Human-in-the-Loop)
+The interactive nature of the pipeline is managed through Predefined Checkpoints
+within the LangGraph workflow. At these points, the automated "chain" pauses to
+allow for human adjudication:
+ Screening Adjudication: The Human reviews a sample of AI-labeled records
+to calibrate the model's behavior.
+ CMOC Validation: Humans spot-check the extracted
+Context–Mechanism–Outcome configurations (CMOCs) to ensure they
+align with the original literature.
+ Contradiction Adjudication: When the Contradiction Agent identifies a
+conflict (e.g., same intervention leading to different outcomes), the system flags
+it for human interpretation rather than "smoothing" the data.
+ Theory Sign-Off: The final "Programme Theory" must be approved by the
+researcher before the pipeline generates the final artifacts.
+4. Graph-Enhanced Retrieval (GraphRAG)
+While LangGraph manages the agent workflow, GraphRAG manages the evidence.
+ Relational Retrieval: Instead of retrieving isolated text passages, the agents
+use GraphRAG to retrieve subgraphs of connected claims from the
+Literature Knowledge Graph (LKG) .
+ Configuration Reasoning: This allows the LLM agents to reason over
+complex interactions—such as how a specific "Context" node (e.g., student
+self-confidence) interacts with an "Intervention" node to change the
+"Outcome"—matching the high-level reasoning performed by human
+researchers like Richmond et al. (2020) .
+In summary, you will use LangChain as the broad agent framework and LangGraph
+as the specific tool to build the stateful, interactive pipeline. This architecture ensures
+the review is not just automated, but is auditable, traceable, and governed by
+human expertise at every critical juncture.
+How does the MOTIF method identify similar trends across research?
+How are human feedback loops integrated into the LangChain framework?
+How does the Microsoft Graph ensure auditability within the framework?
+Based on the LangChain framework, please describe each agent function and how
+each of them will be prompted, and what the workflow is for simulating the
+
+===== PAGE 56 =====
+systematic review and the plug-in specifics. Could you clearly talk about how the
+Graph RAG is built on the build-up of your graph and how they perform the required
+tasks as we outlined above. Go back and look at what we talked about regarding the
+agents, the core framework, and the plug-in functions for each specific systematic
+review approach. Please combine them in detail.
+4. Methodology: The Multi-Agent Orchestration Framework
+The proposed framework is a stateful orchestration system built on LangChain and
+LangGraph, designed to automate the labor-intensive stages of a systematic review
+while preserving the interpretive depth required for complex educational systems. The
+architecture is partitioned into a method-agnostic Core Review Infrastructure and
+method-specific Synthesis Plugins, ensuring the system can support diverse
+methodological traditions as required by the Review of Research in Education
+(RRE) 2026 call .
+4.1 The Core Review Infrastructure (Method-Agnostic)
+The core infrastructure provides the foundational "Review Services" that manage data
+provenance, audit trails, and human-in-the-loop (HITL) governance.
+ Protocol & Scope Agent: This agent encodes researcher-defined review
+questions, inclusion/exclusion criteria, and Initial Programme Theory (IPT)
+schemas into versioned prompt templates. Prompting Strategy: It is prompted
+to "Act as a methodology expert," using structured schemas (e.g., JSON) to
+define the boundaries of the review.
+ Search & Retrieval Agent (Microsoft Graph API): Utilizing Microsoft
+Graph as the enterprise retrieval layer, this agent harvests literature from
+organizational repositories like Teams, SharePoint, and OneDrive. It logs every
+query and source to ensure absolute retrieval traceability and reproducibility.
+ Deduplication & Record-Linking Agent: This agent clusters candidate
+records across multiple databases, assigns stable StudyIDs, and maintains the
+"Single Source of Truth" study registry.
+ Two-Stage Screening Agent: A multi-stage classifier that applies eligibility
+rules at the title/abstract and full-text levels. Prompting Strategy: It is
+prompted with few-shot examples from human calibration rounds, requiring it
+to output an "include, exclude, or uncertain" label alongside a structured
+rationale and a confidence score.
+ Reporting & Audit Agent: This agent automatically packages all decision
+logs, search queries, extraction tables, and human feedback records into
+repository-ready artifacts suitable for the AERA-RRE repository.
+4.2 The Realist Synthesis Plugin (Worked Example)
+
+===== PAGE 57 =====
+While the core manages the workflow, plugins instantiate the specific synthesis logic.
+The Realist Synthesis Plugin operationalizes the logic of Richmond et al. (2020) to
+explain why, how, and for whom interventions work.
+ CMOC Extraction Agent: This agent deconstructs full-text passages into
+Context–Mechanism–Outcome configurations (CMOCs) . Prompting
+Strategy: It is prompted to identify "Context" (student/teacher factors),
+"Mechanism Resource" (what the intervention provides), "Mechanism
+Response" (learner reaction), and "Outcome". It maps these into relational
+triples for the knowledge graph.
+ Theory Synthesis & Refinement Agent: It compares CMOCs across studies
+to identify demi-regularities (recurrent patterns). It proposes evidence-based
+updates to the programme theory, linking every theoretical claim back to
+specific evidence-span pointers in the literature.
+ Contradiction & Sensitivity Agent: This agent utilizes MOTIF detection to
+flag instances where the same intervention resource leads to divergent
+outcomes in different contexts. It forces explicit adjudication of "contextual
+contingencies," preventing the system from "smoothing over" contested
+findings.
+4.3 Workflow Simulation: Replicating Richmond et al. (2020)
+The workflow is a stateful graph where transitions are governed by completion of
+tasks and human approval.
+1. IPT Seeding: The Protocol Agent formalizes the initial hypothesis (e.g., Dual-
+Process Theory in clinical reasoning).
+2. Retrieval & Registry: The Retriever Agent harvests the 28 benchmark papers
+and associated metadata via Microsoft Graph.
+3. HITL Screening Calibration: Researchers review a stratified sample of 10%
+of records; their corrections update the Screening Agent’s prompt logic
+through few-shot learning.
+4. Configurational Extraction: The Extraction Agent populates the Literature
+Knowledge Graph (LKG) with nodes and edges representing the evidence
+base.
+5. MOTIF-Based Synthesis: The Synthesis Agent queries the graph for
+recurrent CMOC patterns (MOTIFs) to refine the overall programme theory.
+6. Contradiction Resolution: The Contradiction Agent identifies the "Expertise
+Reversal Effect" (e.g., directive teaching helps novices but hinders experts) by
+flagging conflicting subgraphs for human interpretation.
+4.4 Literature Knowledge Graph and GraphRAG
+
+===== PAGE 58 =====
+The Literature Knowledge Graph (LKG) serves as the reasoning substrate for the
+agents. It is constructed by extracting entities (Intervention, Population, Outcome,
+Context) and relations from full texts using Named Entity Recognition (NER) and
+Relation Extraction (RE) .
+GraphRAG (Graph-enhanced Retrieval-Augmented Generation) improves upon
+traditional RAG by allowing agents to retrieve subgraphs of connected claims rather
+than isolated text passages. By building "community structures" within the LKG,
+GraphRAG enables agents to perform global, configurational reasoning —such as
+mapping how student self-confidence (Context) moderates the response to simulated
+patients (Mechanism)—which matches the interpretive depth of the original human
+review.
+4.5 Human-in-the-Loop (HITL) and Lifelong Learning
+The framework is governed by a formal protocol where human researchers act as
+arbiters at four predefined checkpoints: Screening Adjudication, CMOC
+Validation, Contradiction Adjudication, and Theory Sign-off . Every human
+correction is recycled to update the system’s decision policies (prompts and rules) ,
+enabling lifelong (continual) and online updating . This ensures the framework
+accommodates evolving stakeholder requirements and adapts as new studies are added
+to the "living" review.
+How do LangChain agents simulate the Richmond realist review?
+How does MOTIF detection resolve causal contradictions in the graph?
+What specifically separates core infrastructure from method-specific synthesis
+plugins?
+You talk about knowledge graph, but you did not talk about how they build it. That is
+a key part, how we identify entities. Who will play this role?
+The construction of the Literature Knowledge Graph (LKG) is a multi-stage
+process handled by specialized agents within the framework, utilizing both automated
+extraction and human-in-the-loop validation.
+1. Who Plays the Role? (Agent Responsibilities)
+The identification and structuring of entities are distributed across three primary roles:
+ Extraction Agent (or CMOC Extraction Agent): This agent is the primary
+"identifier." It processes full-text chunks to identify key educational
+constructs—such as interventions, populations, outcomes, and contexts—and
+the relationships between them. For the realist plugin, this agent specifically
+focuses on identifying Contexts, Mechanism Resources, Mechanism
+Responses, and Outcomes .
+ Normalization Agent: After initial extraction, this agent performs
+canonicalization. It is responsible for de-duplicating and merging entities that
+
+===== PAGE 59 =====
+refer to the same concept but use different terminology, such as resolving "self-
+efficacy" and "confidence" into a single node to ensure graph consistency.
+ Human Researcher (HITL): Humans act as the final authority. At a
+predefined CMOC Validation checkpoint , researchers spot-check the
+extracted entities and relations against the original evidence spans to ensure
+interpretive accuracy and correct any systematic misinterpretations by the
+agents.
+2. How They Build It (The Extraction Pipeline)
+The building of the graph follows a systematic pipeline:
+ NER and RE Processing: The framework uses Named Entity Recognition
+(NER) and Relation Extraction (RE) to automatically process publications
+harvested from databases like ERIC or Scopus. These methods identify the
+"nodes" (entities like intervention or outcome) and the "edges" (relations like
+intervention affects outcome ).
+ Structuring into Triples: The extracted data is organized into relational
+triples (e.g., [Study]—contains—[CMOC] or [CMOC]—has_context—
+[ContextFactor]). Every entity and relation is persistently linked to an
+EvidenceSpan pointer, which maps back to the specific docID and text
+segment to ensure traceability.
+ Denoising and Completion: Once the initial graph is formed, the system
+employs graph embeddings and link prediction . These computational
+techniques help "denoise" the graph and identify potentially missing edges,
+resulting in a more structured and complete knowledge base for subsequent
+reasoning.
+ GraphRAG Integration: The resulting LKG serves as the reasoning substrate.
+Instead of retrieving isolated text, the Synthesis Agent uses Graph-enhanced
+Retrieval-Augmented Generation (GraphRAG) to retrieve subgraphs of
+these connected entities, allowing for configuration-level reasoning over the
+evidence.
+By separating the identification (Extraction Agent), refinement (Normalization
+Agent), and verification (Human Researcher), the framework ensures the knowledge
+graph is both scalable and methodologically rigorous.
+How will the Extraction Agent identify specific educational constructs?
+Which entities and relations populate the Literature Knowledge Graph?
+How do researchers validate the graph during CMOC checkpoints?

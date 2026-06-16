@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-05-28 11:59:28",
+  "total_cmocs": 57,
+  "studies_with_cmocs": 28,
+  "avg_cmocs_per_study": 2.0357142857142856,
+  "negative_cmoc_count": 21,
+  "by_pts": {
+    "PTS1": 20,
+    "PTS3": 12,
+    "PTS4": 20,
+    "PTS2": 2,
+    "PTS5": 3
+  },
+  "by_context_code": {
+    "E02": 23,
+    "E04": 6,
+    "E05": 18,
+    "E03": 5,
+    "E06": 5
+  },
+  "by_intervention_code": {
+    "E15": 4,
+    "E10": 10,
+    "E14": 16,
+    "E18": 11,
+    "E07": 3,
+    "E08": 4,
+    "E09": 3,
+    "E13": 1,
+    "E17": 3,
+    "E24": 1,
+    "E12": 1
+  },
+  "by_mechanism_response_code": {
+    "E27": 24,
+    "E26": 5,
+    "E45": 19,
+    "E39": 5,
+    "E24": 1,
+    "E32": 1,
+    "E23": 1,
+    "E42": 1
+  },
+  "by_outcome_code": {
+    "E25": 8,
+    "E22": 7,
+    "E38": 5,
+    "E46": 15,
+    "E28": 1,
+    "E36": 16,
+    "E44": 3,
+    "E43": 2
+  },
+  "relationships": {
+    "total_instances": 171,
+    "distinct_types_used": 5,
+    "by_type": {
+      "LEADS_TO": 57,
+      "TRIGGERS": 53,
+      "PROVIDES": 44,
+      "CONSTRAINS": 9,
+      "INHIBITS": 8
+    },
+    "top_chain_patterns": {
+      "PROVIDES → TRIGGERS → LEADS_TO": 44,
+      "CONSTRAINS → TRIGGERS → LEADS_TO": 5,
+      "INHIBITS → TRIGGERS → LEADS_TO": 4,
+      "INHIBITS → CONSTRAINS → LEADS_TO": 4
+    }
+  }
+}

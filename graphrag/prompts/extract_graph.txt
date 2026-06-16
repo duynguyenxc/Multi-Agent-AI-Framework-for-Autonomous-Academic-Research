@@ -1,7 +1,12 @@
 
 -Goal-
-Given a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.
- 
+Given a text document from a medical/healthcare education study, identify all entities related to
+Clinical Reasoning Education and all relationships among the identified entities.
+
+This is for a Realist Synthesis following the CMOC framework (Context-Mechanism-Outcome Configuration)
+as defined by Richmond et al. (2020): "The student is key: A realist review of educational interventions
+to develop analytical and non-analytical clinical reasoning ability."
+
 -Steps-
 1. Identify all entities. For each identified entity, extract the following information:
 - entity_name: Name of the entity, capitalized
@@ -15,101 +20,73 @@ For each pair of related entities, extract the following information:
 - target_entity: name of the target entity, as identified in step 1
 - relationship_description: explanation as to why you think the source entity and the target entity are related to each other
 - relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity
- Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
+- relationship_type: One of: PROVIDES, ENABLES, LEADS_TO, TRIGGERS, INHIBITS, MODERATES
+ Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>{tuple_delimiter}<relationship_type>)
  
 3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
  
 4. When finished, output {completion_delimiter}
- 
+
+-Entity Type Definitions for Medical Education Realist Synthesis-
+Context: WHO is learning — the learner population, their knowledge level, coping strategies, group composition.
+  Examples: "novice medical students", "Year 3 clerkship students with limited diagnostic experience", "surgical residents with existing expertise"
+Intervention: WHAT the educational activity provides — the pedagogical approach or instructional design.
+  Examples: "case-based self-explanation", "combined analytical and non-analytical reasoning instruction", "serious game simulation"
+Mechanism_Resource: WHAT resources the intervention provides — always "multiple relevant resources" in Richmond's framework but specify what those resources are.
+  Examples: "worked examples with expert commentary", "ECG practice cases with diagnostic features", "virtual patient scenarios"
+Mechanism_Response: HOW the learner internally responds — the cognitive/emotional/motivational reaction.
+  Examples: "students built understanding by linking biomedical and clinical knowledge", "students experienced cognitive overload", "students relied on pattern recognition"
+Outcome: WHAT measurable result occurred — the learning outcome or diagnostic performance change.
+  Examples: "improved diagnostic accuracy on transfer cases", "more complete illness scripts", "no reduction in diagnostic error"
+
 ######################
 -Examples-
 ######################
 Example 1:
-Entity_types: ORGANIZATION,PERSON
+Entity_types: Context, Intervention, Mechanism_Resource, Mechanism_Response, Outcome
 Text:
-The Verdantis's Central Institution is scheduled to meet on Monday and Thursday, with the institution planning to release its latest policy decision on Thursday at 1:30 p.m. PDT, followed by a press conference where Central Institution Chair Martin Smith will take questions. Investors expect the Market Strategy Committee to hold its benchmark interest rate steady in a range of 3.5%-3.75%.
+Objective: Previous research has revealed a pedagogical benefit of instructing novice diagnosticians to utilise a combined approach to clinical reasoning. This paper reports 2 studies demonstrating that the combined instructions are especially valuable in helping students overcome biasing influences. Methods: Undergraduate psychology students were trained to diagnose 10 cardiac conditions via ECG presentation. Half were instructed to reason in a combined manner and half were given no explicit instruction. Results: The instruction to utilise a combined reasoning approach resulted in greater diagnostic accuracy relative to leaving students to their own intuitions. The effect was particularly pronounced when cases were made challenging by biasing participants towards an incorrect diagnosis.
 ######################
 Output:
-("entity"{tuple_delimiter}CENTRAL INSTITUTION{tuple_delimiter}ORGANIZATION{tuple_delimiter}The Central Institution is the Federal Reserve of Verdantis, which is setting interest rates on Monday and Thursday)
+("entity"{tuple_delimiter}NOVICE DIAGNOSTICIANS{tuple_delimiter}Context{tuple_delimiter}Undergraduate students with no prior diagnostic training, low clinical domain-specific knowledge)
 {record_delimiter}
-("entity"{tuple_delimiter}MARTIN SMITH{tuple_delimiter}PERSON{tuple_delimiter}Martin Smith is the chair of the Central Institution)
+("entity"{tuple_delimiter}COMBINED ANALYTICAL AND NON-ANALYTICAL REASONING INSTRUCTION{tuple_delimiter}Intervention{tuple_delimiter}Students instructed to use both familiarity-driven pattern recognition and careful feature consideration when diagnosing)
 {record_delimiter}
-("entity"{tuple_delimiter}MARKET STRATEGY COMMITTEE{tuple_delimiter}ORGANIZATION{tuple_delimiter}The Central Institution committee makes key decisions about interest rates and the growth of Verdantis's money supply)
+("entity"{tuple_delimiter}ECG PRACTICE CASES WITH DIAGNOSTIC FEATURES{tuple_delimiter}Mechanism_Resource{tuple_delimiter}Multiple relevant resources including 10 cardiac condition ECGs with biasing features)
 {record_delimiter}
-("relationship"{tuple_delimiter}MARTIN SMITH{tuple_delimiter}CENTRAL INSTITUTION{tuple_delimiter}Martin Smith is the Chair of the Central Institution and will answer questions at a press conference{tuple_delimiter}9)
+("entity"{tuple_delimiter}STUDENTS RELIED ON BOTH PATTERN MATCHING AND FEATURE ANALYSIS{tuple_delimiter}Mechanism_Response{tuple_delimiter}Students built understanding by integrating non-analytical familiarity cues with analytical feature checking)
+{record_delimiter}
+("entity"{tuple_delimiter}GREATER DIAGNOSTIC ACCURACY{tuple_delimiter}Outcome{tuple_delimiter}Combined reasoning instruction resulted in significantly higher diagnostic accuracy, especially under biasing conditions)
+{record_delimiter}
+("relationship"{tuple_delimiter}COMBINED ANALYTICAL AND NON-ANALYTICAL REASONING INSTRUCTION{tuple_delimiter}ECG PRACTICE CASES WITH DIAGNOSTIC FEATURES{tuple_delimiter}The combined instruction provided structured resources for learning diagnosis{tuple_delimiter}8{tuple_delimiter}PROVIDES)
+{record_delimiter}
+("relationship"{tuple_delimiter}ECG PRACTICE CASES WITH DIAGNOSTIC FEATURES{tuple_delimiter}STUDENTS RELIED ON BOTH PATTERN MATCHING AND FEATURE ANALYSIS{tuple_delimiter}Practice cases triggered integration of both reasoning strategies{tuple_delimiter}9{tuple_delimiter}TRIGGERS)
+{record_delimiter}
+("relationship"{tuple_delimiter}STUDENTS RELIED ON BOTH PATTERN MATCHING AND FEATURE ANALYSIS{tuple_delimiter}GREATER DIAGNOSTIC ACCURACY{tuple_delimiter}Integrated reasoning led to higher diagnostic performance{tuple_delimiter}9{tuple_delimiter}LEADS_TO)
 {completion_delimiter}
 
 ######################
 Example 2:
-Entity_types: ORGANIZATION
+Entity_types: Context, Intervention, Mechanism_Resource, Mechanism_Response, Outcome
 Text:
-TechGlobal's (TG) stock skyrocketed in its opening day on the Global Exchange Thursday. But IPO experts warn that the semiconductor corporation's debut on the public markets isn't indicative of how other newly listed companies may perform.
-
-TechGlobal, a formerly public company, was taken private by Vision Holdings in 2014. The well-established chip designer says it powers 85% of premium smartphones.
+Objectives: Cognitive forcing strategies (CFS) may reduce error arising from cognitive biases. This is the first experimental test to determine the effect of CFS training in medical students. Methods: Students were allocated to CFS training or control during a 4-week emergency medicine rotation. Results: There were 145 students in the intervention and 46 in the control group. For search satisficing bias cases, 52% of students with CFS training and 48% in the control group initiated a search for the second diagnosis. There were no significant differences between groups. Conclusions: The educational interventions employed to teach CFS failed to show any reduction in diagnostic error by novices.
 ######################
 Output:
-("entity"{tuple_delimiter}TECHGLOBAL{tuple_delimiter}ORGANIZATION{tuple_delimiter}TechGlobal is a stock now listed on the Global Exchange which powers 85% of premium smartphones)
+("entity"{tuple_delimiter}MEDICAL STUDENTS IN EMERGENCY MEDICINE{tuple_delimiter}Context{tuple_delimiter}Students with low domain-specific knowledge in emergency medicine diagnosis)
 {record_delimiter}
-("entity"{tuple_delimiter}VISION HOLDINGS{tuple_delimiter}ORGANIZATION{tuple_delimiter}Vision Holdings is a firm that previously owned TechGlobal)
+("entity"{tuple_delimiter}COGNITIVE FORCING STRATEGY TRAINING{tuple_delimiter}Intervention{tuple_delimiter}Students instructed to use analytical reasoning alone via cognitive forcing rules to reduce diagnostic bias)
 {record_delimiter}
-("relationship"{tuple_delimiter}TECHGLOBAL{tuple_delimiter}VISION HOLDINGS{tuple_delimiter}Vision Holdings formerly owned TechGlobal from 2014 until present{tuple_delimiter}5)
-{completion_delimiter}
-
-######################
-Example 3:
-Entity_types: ORGANIZATION,GEO,PERSON
-Text:
-Five Aurelians jailed for 8 years in Firuzabad and widely regarded as hostages are on their way home to Aurelia.
-
-The swap orchestrated by Quintara was finalized when $8bn of Firuzi funds were transferred to financial institutions in Krohaara, the capital of Quintara.
-
-The exchange initiated in Firuzabad's capital, Tiruzia, led to the four men and one woman, who are also Firuzi nationals, boarding a chartered flight to Krohaara.
-
-They were welcomed by senior Aurelian officials and are now on their way to Aurelia's capital, Cashion.
-
-The Aurelians include 39-year-old businessman Samuel Namara, who has been held in Tiruzia's Alhamia Prison, as well as journalist Durke Bataglani, 59, and environmentalist Meggie Tazbah, 53, who also holds Bratinas nationality.
-######################
-Output:
-("entity"{tuple_delimiter}FIRUZABAD{tuple_delimiter}GEO{tuple_delimiter}Firuzabad held Aurelians as hostages)
+("entity"{tuple_delimiter}COGNITIVE FORCING RULE CARDS AND TRAINING SESSIONS{tuple_delimiter}Mechanism_Resource{tuple_delimiter}Multiple resources including rule cards and structured training during EM rotation)
 {record_delimiter}
-("entity"{tuple_delimiter}AURELIA{tuple_delimiter}GEO{tuple_delimiter}Country seeking to release hostages)
+("entity"{tuple_delimiter}STUDENT CONFUSION ABOUT WHEN TO APPLY RULES{tuple_delimiter}Mechanism_Response{tuple_delimiter}Students became confused about when and how to apply the forcing strategies, experiencing increased cognitive load)
 {record_delimiter}
-("entity"{tuple_delimiter}QUINTARA{tuple_delimiter}GEO{tuple_delimiter}Country that negotiated a swap of money in exchange for hostages)
+("entity"{tuple_delimiter}NO REDUCTION IN DIAGNOSTIC ERROR{tuple_delimiter}Outcome{tuple_delimiter}Negative outcome: CFS training failed to reduce diagnostic error in novices, no significant difference from control)
 {record_delimiter}
+("relationship"{tuple_delimiter}COGNITIVE FORCING STRATEGY TRAINING{tuple_delimiter}COGNITIVE FORCING RULE CARDS AND TRAINING SESSIONS{tuple_delimiter}CFS training provided rule-based resources for diagnosis{tuple_delimiter}7{tuple_delimiter}PROVIDES)
 {record_delimiter}
-("entity"{tuple_delimiter}TIRUZIA{tuple_delimiter}GEO{tuple_delimiter}Capital of Firuzabad where the Aurelians were being held)
+("relationship"{tuple_delimiter}COGNITIVE FORCING RULE CARDS AND TRAINING SESSIONS{tuple_delimiter}STUDENT CONFUSION ABOUT WHEN TO APPLY RULES{tuple_delimiter}Rule cards triggered confusion rather than clarity{tuple_delimiter}6{tuple_delimiter}TRIGGERS)
 {record_delimiter}
-("entity"{tuple_delimiter}KROHAARA{tuple_delimiter}GEO{tuple_delimiter}Capital city in Quintara)
-{record_delimiter}
-("entity"{tuple_delimiter}CASHION{tuple_delimiter}GEO{tuple_delimiter}Capital city in Aurelia)
-{record_delimiter}
-("entity"{tuple_delimiter}SAMUEL NAMARA{tuple_delimiter}PERSON{tuple_delimiter}Aurelian who spent time in Tiruzia's Alhamia Prison)
-{record_delimiter}
-("entity"{tuple_delimiter}ALHAMIA PRISON{tuple_delimiter}GEO{tuple_delimiter}Prison in Tiruzia)
-{record_delimiter}
-("entity"{tuple_delimiter}DURKE BATAGLANI{tuple_delimiter}PERSON{tuple_delimiter}Aurelian journalist who was held hostage)
-{record_delimiter}
-("entity"{tuple_delimiter}MEGGIE TAZBAH{tuple_delimiter}PERSON{tuple_delimiter}Bratinas national and environmentalist who was held hostage)
-{record_delimiter}
-("relationship"{tuple_delimiter}FIRUZABAD{tuple_delimiter}AURELIA{tuple_delimiter}Firuzabad negotiated a hostage exchange with Aurelia{tuple_delimiter}2)
-{record_delimiter}
-("relationship"{tuple_delimiter}QUINTARA{tuple_delimiter}AURELIA{tuple_delimiter}Quintara brokered the hostage exchange between Firuzabad and Aurelia{tuple_delimiter}2)
-{record_delimiter}
-("relationship"{tuple_delimiter}QUINTARA{tuple_delimiter}FIRUZABAD{tuple_delimiter}Quintara brokered the hostage exchange between Firuzabad and Aurelia{tuple_delimiter}2)
-{record_delimiter}
-("relationship"{tuple_delimiter}SAMUEL NAMARA{tuple_delimiter}ALHAMIA PRISON{tuple_delimiter}Samuel Namara was a prisoner at Alhamia prison{tuple_delimiter}8)
-{record_delimiter}
-("relationship"{tuple_delimiter}SAMUEL NAMARA{tuple_delimiter}MEGGIE TAZBAH{tuple_delimiter}Samuel Namara and Meggie Tazbah were exchanged in the same hostage release{tuple_delimiter}2)
-{record_delimiter}
-("relationship"{tuple_delimiter}SAMUEL NAMARA{tuple_delimiter}DURKE BATAGLANI{tuple_delimiter}Samuel Namara and Durke Bataglani were exchanged in the same hostage release{tuple_delimiter}2)
-{record_delimiter}
-("relationship"{tuple_delimiter}MEGGIE TAZBAH{tuple_delimiter}DURKE BATAGLANI{tuple_delimiter}Meggie Tazbah and Durke Bataglani were exchanged in the same hostage release{tuple_delimiter}2)
-{record_delimiter}
-("relationship"{tuple_delimiter}SAMUEL NAMARA{tuple_delimiter}FIRUZABAD{tuple_delimiter}Samuel Namara was a hostage in Firuzabad{tuple_delimiter}2)
-{record_delimiter}
-("relationship"{tuple_delimiter}MEGGIE TAZBAH{tuple_delimiter}FIRUZABAD{tuple_delimiter}Meggie Tazbah was a hostage in Firuzabad{tuple_delimiter}2)
-{record_delimiter}
-("relationship"{tuple_delimiter}DURKE BATAGLANI{tuple_delimiter}FIRUZABAD{tuple_delimiter}Durke Bataglani was a hostage in Firuzabad{tuple_delimiter}2)
+("relationship"{tuple_delimiter}STUDENT CONFUSION ABOUT WHEN TO APPLY RULES{tuple_delimiter}NO REDUCTION IN DIAGNOSTIC ERROR{tuple_delimiter}Confusion inhibited any improvement in diagnostic accuracy{tuple_delimiter}8{tuple_delimiter}INHIBITS)
 {completion_delimiter}
 
 ######################

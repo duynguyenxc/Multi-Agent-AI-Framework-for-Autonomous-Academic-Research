@@ -1,6 +1,90 @@
-# Evidence Table: Extracted CMOCs
-Generated: 2026-04-13 16:40:56
+# Evidence Table: Extracted CMOCs (Phase 1, multi-CMOC schema)
+Generated: 2026-05-28 11:59:28
+Total CMOCs: 57 | Studies: 28 | Avg CMOCs/study: 2.04
 
-| # | Study | Context | Mechanism Resource | Mechanism Response | Outcome |
-|---|-------|---------|-------------------|-------------------|--------|
-| 1 | d:\LLM-Knowledge-Graph\gr | students with 'low knowledge,' low clinical d… | multiple relevant resources | build understanding | positive impact on learning |
+Grouped by Programme Theory Statement (PTS1–PTS5).
+
+## PTS1 (20 CMOC(s))
+
+| # | Study | CMOC | C | I | M-res | M-resp | O | Neg? | Conf |
+|---|-------|------|---|---|-------|--------|---|------|------|
+| 1 | S001 | CMOC1 | E02 | E15 | E19 | E27 | E25 |  | 0.90 |
+| 2 | S002 | CMOC1 | E02 | E18 | E19 | E39 | E46 |  | 0.90 |
+| 3 | S004 | CMOC1 | E02 | E18 | E19 | E27 | E46 |  | 0.90 |
+| 4 | S004 | CMOC2 | E02 | E08 | E19 | E45 | E36 | Y | 0.85 |
+| 5 | S005 | CMOC1 | E02 | E18 | E19 | E27 | E25 |  | 0.90 |
+| 6 | S006 | CMOC1 | E02 | E18 | E19 | E27 | E25 |  | 0.90 |
+| 7 | S007 | CMOC1 | E02 | E09 | E19 | E27 | E46 |  | 0.90 |
+| 8 | S008 | CMOC1 | E02 | E18 | E19 | E27 | E46 |  | 0.90 |
+| 9 | S009 | CMOC1 | E02 | E18 | E19 | E27 | E46 |  | 0.90 |
+| 10 | S010 | CMOC1 | E02 | E15 | E19 | E27 | E46 |  | 0.90 |
+| 11 | S013 | CMOC2 | E03 | E13 | E19 | E27 | E25 |  | 0.85 |
+| 12 | S014 | CMOC1 | E02 | E18 | E19 | E27 | E46 |  | 0.90 |
+| 13 | S017 | CMOC1 | E02 | E15 | E19 | E27 | E46 |  | 0.90 |
+| 14 | S018 | CMOC1 | E02 | E10 | E19 | E27 | E46 |  | 0.90 |
+| 15 | S020 | CMOC1 | E02 | E18 | E19 | E27 | E46 |  | 0.90 |
+| 16 | S021 | CMOC2 | E02 | E15 | E19 | E27 | E25 |  | 0.85 |
+| 17 | S022 | CMOC1 | E02 | E09 | E19 | E27 | E25 |  | 0.90 |
+| 18 | S026 | CMOC1 | E02 | E17 | E19 | E27 | E25 |  | 0.90 |
+| 19 | S027 | CMOC2 | E02 | E18 | E19 | E42 | E44 |  | 0.85 |
+| 20 | S028 | CMOC1 | E02 | E24 | E19 | E27 | E46 |  | 0.90 |
+
+## PTS2 (2 CMOC(s))
+
+| # | Study | CMOC | C | I | M-res | M-resp | O | Neg? | Conf |
+|---|-------|------|---|---|-------|--------|---|------|------|
+| 1 | S002 | CMOC2 | E03 | E18 | E19 | E24 | E25 |  | 0.85 |
+| 2 | S023 | CMOC1 | E03 | E10 | E19 | E39 | E46 |  | 0.90 |
+
+## PTS3 (12 CMOC(s))
+
+| # | Study | CMOC | C | I | M-res | M-resp | O | Neg? | Conf |
+|---|-------|------|---|---|-------|--------|---|------|------|
+| 1 | S001 | CMOC2 | E04 | E10 | E19 | E26 | E22 |  | 0.85 |
+| 2 | S003 | CMOC2 | E04 | E10 | E19 | E26 | E28 |  | 0.85 |
+| 3 | S006 | CMOC2 | E04 | E09 | E19 | E26 | E22 |  | 0.85 |
+| 4 | S008 | CMOC2 | E04 | E10 | E19 | E26 | E22 |  | 0.85 |
+| 5 | S011 | CMOC1 | E03 | E07 | E19 | E27 | E44 |  | 0.90 |
+| 6 | S012 | CMOC1 | E06 | E10 | E19 | E27 | E22 |  | 0.90 |
+| 7 | S015 | CMOC1 | E06 | E10 | E19 | E27 | E44 |  | 0.90 |
+| 8 | S016 | CMOC1 | E03 | E18 | E19 | E27 | E46 |  | 0.90 |
+| 9 | S019 | CMOC1 | E02 | E10 | E19 | E27 | E22 |  | 0.90 |
+| 10 | S024 | CMOC1 | E02 | E10 | E19 | E27 | E46 |  | 0.90 |
+| 11 | S027 | CMOC1 | E04 | E17 | E19 | E27 | E46 |  | 0.90 |
+| 12 | S028 | CMOC2 | E04 | E12 | E19 | E26 | E22 |  | 0.85 |
+
+## PTS4 (20 CMOC(s))
+
+| # | Study | CMOC | C | I | M-res | M-resp | O | Neg? | Conf |
+|---|-------|------|---|---|-------|--------|---|------|------|
+| 1 | S001 | CMOC3 | E05 | E14 | E19 | E45 | E38 | Y | 0.80 |
+| 2 | S005 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 3 | S007 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 4 | S009 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 5 | S010 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 6 | S011 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 7 | S012 | CMOC2 | E05 | E14 | E19 | E45 | E38 | Y | 0.85 |
+| 8 | S013 | CMOC1 | E02 | E10 | E19 | E32 | E36 | Y | 0.90 |
+| 9 | S014 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 10 | S015 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 11 | S016 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 12 | S017 | CMOC2 | E05 | E08 | E19 | E45 | E36 | Y | 0.85 |
+| 13 | S018 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 14 | S019 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 15 | S020 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 16 | S022 | CMOC2 | E05 | E08 | E19 | E45 | E38 | Y | 0.85 |
+| 17 | S023 | CMOC2 | E05 | E14 | E19 | E45 | E36 | Y | 0.85 |
+| 18 | S025 | CMOC1 | E05 | E08 | E19 | E45 | E36 | Y | 0.90 |
+| 19 | S025 | CMOC2 | E02 | E14 | E19 | E23 | E38 | Y | 0.85 |
+| 20 | S026 | CMOC2 | E05 | E14 | E19 | E45 | E38 | Y | 0.85 |
+
+## PTS5 (3 CMOC(s))
+
+| # | Study | CMOC | C | I | M-res | M-resp | O | Neg? | Conf |
+|---|-------|------|---|---|-------|--------|---|------|------|
+| 1 | S003 | CMOC1 | E06 | E07 | E19 | E39 | E22 |  | 0.90 |
+| 2 | S021 | CMOC1 | E06 | E17 | E19 | E39 | E43 |  | 0.90 |
+| 3 | S024 | CMOC2 | E06 | E07 | E19 | E39 | E43 |  | 0.85 |
+
+## N/A
+*No CMOCs mapped to this PTS.*

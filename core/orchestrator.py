@@ -8,7 +8,7 @@ Implements the complete pipeline aligned with Richmond et al. (2020):
   [3] Title/Abstract Screener    →  Primary Reviewer
   [4] HITL: Screening Review     →  Human Checkpoint 1
   [5] Full-Text Eligibility      →  Secondary Reviewer
-  [6] CMOC Extraction            →  Subject Matter Expert
+  [6] CMOC Extraction (LOOP)     →  Subject Matter Expert (iterates all studies)
   [7] HITL: CMOC Validation      →  Human Checkpoint 2
   [8] Contradiction Detection    →  Quality Auditor
   [9] HITL: Contradiction        →  Human Checkpoint 3
@@ -16,6 +16,7 @@ Implements the complete pipeline aligned with Richmond et al. (2020):
   [11] HITL: Theory Sign-off     →  Human Checkpoint 4
   [12] Reporting & Artifacts     →  Technical Writer
 """
+import os
 from langgraph.graph import StateGraph, END
 from core.state import RealistReviewState
 from plugins.realist_synthesis.cmoc_extractor import extract_cmoc_node
@@ -26,6 +27,7 @@ from core.agents.screening_agent import (
     full_text_eligibility_node
 )
 from core.agents.reporting_agent import generate_reporting_node
+from core.audit_logger import log_hitl_event
 
 
 # ── HITL Master Control Nodes ─────────────────────────────────────────────────
@@ -38,18 +40,13 @@ def hitl_screening_node(state: RealistReviewState) -> dict:
     decisions = state.get("title_abstract_decisions", [])
     uncertain = [d for d in decisions if d["decision"] == "uncertain"]
 
-    print(f"\n[HITL CP-1] Screening Adjudication Checkpoint")
-    print(f"  Uncertain cases requiring adjudication: {len(uncertain)}")
-    if uncertain:
-        print("  [HITL] Researcher review required for:")
-        for u in uncertain[:3]:
-            print(f"    - {u['study_id']}: {u['rationale'][:70]}")
+    details = [f"{u['study_id']}: {u['rationale'][:70]}" for u in uncertain[:3]]
+    status = log_hitl_event("Screening Adjudication", len(uncertain), details)
 
-    log = f"[HITL CP-1] Screening checkpoint passed. {len(uncertain)} uncertain cases logged for adjudication."
     return {
-        "hitl_checkpoint": "screening_approved",
+        "hitl_checkpoint": status,
         "validation_status": "screening_complete",
-        "audit_log": [log]
+        "audit_log": [f"[HITL CP-1] Screening checkpoint: {status}"]
     }
 
 
@@ -59,16 +56,14 @@ def hitl_cmoc_validation_node(state: RealistReviewState) -> dict:
     Pauses if extractions seem too generic or outside E01-E47.
     """
     cmocs = state.get("extracted_cmocs", [])
-    print(f"\n[HITL CP-2] CMOC Validation Checkpoint")
-    print(f"  CMOCs available for spot-check: {len(cmocs)}")
-    print(f"  [HITL] Researcher validates extraction fidelity vs Richmond E01-E47 schema...")
-    print(f"  Validation: AUTO-APPROVED (researcher sign-off required in production)")
+    
+    details = [f"{getattr(c, 'cmoc_id', 'unknown')}: Confidence {getattr(c, 'confidence', 'N/A')}" for c in cmocs[:3]]
+    status = log_hitl_event("CMOC Validation", len(cmocs), details)
 
-    log = f"[HITL CP-2] CMOC validation checkpoint: {len(cmocs)} CMOCs approved."
     return {
-        "hitl_checkpoint": "cmoc_approved",
-        "validation_status": "approved",
-        "audit_log": [log]
+        "hitl_checkpoint": status,
+        "validation_status": "approved" if status == "auto_pass_demo" else "pending",
+        "audit_log": [f"[HITL CP-2] CMOC validation checkpoint: {status}"]
     }
 
 
@@ -78,20 +73,13 @@ def hitl_contradiction_node(state: RealistReviewState) -> dict:
     Presents the Conflict Register to the researcher for interpretive resolution.
     """
     contradictions = state.get("contradictions_found", [])
-    print(f"\n[HITL CP-3] Contradiction Adjudication Checkpoint")
-    if contradictions:
-        print(f"  CONFLICT REGISTER: {len(contradictions)} contradictions detected")
-        for i, c in enumerate(contradictions[:3], 1):
-            print(f"  [{i}] {str(c)[:80]}")
-        print("  [HITL] Researcher must provide interpretive explanation for each conflict.")
-        print("  [awaiting human adjudication — AUTO-CONTINUE for pipeline demo]")
-    else:
-        print("  No contradictions found — checkpoint passed automatically.")
+    
+    details = [str(c)[:80] for c in contradictions[:3]]
+    status = log_hitl_event("Contradiction Adjudication", len(contradictions), details)
 
-    log = f"[HITL CP-3] Contradiction checkpoint: {len(contradictions)} conflicts presented."
     return {
-        "hitl_checkpoint": "contradiction_resolved",
-        "audit_log": [log]
+        "hitl_checkpoint": status,
+        "audit_log": [f"[HITL CP-3] Contradiction checkpoint: {status}"]
     }
 
 
@@ -102,54 +90,96 @@ def hitl_theory_signoff_node(state: RealistReviewState) -> dict:
     """
     theory = state.get("draft_programme_theory", "")
     print(f"\n[HITL CP-4] Theory Sign-off Checkpoint")
-    print(f"  Programme Theory (first 200 chars):\n  {theory[:200]}")
-    print(f"  [HITL] Researcher reviews evidence path from theory -> source spans")
-    print(f"  SIGN-OFF: APPROVED (production: requires explicit researcher confirmation)")
+    theories = state.get("synthesis_theories", [])
+    
+    details = [str(t)[:80] for t in theories[:3]]
+    status = log_hitl_event("Theory Sign-off", len(theories), details)
 
-    log = "[HITL CP-4] Programme Theory signed off. Proceeding to artifact generation."
     return {
-        "hitl_checkpoint": "theory_signed_off",
+        "hitl_checkpoint": status,
         "validation_status": "theory_approved",
-        "audit_log": [log]
+        "audit_log": [f"[HITL CP-4] Theory sign-off: {status}"]
     }
 
 
-def prepare_cmoc_for_study(state: RealistReviewState) -> dict:
-    """Bridge node: sets current paper text for CMOC extraction from included studies."""
+# ── CMOC Loop Nodes ──────────────────────────────────────────────────────────
+
+def prepare_next_study(state: RealistReviewState) -> dict:
+    """
+    Bridge node: loads the next unprocessed study's text for CMOC extraction.
+    Iterates through included_studies, skipping any already extracted.
+    Uses study_id (e.g. 'S001') as the canonical tracking key for consistency.
+    """
     included = state.get("included_studies", [])
     extracted = state.get("extracted_cmocs", [])
 
-    # Find next study not yet extracted
-    extracted_ids = {c.record_id for c in extracted if c}
+    # Build set of already-processed study IDs (using canonical record_id)
+    extracted_ids = set()
+    for cmoc in extracted:
+        if cmoc and hasattr(cmoc, "record_id"):
+            extracted_ids.add(cmoc.record_id)
+
+    # Find next unprocessed study (match by study_id)
+    input_dir = os.path.dirname(included[0].get("source_file", "")) if included else ""
     for study in included:
-        if study["source_file"] not in extracted_ids and study["study_id"] not in extracted_ids:
+        study_id = study.get("study_id", "")
+        if study_id not in extracted_ids:
+            source_file = study.get("source_file", "")
+
+            # Fallback: if source_file is a PubMed URL, look for local pubmed_PMID.txt
+            if not os.path.exists(source_file) and "pubmed.ncbi.nlm.nih.gov" in source_file:
+                pmid = source_file.rstrip("/").split("/")[-1]
+                candidate = os.path.join(input_dir, f"pubmed_{pmid}.txt")
+                if os.path.exists(candidate):
+                    source_file = candidate
+
             try:
-                with open(study["source_file"], "r", encoding="utf-8", errors="replace") as f:
-                    text = f.read(8000)
-            except:
+                with open(source_file, "r", encoding="utf-8", errors="replace") as f:
+                    full_text = f.read()
+                # Smart truncation: keep intro (first 10K) + results/discussion (last 10K)
+                if len(full_text) > 20000:
+                    text = full_text[:10000] + "\n\n[...]\n\n" + full_text[-10000:]
+                else:
+                    text = full_text
+            except (FileNotFoundError, OSError):
                 text = study.get("abstract", "No text available")
 
+            remaining = len(included) - len(extracted_ids) - 1
+            print(f"\n[CMOC LOOP] Preparing: {study_id} ({remaining} remaining after this)")
             return {
-                "current_record_id": study["source_file"],
+                "current_record_id": study_id,
                 "current_paper_text": text
             }
-    return {}
+
+    # All studies processed
+    print(f"\n[CMOC LOOP] All {len(included)} studies processed.")
+    return {
+        "current_record_id": "",
+        "current_paper_text": ""
+    }
 
 
-def router_after_screen(state: RealistReviewState) -> str:
-    return "hitl_screening"
+def cmoc_router(state: RealistReviewState) -> str:
+    """
+    Conditional edge after CMOC extraction: decides whether to loop back
+    for the next study or proceed to HITL validation.
+    Uses study_id as canonical tracking key (matches prepare_next_study).
+    """
+    included = state.get("included_studies", [])
+    extracted = state.get("extracted_cmocs", [])
 
-def router_after_hitl_screen(state: RealistReviewState) -> str:
-    return "full_text_eligibility"
+    extracted_ids = set()
+    for cmoc in extracted:
+        if cmoc and hasattr(cmoc, "record_id"):
+            extracted_ids.add(cmoc.record_id)
 
-def router_after_cmoc(state: RealistReviewState) -> str:
+    # Check if any included study still needs extraction (by study_id)
+    for study in included:
+        study_id = study.get("study_id", "")
+        if study_id not in extracted_ids:
+            return "prepare_next_study"
+
     return "hitl_cmoc_validation"
-
-def router_after_contradiction(state: RealistReviewState) -> str:
-    return "hitl_contradiction"
-
-def router_after_synthesis(state: RealistReviewState) -> str:
-    return "hitl_theory_signoff"
 
 
 # ── Build the LangGraph State Machine ────────────────────────────────────────
@@ -160,6 +190,7 @@ workflow = StateGraph(RealistReviewState)
 workflow.add_node("screen_title_abstract", screen_title_abstract_node)
 workflow.add_node("hitl_screening", hitl_screening_node)
 workflow.add_node("full_text_eligibility", full_text_eligibility_node)
+workflow.add_node("prepare_next_study", prepare_next_study)
 workflow.add_node("extract_cmoc", extract_cmoc_node)
 workflow.add_node("hitl_cmoc_validation", hitl_cmoc_validation_node)
 workflow.add_node("check_contradictions", detect_contradictions_node)
@@ -168,12 +199,15 @@ workflow.add_node("synthesis_theory", synthesis_node)
 workflow.add_node("hitl_theory_signoff", hitl_theory_signoff_node)
 workflow.add_node("generate_report", generate_reporting_node)
 
-# Wire the pipeline
+# Wire the pipeline (linear flow with CMOC loop)
 workflow.set_entry_point("screen_title_abstract")
 workflow.add_edge("screen_title_abstract", "hitl_screening")
 workflow.add_edge("hitl_screening", "full_text_eligibility")
-workflow.add_edge("full_text_eligibility", "extract_cmoc")
-workflow.add_edge("extract_cmoc", "hitl_cmoc_validation")
+workflow.add_edge("full_text_eligibility", "prepare_next_study")
+workflow.add_edge("prepare_next_study", "extract_cmoc")
+workflow.add_conditional_edges("extract_cmoc", cmoc_router,
+                               {"prepare_next_study": "prepare_next_study",
+                                "hitl_cmoc_validation": "hitl_cmoc_validation"})
 workflow.add_edge("hitl_cmoc_validation", "check_contradictions")
 workflow.add_edge("check_contradictions", "hitl_contradiction")
 workflow.add_edge("hitl_contradiction", "synthesis_theory")
@@ -183,3 +217,4 @@ workflow.add_edge("generate_report", END)
 
 # Compile
 orchestrator_app = workflow.compile()
+# Note: recursion_limit is set at invocation time in main.py, not here.

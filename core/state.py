@@ -73,3 +73,4 @@ class RealistReviewState(TypedDict):
     # ── Meta ────────────────────────────────────────────────────────────────
     errors: Annotated[List[str], merge_list]
     iteration_count: int
+    benchmark_mode: bool                     # True = Richmond benchmark (skip screening)

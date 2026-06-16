@@ -1,0 +1,5 @@
+{"timestamp": "2026-06-15T19:29:05.543673", "checkpoint": "Screening Adjudication", "status": "auto_pass_demo", "items_count": 0, "details": []}
+{"timestamp": "2026-06-15T19:30:28.004045", "checkpoint": "Screening Adjudication", "status": "auto_pass_demo", "items_count": 0, "details": []}
+{"timestamp": "2026-06-15T19:30:28.004045", "checkpoint": "CMOC Validation", "status": "auto_pass_demo", "items_count": 57, "details": ["S001_CMOC1: Confidence 0.9", "S001_CMOC2: Confidence 0.85", "S001_CMOC3: Confidence 0.8"]}
+{"timestamp": "2026-06-15T19:30:28.004045", "checkpoint": "Contradiction Adjudication", "status": "auto_pass_demo", "items_count": 2, "details": ["---", "---"]}
+{"timestamp": "2026-06-15T19:30:28.004045", "checkpoint": "Theory Sign-off", "status": "auto_pass_demo", "items_count": 2, "details": ["Programme Theory Statement 4 (PTS4) explores the impact of negative coping strat", "Programme Theory Statement 5 (PTS5) explores the impact of heterogeneous knowled"]}

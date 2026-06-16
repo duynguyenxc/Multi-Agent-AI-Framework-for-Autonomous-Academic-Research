@@ -1,0 +1,182 @@
+[
+  {
+    "source_e_code": "E14",
+    "predicate": "CONSTRAINS",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "TRIGGERS",
+    "target_e_code": "E24"
+  },
+  {
+    "source_e_code": "E39",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E46"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "TRIGGERS",
+    "target_e_code": "E23"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "TRIGGERS",
+    "target_e_code": "E42"
+  },
+  {
+    "source_e_code": "E24",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E27",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E46"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "TRIGGERS",
+    "target_e_code": "E32"
+  },
+  {
+    "source_e_code": "E23",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E38"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "TRIGGERS",
+    "target_e_code": "E45"
+  },
+  {
+    "source_e_code": "E24",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E25"
+  },
+  {
+    "source_e_code": "E15",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E27",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E44"
+  },
+  {
+    "source_e_code": "E18",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E17",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E13",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "TRIGGERS",
+    "target_e_code": "E27"
+  },
+  {
+    "source_e_code": "E45",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E38"
+  },
+  {
+    "source_e_code": "E42",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E44"
+  },
+  {
+    "source_e_code": "E45",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E36"
+  },
+  {
+    "source_e_code": "E27",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E25"
+  },
+  {
+    "source_e_code": "E10",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E39",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E22"
+  },
+  {
+    "source_e_code": "E26",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E22"
+  },
+  {
+    "source_e_code": "E27",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E22"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "TRIGGERS",
+    "target_e_code": "E26"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "CONSTRAINS",
+    "target_e_code": "E45"
+  },
+  {
+    "source_e_code": "E12",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E19",
+    "predicate": "TRIGGERS",
+    "target_e_code": "E39"
+  },
+  {
+    "source_e_code": "E39",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E43"
+  },
+  {
+    "source_e_code": "E08",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E09",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E26",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E28"
+  },
+  {
+    "source_e_code": "E32",
+    "predicate": "LEADS_TO",
+    "target_e_code": "E36"
+  },
+  {
+    "source_e_code": "E07",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  },
+  {
+    "source_e_code": "E14",
+    "predicate": "PROVIDES",
+    "target_e_code": "E19"
+  }
+]

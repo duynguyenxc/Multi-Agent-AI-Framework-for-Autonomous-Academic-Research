@@ -1,0 +1,262 @@
+# Extracted text: Human-Workflow-from-paper-Richmond.pdf
+# Pages: 9
+
+
+
+===== PAGE 1 =====
+1. Human Workflow Specification (Gold Standard): Richmond et al. (2020) Realist Review
+- Human Reviewer Architecture and Algorithm
+1.1 Objective (what the human workflow is trying to achieve)
+Richmond et al. (2020) conduct a realist review to build an explanatory programme theory of
+how educational interventions develop analytical and non ‑analytical clinical reasoning in
+undergraduate health professions education, explicitly addressing why interventions work, for
+whom, when, and under what circumstances.
+● Evidence (Abstract): “This realist review examines the way educational interventions
+develop analytical and non-analytical reasoning ability in undergraduate education…
+seeking not only to identify if an intervention works, but also understand the reasons
+why, for whom, and in what circumstances.”
+● Evidence (Abstract): “The aim of this study is to develop understanding… when they
+do, for whom and in what circumstances.”
+● Evidence (Methods): “Realist research data are analysed and interpreted to form context,
+mechanism, outcome configurations (CMOCs) and collectively form a programme
+theory.”
+This specification “unpacks” the human reviewer workflow that produced the paper’s final
+conclusions, i.e., the sequence of reasoning operations, decision rules, and intermediate products.
+2. Human “System Architecture” (who does what, with what tools, producing what
+artefacts)
+2.1 Human roles
+Richmond’s workflow is not a single ‑person extraction; it is a team process with defined
+responsibilities and quality control.
+● Lead reviewer (Anna Richmond; AR) : conducts background/scoping searches, runs
+database searches, performs initial CMOC coding, synthesises results, and drafts the
+manuscript.
+● Evidence (Methods): “Initial background literature searches… was undertaken by the
+lead author (AR).”
+● Evidence (Methods): “Initial CMOC coding was undertaken by AR…”
+● Evidence (Author Contributions) : “AR developed the protocol, performed the searches,
+performed initial data extraction, synthesised the results…”
+
+===== PAGE 2 =====
+● Research team (AR, NC, SG, WA, RP) : provides domain expertise and consensus
+building for the IPT, checks coding consistency, and provides feedback on the developing
+theory and manuscript.
+● Evidence (Methods): “All members of the research team… were clinical teachers…”
+● Evidence (Methods): “AR developed consensus amongst the research team…”
+● Evidence (Methods): “…all 28 articles were checked for consistency by another
+reviewer (RP, SG or NC).”
+2.2 Tooling and data management
+Richmond’s reasoning is operationalised via concrete tools for storing texts, coding contexts, and
+elaborating causal links.
+● NVivo: used to store full texts and code contexts.
+● Evidence (Methods 2.2) : “NVivo… used to store full texts and code contexts.”
+● Microsoft Excel: used to elaborate “which contexts affected the mechanisms and
+outcomes,” i.e., to organise and refine cross ‑study causal structure.
+● Evidence (Methods 2.2) : “Microsoft® Excel… was used to further elaborate which
+contexts affected the mechanisms and outcomes.”
+● Governance standards: PROSPERO registration and RAMESES standards are
+explicitly referenced as process/quality anchors for realist synthesis reporting.
+● Evidence (Methods): “The review was registered on PROSPERO…”
+● Evidence (Methods): “The RAMESES… standards… were referred to throughout the
+review.”
+2.3 Core artefacts
+The workflow produces and iteratively refines the following artefacts:
+● Aim + Research Questions (the controlling specification of what the review must
+explain)
+● IPT (Initial Programme Theory) (a theory seed that defines what counts as relevant
+evidence)
+● Search specification (databases, year constraints, and theory ‑derived search
+concepts/terms)
+● Screening/appraisal decisions (inclusion rules tied to theory contribution and
+methodological rigour)
+● CMOC set (coded configurations across included papers)
+● Cross‑study pattern map (recurrent CMOC patterns and their consolidation into key
+contexts/mechanisms)
+
+===== PAGE 3 =====
+● Final programme theory (results + figures + conclusions expressing “what works, for
+whom, when, why”)
+3. Human Algorithm (step ‑by‑step operations, decision rules, and iterative loops)
+Stage 0 — Problem framing: define realist explanatory intent and formal research
+questions
+Input
+● The educational and safety importance of developing clinical reasoning.
+● The observed problem that interventions may not work uniformly across learners and
+contexts.
+Operation (human reasoning)
+● Establish a realist explanatory aim (mechanism ‑ and context‑sensitive causation).
+● Derive explicit research questions from the aim.
+Output
+● A stated aim plus two research questions guiding the entire process.
+Evidence (Introduction)
+● Aim is explicitly articulated, followed by:
+“The research questions that emerged from this aim were: (i) What educational interventions are
+effective…?, and (ii) When and why are they effective, for whom and in what circumstances?”
+Stage 1 — IPT construction (theory seeding): create the initial explanatory model before
+large‑scale screening
+This stage is the primary “human import” step: humans define the conceptual target that later
+governs search and inclusion.
+Input
+● Scoping/background literature
+● Expert opinion and researcher experience
+● Team expertise as clinical teachers
+
+===== PAGE 4 =====
+● Complementary learning theories to structure how “context” will be sought
+Operation (algorithmic sequence)
+1. Background/scoping searches are conducted (by AR).
+2. The team builds consensus on what kinds of educational interventions promote analytical
+vs non‑analytical reasoning.
+3. Outputs from steps (1)–(2) are used to draft initial CMOC hypotheses.
+4. After research‑team feedback, these drafts are consolidated into an Initial Programme
+Theory (IPT).
+5. Additional learning theories are integrated to define “context levels” to be investigated
+(student, teacher, learning encounter/activity, organisational).
+Output
+● IPT + initial CMOC drafts + a context ‑level lens that directs later searching and
+synthesis.
+Evidence (Abstract/Methods)
+● “Literature from a scoping search, combined with expert opinion and researcher
+experience was synthesised to generate an initial programme theory (IPT).”
+● “AR developed consensus amongst the research team…”
+● “The outputs… led to the development of initial drafts of CMOCs… Following
+feedback… an IPT was constructed…”
+● “Other relevant theories were also integrated into the IPT… Cognitive flexibility
+theory… Situativity theory…”
+Stage 2 — Search strategy and execution: theory ‑driven retrieval, with deliberate term
+expansion
+Input
+● IPT themes/constructs (the theory seed determines what to retrieve)
+Operation (algorithmic sequence + loop)
+1. Conduct structured searches in MEDLINE, PsycINFO, ERIC, and CINAHL (May 2017),
+incorporating IPT themes.
+
+===== PAGE 5 =====
+2. Apply a time boundary: searching begins in 2000, justified by the 1999 “To err is human”
+report.
+3. Perform a supplementary search to add additional terms as initial searching identifies
+relevant constructs (pattern recognition, deliberate practice, illness scripts, knowledge
+acquisition/recall).
+4. Operationalise “knowledge” as a multidimensional construct (Table 1) to support
+consistent reasoning about “low/high knowledge” contexts.
+Output
+● A candidate corpus for screening and appraisal.
+Evidence (Methods 2.1)
+● Database list, search date, year constraint, and supplementary terms are explicitly stated.
+Stage 3 — Screening and appraisal: select studies for theory contribution and assess
+methodological credibility
+This stage formalises the key realist inclusion principle: studies are included because they
+contribute to theory building, not merely because they match a topic.
+Input
+● Candidate corpus from Stage 2
+Operation
+1. Title/abstract screening assesses relevance; studies are retrieved if they are deemed to
+contribute to theory building.
+2. Full‑text review assesses methodological rigour as credibility/trustworthiness.
+3. Apply the review’s operational definition of “educational intervention” for full ‑text
+decisions.
+4. Include studies describing a technique that can be integrated into an intervention (not
+only fully packaged interventions).
+5. Search reference lists of included papers for additional theory ‑contributing studies.
+Output
+● The final included set that will drive programme theory refinement.
+
+===== PAGE 6 =====
+Evidence (Methods/Results)
+● “studies retrieved if they were deemed to contribute to theory building.”
+● “Methodological rigour… credible and trustworthy… assessed at full text review.”
+● Quantitative flow (non ‑ambiguous):
+“In total, 149 full texts were retrieved. Of these, 25 articles met the inclusion criteria, and two
+more were added from reference list searching… One was added…”
+⇒ 28 papers contributed.
+Not reported in paper
+● A named appraisal instrument (e.g., CASP) or a numerical scoring rubric is not specified;
+rigour is stated as credibility/trustworthiness.
+Stage 4 — Data extraction and CMOC coding: convert each included paper into structured
+causal explanations
+Input
+● 28 included full texts
+● IPT and CMOC framing
+● Data extraction forms
+Operation (algorithmic sequence + inference rules)
+1. For each included full text, human reviewers devise CMOCs.
+2. Apply realist inference rules for latent constructs:
+● Mechanisms (especially cognitive/emotional learner responses) may be implicit and
+therefore are theorised or inferred from learning theory and study data.
+● Outcomes may also be theorised when not explicit.
+1. Quality assurance:
+● AR performs initial CMOC coding.
+● A second reviewer checks all 28 articles for consistency.
+1. Manage and structure coded information:
+● NVivo is used for storing texts and coding contexts.
+● Excel is used to further elaborate which contexts affect mechanisms and outcomes (i.e.,
+to refine causal mapping).
+Output
+
+===== PAGE 7 =====
+● A CMOC set across all included studies, with coded contexts and structured links
+between contexts, mechanisms, and outcomes.
+Evidence
+● “The CMOCs were devised for all included full texts.”
+● “Initial CMOC coding was undertaken by AR and all 28 articles were checked for
+consistency by another reviewer…”
+● “Mechanisms… are not always explicit… can be theorised… or inferred…”
+● “All possible outcomes may also not be explicit… outcomes can be… theorised…”
+● NVivo/Excel statements in Methods 2.2.
+Important representation detail
+Richmond’s Results present CMOC statements using a C / Mresource / Mresponse / O structure
+(e.g., in Context 1), reflecting their operational decomposition of mechanisms into resource and
+response in reporting.
+Stage 5 — Cross ‑study synthesis and iterative refinement: derive recurrent CMOC
+patterns and consolidate into programme theory
+This stage is where the final conclusions are produced: human reviewers aggregate and reconcile
+CMOCs across studies, iteratively revisiting earlier papers as theory evolves.
+Input
+● CMOC set across studies + IPT
+Operation (pattern‑finding + iterative loop)
+1. Compare studies and identify recurrent patterns of CMOCs.
+2. Recognise that different studies contribute differently (some highlight contexts, others
+mechanisms).
+3. Iteratively re‑analyse earlier studies in light of theories arising from later studies.
+4. Maintain a theory ‑building stance (rather than hypothesis testing) due to under ‑reporting
+or distance of outcomes.
+5. Produce consolidated outputs: key contexts and key mechanisms determining
+effectiveness.
+Output
+
+===== PAGE 8 =====
+● A refined programme theory and its core explanatory components.
+● In Results, the programme theory is operationalised via five key student ‑level contexts,
+each presented with CMOC statements and supporting evidence; teacher/organisational
+contexts are noted as rarely discussed.
+Evidence (Methods/Results)
+● “recurrent patterns of CMOCs were identified.”
+● “Studies identified earlier were re-analysed…”
+● “Key contexts and mechanisms… produced as outputs…”
+● “Five key contexts were identified…”
+4. Public, verifiable outputs (what Richmond reports that can be used as gold ‑standard
+targets)
+These are the observable outputs that a verification effort can directly target:
+● Included set size and flow: 149 full texts retrieved → 28 included (25 + 2 + 1).
+● Programme theory expressed via CMOCs: CMOCs collectively form the programme
+theory.
+● Five key contexts (student level) explicitly enumerated in Results:
+● low knowledge / low domain knowledge / inability to apply knowledge
+● high domain-specific knowledge
+● positive coping strategies / appropriate self-confidence/self-efficacy
+● negative coping strategies / low self-confidence/self-efficacy
+● different levels of knowledge within a group
+● High‑level conclusions about what is required to develop reasoning (knowledge
+acquisition/recall + clinical experience + practice in real/simulated environments) and
+how contexts (pre-existing knowledge, self-confidence) condition effectiveness.
+5. What this specification clarifies
+This document makes explicit how Richmond’s team produced the paper’s conclusions:
+● They did not start with “28 papers” arbitrarily; they built an IPT first, then used it to
+guide search and inclusion.
+● Inclusion decisions were theory ‑contribution driven and filtered by rigour.
+● They transformed papers into CMOCs using a realist inference rule that allows
+theorising/inference for mechanisms/outcomes when implicit.
+
+===== PAGE 9 =====
+● They produced conclusions via cross ‑study pattern identification and an iterative
+re‑analysis loop, culminating in a programme theory expressed through five key contexts
+and CMOC statements.

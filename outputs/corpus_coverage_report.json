@@ -1,0 +1,10 @@
+{
+  "audited_at": "2026-06-15T19:05:13.919437",
+  "coverage": {
+    "registry_input_coverage": "28/28",
+    "cmoc_pipeline_coverage": "28/28",
+    "graphrag_indexed_documents": "20/28"
+  },
+  "reason": "Likely 20 full-text documents indexed, 8 abstract-only represented separately and ignored by GraphRAG due to chunk size limits.",
+  "status": "Limitation requiring transparent reporting, not a hidden failure."
+}
